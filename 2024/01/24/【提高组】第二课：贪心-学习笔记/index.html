@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>【提高组】第二课：贪心 学习笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="贪心第二课：贪心 A：最小字典序最小字典序 思路贪心的去选取 例如样例 ACDBCB 开头和结尾相比，A 小，B 大，选择 A，此时 $t$ 为 A 字符串变成 CDBCB，B 小，C大，选 B，此时 $t$ 为 AB 看似只要开头和结尾不同就只要选择小的哪个就 OK 了，但是如果开头和结尾相同呢？ 此时字符串为 CDBC，选择左边的 C 还是右边的 C 就值得思考了。 如果选择左边，接下来 $t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【提高组】第二课：贪心 学习笔记">
+<meta property="og:url" content="http://example.com/2024/01/24/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%8C%E8%AF%BE%EF%BC%9A%E8%B4%AA%E5%BF%83-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="贪心第二课：贪心 A：最小字典序最小字典序 思路贪心的去选取 例如样例 ACDBCB 开头和结尾相比，A 小，B 大，选择 A，此时 $t$ 为 A 字符串变成 CDBCB，B 小，C大，选 B，此时 $t$ 为 AB 看似只要开头和结尾不同就只要选择小的哪个就 OK 了，但是如果开头和结尾相同呢？ 此时字符串为 CDBC，选择左边的 C 还是右边的 C 就值得思考了。 如果选择左边，接下来 $t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/4jpwtti2.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/a1w1zl9z.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/a1w1zl9z.png">
+<meta property="article:published_time" content="2024-01-24T11:13:26.000Z">
+<meta property="article:modified_time" content="2026-06-21T12:39:15.532Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="提高组">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="贪心">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/4jpwtti2.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-【提高组】第二课：贪心-学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/24/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%8C%E8%AF%BE%EF%BC%9A%E8%B4%AA%E5%BF%83-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-01-24T11:13:26.000Z" itemprop="datePublished">2024-01-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【提高组】第二课：贪心 学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h1><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1141">第二课：贪心</a></p>
+<h2 id="A：最小字典序"><a href="#A：最小字典序" class="headerlink" title="A：最小字典序"></a>A：最小字典序</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1141/problem/A">最小字典序</a></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>贪心的去选取</p>
+<p>例如样例 <code>ACDBCB</code></p>
+<p>开头和结尾相比，A 小，B 大，选择 A，此时 $t$ 为 <code>A</code></p>
+<p>字符串变成 <code>CDBCB</code>，B 小，C大，选 B，此时 $t$ 为 <code>AB</code></p>
+<p>看似只要开头和结尾不同就只要选择小的哪个就 OK 了，但是如果开头和结尾相同呢？</p>
+<p>此时字符串为 <code>CDBC</code>，选择左边的 C 还是右边的 C 就值得思考了。</p>
+<p>如果选择左边，接下来 $t$ 最终会变成 <code>ABCCBD</code> ，显然不是最优的，那么就应该先选择右边的 C，最终得到的才是正确的答案</p>
+<h3 id="正解"><a href="#正解" class="headerlink" title="正解"></a>正解</h3><p>如果开头和结尾不同，那么就取较小的字符</p>
+<p>当一个字符串的开头和结尾相同时，就要两边同时往里面看，一直看到两边不同为止。</p>
+<p>假设向里面看到的两个不同的位置的字符从左到右分别是 $A$ 和 $B$ ，那么如果 $A$ 小于 $B$，就先取左边的开头，如果 $B$ 小于 $A$ ，那么就取右边的结尾</p>
+<p>这样做的复杂度为 $O(n^2)$，而 $n$ 最大只有 $2000$，完全可以接受</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    string t = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="type">int</span> l = <span class="number">0</span>, r = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt;= r) &#123;<span class="comment">//两个变量维护开头和结尾</span></span><br><span class="line">        <span class="comment">//如果开头和结尾不同，就取较小的一个</span></span><br><span class="line">        <span class="keyword">if</span> (s[l] &lt; s[r]) t += s[l], l++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s[r] &lt; s[l]) t += s[r], r--;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//两个变量同时往里面缩</span></span><br><span class="line">            <span class="type">int</span> idx1 = l, idx2 = r;</span><br><span class="line">            <span class="keyword">while</span>(idx1 &lt;= idx2 &amp;&amp; s[idx1] == s[idx2]) idx1++, idx2--;</span><br><span class="line">            <span class="keyword">if</span> (s[idx1] &lt; s[idx2]) t += s[l], l++;</span><br><span class="line">            <span class="keyword">else</span> t += s[r], r--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//别忘了每80个字符换行一次</span></span><br><span class="line">    <span class="type">int</span> len = t.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        cout &lt;&lt; t[i];</span><br><span class="line">        <span class="keyword">if</span> ((i + <span class="number">1</span>) % <span class="number">80</span> == <span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="B：雷达"><a href="#B：雷达" class="headerlink" title="B：雷达"></a>B：雷达</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1141/problem/B">雷达</a></p>
+<h3 id="直接按-x-排序"><a href="#直接按-x-排序" class="headerlink" title="直接按 $x$ 排序"></a>直接按 $x$ 排序</h3><p>直觉告诉我们，可以按照点的 $x$ 排序，这样的话这个雷达不仅可以把这个点覆盖，还有更多的机会取覆盖更右边的点</p>
+<p>但是会有一个问题</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/4jpwtti2.png" alt="特殊情况"></p>
+<p>假设有连个点，分别为 $C_1,C_2$，能够覆盖他们的雷达的最远位置分别是 $A_1,A_2$  ，它们格子距离雷达的长度分别是 $l_1,l_2$ </p>
+<p>那么如果选择了 $A_1$ ，就会错过 $C_2$ ，原因是因为，$C_2$ 距离 $x$ 轴是包含了高度的，这样计算的话，如果 $l_1$ 就等于 $d$ ，也就是雷达的最大半径，$A_1$ 就无法覆盖。原来的贪心策略出现了问题</p>
+<h3 id="正解-1"><a href="#正解-1" class="headerlink" title="正解"></a>正解</h3><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/a1w1zl9z.png" alt="正解示例图"></p>
+<p>可以换一个角度思考这个问题</p>
+<p>对于每一个点，设能够覆盖到它的最远的雷达分别为 $B_1,B_2 $</p>
+<p>那么这两个点就构成了一个区间</p>
+<p>如图，红色的点的位置为 $(x,y)$，设点 $P$ 的左边为 $(x,y)$ ，那么 $B_1,B2$ 的 $y$ 坐标肯定都是 $0$ ，$x$ 坐标分别为 $x-\sqrt{d^2-y^2}$ 和 $x+\sqrt{d^2-y^2}$（关于原理论证，详见下）</p>
+<p>也就是说，在 区间$[x-\sqrt{d^2-y^2}，x+\sqrt{d^2-y^2}]$ 内任意选一个雷达，都可以覆盖掉这个点</p>
+<p>那么就可以得出这么一个结论，所有的点都可以转化成若干段区间。</p>
+<p>原问题就被转换成了一个新的问题，即给你若干个区间，选择最少的点，使得每个区间内都有点</p>
+<p>新问题中的“点”其实就是雷达，根据模型转换的思想，就不需要管原问题了</p>
+<h3 id="论证"><a href="#论证" class="headerlink" title="论证"></a>论证</h3><p>还是上面这个图</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/a1w1zl9z.png" alt="图"></p>
+<p>设左边黄色的线上的点是 $B_1$ ，右边黄色的线上的点是 $B_2$ ，红色的点为 $P$ </p>
+<p>我们观察到到三角形 $PB_1B_2$ 中的一条紫色的先把这个三角形分成两半，而且是两个直角三角形</p>
+<p>直角三角有一个至关重要的结论——勾股定理，也就是 $a^2+b^2&#x3D;c^2$ </p>
+<p>那么，现在我们把这个公式倒过来用</p>
+<hr>
+<p>设点 $P$ 的坐标为 $(x,y)$ </p>
+<p>已知紫色的线于 $x$ 轴垂直，设垂足为 $Q$</p>
+<p>已知三角形 $PB_1Q$ 的斜边长度为 $d$ ，高的长度为 $y$ ，在勾股定理中分别代表 $a$ 和 $c$ </p>
+<p>那么就可以得到 $d^2$ 和 $y^2$ ，即勾股定理中的 $a^2$ 和 $c^2$ </p>
+<p>那么就已知 $a^2$ 和 $c^2$ </p>
+<p>$\because a^2+b^2&#x3D;c^2$</p>
+<p>$\therefore b^2&#x3D;c^2-a^2$</p>
+<p>$\therefore b&#x3D;\sqrt{c^2-a^2}$</p>
+<p><del>数学语言不太标准，勿喷</del></p>
+<h3 id="区间覆盖问题"><a href="#区间覆盖问题" class="headerlink" title="区间覆盖问题"></a>区间覆盖问题</h3><p>通过模型转化，得到以下新问题</p>
+<p>给你若干个区间，求至少多少个点，可以覆盖所有区间</p>
+<p>因为选择右端点可以尽可能多的覆盖区间，所以贪心的策略就是只选右端点</p>
+<p>一定存在这样一种答案，所有选择的点都是右端点</p>
+<p>按照右端点排序</p>
+<p>用变量 $R$ 维护当前选区的右端点</p>
+<p>如果下一个区间的左端点小于 $R$ ，那么就不用管这个区间了，这个区间会直接被覆盖</p>
+<h3 id="无解的情况"><a href="#无解的情况" class="headerlink" title="无解的情况"></a>无解的情况</h3><p>当我们发现输入的点的 $y$ 坐标大于 $d$ 时，就是误解</p>
+<p><strong>不推荐在输入时 break ，尤其是多组数据，会出问题</strong></p>
+<p>注意：这道题目有负数，但只要特判无解的时候加上 fabs 或者 abs 就行了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="type">double</span> x[N], y[N];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, r;</span><br><span class="line"><span class="comment">//转换后的区间</span></span><br><span class="line">pair&lt;<span class="type">double</span>, <span class="type">double</span>&gt; a[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">double</span> tmp = <span class="built_in">sqrt</span>(r * r - y[i] * y[i]);</span><br><span class="line">        a[i].first= x[i] - tmp;</span><br><span class="line">        a[i].second = x[i] + tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(pair&lt;<span class="type">double</span>, <span class="type">double</span>&gt; _x, pair&lt;<span class="type">double</span>, <span class="type">double</span>&gt; _y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _x.second &lt; _y.second;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;r);</span><br><span class="line">    <span class="type">int</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>, &amp;x[i], &amp;y[i]);</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">fabs</span>(y[i]) &gt; r) flag = <span class="number">1</span>;<span class="comment">//注意y[i]可能是负数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//特判无解</span></span><br><span class="line">    <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;-1\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + n + <span class="number">1</span>, cmp);<span class="comment">//排序，右端点越大越靠前</span></span><br><span class="line">    <span class="type">double</span> R = a[<span class="number">1</span>].second;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">if</span>(a[i].first &gt; R) R = a[i].second, ans++;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="C：机器分配"><a href="#C：机器分配" class="headerlink" title="C：机器分配"></a>C：机器分配</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1141/problem/C">机器分配</a></p>
+<h3 id="把机器和任务转化成点"><a href="#把机器和任务转化成点" class="headerlink" title="把机器和任务转化成点"></a>把机器和任务转化成点</h3><p>我们可以把机器和任务都转化成平面直角坐标系上的点</p>
+<p>一个机器要想完成一个任务，那么代表这个机器的点必须在代表任务的点的上方或右方或右上方</p>
+<h3 id="从分数入手"><a href="#从分数入手" class="headerlink" title="从分数入手"></a>从分数入手</h3><p>题目中说完成一个任务的分数为 $500x+2y$ </p>
+<p>显然，$x$ 增加 $1$ ，分数就会增加 $500$ ，$y$ 增加 $1$ ，分数就会增加 $2$ ，而 $y$ 最大只有 $100$ </p>
+<p>这样就可以得出一个结论：优先去做 $x$ 较大的任务</p>
+<p>但是题目的第一需求时完成任务的数量较多，第二需求是分数较多</p>
+<p>优先完成 $x$ 较大的任务会不会导致完成的任务的数量变少呢？</p>
+<p>肯定是会影响答案的</p>
+<p>那么在任务选择机器的时候，就应该选择最合适的机器，性价比最高的机器</p>
+<p>就是说只要这个机器能完成当前的任务就先顶了，没必要让机器大出任务很多</p>
+<h3 id="正解-2"><a href="#正解-2" class="headerlink" title="正解"></a>正解</h3><p>把机器和任务分别都按照 $x$ 从大到小排序</p>
+<p>在任务数组里面设置一个 $i$ 指针，在机器数组里面设置一个 $j$ 指针，因为数组已经按照 $x$ 排序，所以可以让 $j$ 不断滑动，滑动到刚好 $j$ 位置的 $x$ 大于等于当前任务的 $x$ 并且 $j$ 位置的 $x$ 小于当前任务的 $x$ </p>
+<p>得到这样的一个 $j$ 后，只需要在 [$1,j$] 区间中找一个最合适的机器即可（假设下标从 $1$ 开始）</p>
+<p>此时，机器的 $x$ 已经没有用了，因为我已经知道 [$1,j$] 区间中所有的机器的 $x$ 都大于当前的任务的 $x$ ，所有不用再考虑 $x$ 了。为了性价比最高，应当选择 [$1,j$] 区间中 $y$ 最小的机器，并且这个机器的 $y$ 大于任务的 $y$ </p>
+<p><strong>注意开 long long</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> cnt[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> &#123;</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    <span class="comment">//重载小于号运算符</span></span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> node &amp;cmp) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (x != cmp.x) <span class="keyword">return</span> x &gt; cmp.x;</span><br><span class="line">        <span class="keyword">return</span> y &gt; cmp.y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; a[N], b[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a[i].x, &amp;a[i].y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;b[i].x, &amp;b[i].y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">sort</span>(b + <span class="number">1</span>, b + m + <span class="number">1</span>);</span><br><span class="line">    <span class="comment">//注意开long long</span></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ans1 = <span class="number">0</span>, ans2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(j &lt;= n &amp;&amp; a[j].x &gt;= b[i].x) &#123;</span><br><span class="line">            cnt[a[j].y]++;<span class="comment">//桶</span></span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//利用桶排序的效率更高</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = b[i].y; k &lt;= <span class="number">100</span>; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (cnt[k]) &#123;</span><br><span class="line">                ans1++;</span><br><span class="line">                ans2 += <span class="number">500LL</span> * b[i].x + <span class="number">2LL</span> * b[i].y;</span><br><span class="line">                cnt[k]--;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld %lld\n&quot;</span>, ans1, ans2);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/01/24/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%8C%E8%AF%BE%EF%BC%9A%E8%B4%AA%E5%BF%83-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cmqnrykow00069wwg1fmtfela" data-title="【提高组】第二课：贪心 学习笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" rel="tag">提高组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/26/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%B8%89%E8%AF%BE%EF%BC%9ASTL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【提高组】第三课：STL 学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/23/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%B8%80%E8%AF%BE%EF%BC%9A%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【提高组】第一课：枚举 学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LCA/" rel="tag">LCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/" rel="tag">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" rel="tag">分类讨论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%A6%E7%B1%BB%E8%A7%A3%E6%B3%95/" rel="tag">另类解法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE/" rel="tag">子集枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" rel="tag">提高组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE/" rel="tag">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E5%8E%8BDP/" rel="tag">状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" rel="tag">组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/LCA/" style="font-size: 10px;">LCA</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" style="font-size: 10px;">分类讨论</a> <a href="/tags/%E5%8F%A6%E7%B1%BB%E8%A7%A3%E6%B3%95/" style="font-size: 10px;">另类解法</a> <a href="/tags/%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">子集枚举</a> <a href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" style="font-size: 20px;">提高组</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 15px;">枚举</a> <a href="/tags/%E7%8A%B6%E5%8E%8BDP/" style="font-size: 10px;">状压DP</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" style="font-size: 10px;">组合数</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 15px;">贪心</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/02/07/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%85%AD%E8%AF%BE%EF%BC%9A%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9DP-%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第六课：状态压缩DP/子集枚举 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/05/P10112-GESP202312-%E5%85%AB%E7%BA%A7-%E5%A5%96%E5%93%81%E5%88%86%E9%85%8D-%E9%A2%98%E8%A7%A3/">P10112 [GESP202312 八级] 奖品分配 题解</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/05/P10109-GESP202312-%E5%85%AD%E7%BA%A7-%E5%B7%A5%E4%BD%9C%E6%B2%9F%E9%80%9A-%E9%A2%98%E8%A7%A3/">P10109 [GESP202312 六级] 工作沟通 题解</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/04/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%94%E8%AF%BE%EF%BC%9A%E5%8A%A8%E8%A7%84-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第五课：动规 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/28/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%9B%9B%E8%AF%BE%EF%BC%9A%E4%B8%89%E5%88%86-01%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第四课：三分/01分数规划 学习笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

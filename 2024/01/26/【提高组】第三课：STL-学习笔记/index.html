@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>【提高组】第三课：STL 学习笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="STL第三课：STL A：水果店水果店 考察 map 的使用 map 可以将一个数据类型映射到另一个数据类型 map 的定义123456789101112#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;int main() &#123;    map&lt;int, int&gt; mp;    mp[10] &#x3D; 5;    mp[20] &#x3D; 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【提高组】第三课：STL 学习笔记">
+<meta property="og:url" content="http://example.com/2024/01/26/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%B8%89%E8%AF%BE%EF%BC%9ASTL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="STL第三课：STL A：水果店水果店 考察 map 的使用 map 可以将一个数据类型映射到另一个数据类型 map 的定义123456789101112#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;int main() &#123;    map&lt;int, int&gt; mp;    mp[10] &#x3D; 5;    mp[20] &#x3D; 1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-26T08:38:13.000Z">
+<meta property="article:modified_time" content="2026-06-21T12:39:14.818Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="提高组">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="STL">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-【提高组】第三课：STL-学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/26/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%B8%89%E8%AF%BE%EF%BC%9ASTL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-01-26T08:38:13.000Z" itemprop="datePublished">2024-01-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【提高组】第三课：STL 学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h1><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1142">第三课：STL</a></p>
+<h2 id="A：水果店"><a href="#A：水果店" class="headerlink" title="A：水果店"></a>A：水果店</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1142/problem/A">水果店</a></p>
+<p>考察 map 的使用</p>
+<p>map 可以将一个数据类型映射到另一个数据类型</p>
+<h3 id="map-的定义"><a href="#map-的定义" class="headerlink" title="map 的定义"></a>map 的定义</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; mp;</span><br><span class="line">    mp[<span class="number">10</span>] = <span class="number">5</span>;</span><br><span class="line">    mp[<span class="number">20</span>] = <span class="number">1</span>;</span><br><span class="line">    mp[<span class="number">15</span>] = <span class="number">2</span>;</span><br><span class="line">    mp[<span class="number">1000000000</span>] = <span class="number">4</span>;</span><br><span class="line">    cout &lt;&lt; mp.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上代码会输出 $3$</p>
+<h3 id="map-的遍历"><a href="#map-的遍历" class="headerlink" title="map 的遍历"></a>map 的遍历</h3><h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><p>因为 map 是一种容器，所以只能用迭代器进行访问</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (map&lt;<span class="type">int</span>, <span class="type">int</span>&gt;::iterator it = mp.<span class="built_in">begin</span>(); it != mp.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">    cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样可以对 map 进行排序</p>
+<p>如果你利用这份代码进行输出的话，你会发现：输出的结果会自动排序，先按第一维关键字（<code>it-&gt;first</code>）进行从小到大，再按第二维关键字（<code>it-&gt;second</code>）从小到大进行排序</p>
+<h4 id="auto-进行遍历"><a href="#auto-进行遍历" class="headerlink" title="auto 进行遍历"></a>auto 进行遍历</h4><p>我们发现刚刚的代码太长了，有没有什么办法可以让代码变短一点呢？</p>
+<p>答案是有的（建议充分理解上面的方法后再使用以下方法）</p>
+<p>使用 C++11 的 auto</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it : mp) &#123;</span><br><span class="line">    cout &lt;&lt; it.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; it.second;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是，如果使用迭代器，输出就是 <code>it-&gt;first</code> 和 <code>it-&gt;second</code></p>
+<p>如果使用 auto，输出就是 <code>it.first</code> 和 <code>it.second</code></p>
+<h3 id="map-的用法"><a href="#map-的用法" class="headerlink" title="map 的用法"></a>map 的用法</h3><p><code>map&lt;int,int&gt; mp</code> 定义</p>
+<p><code>mp[10]=100</code> 映射</p>
+<p><code>mp.find(10)</code> 查找（第一关键字） ,找到返回得迭代器，找不到返回 <code>mp.end</code></p>
+<p>map 可以很方便的进行计数，统计，因为它是一个容器，第一关键字和第二关键字是不需要管大小的</p>
+<p>但是它的效率不是 $O(1)$ 的，而是 $O(logn)$ </p>
+<p>本题的朴素版写法（迭代器）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//map 是可以叠加定义的，但是要注意中间的空格，低版本的编译器可能会报错</span></span><br><span class="line">map&lt;string,map&lt;string,<span class="type">int</span>&gt; &gt;mp;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    string shuiguo, city;</span><br><span class="line">    <span class="type">int</span> xiaoliang;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; shuiguo &gt;&gt; city &gt;&gt; xiaoliang;</span><br><span class="line">        mp[city][shuiguo] += xiaoliang;</span><br><span class="line">    &#125;</span><br><span class="line">    map&lt;string,map&lt;string,<span class="type">int</span>&gt; &gt;::iterator it1;</span><br><span class="line">    map&lt;string,<span class="type">int</span>&gt;::iterator it2;</span><br><span class="line">    <span class="comment">//遍历整个容器</span></span><br><span class="line">    <span class="comment">//先遍历外面map&lt;string, map&lt;string, int&gt; &gt;</span></span><br><span class="line">    <span class="keyword">for</span>(it1 = mp.<span class="built_in">begin</span>(); it1 != mp.<span class="built_in">end</span>(); it1++) &#123;</span><br><span class="line">        cout &lt;&lt; it1-&gt;first &lt;&lt; endl;</span><br><span class="line">        <span class="comment">//再遍历里面的map&lt;string, int&gt;</span></span><br><span class="line">        <span class="keyword">for</span>(it2 = it1-&gt;second.<span class="built_in">begin</span>(); it2 != it1-&gt;second.<span class="built_in">end</span>(); it2++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;   |----&quot;</span> &lt;&lt; it2-&gt;first &lt;&lt; <span class="string">&quot;(&quot;</span> &lt;&lt; it2-&gt;second &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为这样写代码量太多了，所以就有了更简短的方法</p>
+<p>本题的高端写法（auto）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">map&lt;string, map&lt;string, <span class="type">int</span>&gt; &gt; mp;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    string shuiguo, city;</span><br><span class="line">    <span class="type">int</span> xiaoliang;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; shuiguo &gt;&gt; city &gt;&gt; xiaoliang;</span><br><span class="line">        mp[city][shuiguo] += xiaoliang;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//auto直接在for循环里面用 &quot;:&quot; 遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it1 : mp) &#123;</span><br><span class="line">        cout &lt;&lt; it<span class="number">1.f</span>irst &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> it2 : it<span class="number">1.</span>second) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;   |----&quot;</span> &lt;&lt; it<span class="number">2.f</span>irst &lt;&lt; <span class="string">&quot;(&quot;</span> &lt;&lt; it<span class="number">2.</span>second &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1142/problem/B">set</a></p>
+<h3 id="set-的用法"><a href="#set-的用法" class="headerlink" title="set 的用法"></a>set 的用法</h3><p><strong>注意：set是集合，自动去重</strong></p>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>set&lt;int&gt; st</code> 定义</p>
+<p><code>st.insert(x)</code> 插入 $x$ （默认从小到大排序）</p>
+<p>遍历：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (set&lt;<span class="type">int</span>&gt;::iterator it = st.<span class="built_in">begin</span>(); it != st.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">    cout &lt;&lt; *it &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it : st) &#123;</span><br><span class="line">    cout &lt;&lt; it &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>最值、删除和查找</strong></p>
+<p>最小值为 <code>*st.begin()</code> </p>
+<p>最大值为 <code>*(--st.end())</code> 或 <code>*(st.rbegin())</code> </p>
+<p>要注意的是：迭代器只能 ++ 或 - - ，如果换成 +1 或 -1 就会报错</p>
+<p>删除有两种方式</p>
+<ol>
+<li><code>st.erase(10)</code></li>
+<li><code>st.erase(it)</code></li>
+</ol>
+<p>也就是说 <code>st.erase()</code> 函数的参数既可以是一个数值，也可以是一个迭代器</p>
+<p>但是如果删除一个并不存在的数值或者迭代器，就会出现一些奇奇怪怪的 bug，因此，在执行删除操作之前，一般要查找这个元素是否存在</p>
+<p><code>st.find(10)</code> 查找，找到返回迭代器，否则返回 <code>st.end()</code></p>
+<h4 id="lower-bound-和-upper-bound"><a href="#lower-bound-和-upper-bound" class="headerlink" title="lower_bound 和 upper_bound"></a>lower_bound 和 upper_bound</h4><ol>
+<li><code>st.lower_bound(10)</code> 返回大于等于 $10$ 的第一个迭代器位置，如果没有返回 <code>st.end()</code></li>
+<li><code>st.upper_bound(10)</code> 返回第一个严格大于 $10$ 的迭代器位置，如果没有分会 <code>st.end()</code></li>
+</ol>
+<p>利用这两个函数，可以衍生出其他的技巧</p>
+<ol>
+<li>最后一个小于：找出第一个大于等于，再往前跳一个</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> it = st.<span class="built_in">lower_bound</span>(<span class="number">20</span>);</span><br><span class="line"><span class="keyword">if</span> (it != st.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">    it--;</span><br><span class="line">    cout &lt;&lt; *it &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>求最后一个不大于（超过）：求出第一个严格大于，再往前跳一个</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> it = st.<span class="built_in">upper_bound</span>(<span class="number">20</span>);</span><br><span class="line"><span class="keyword">if</span> (it != st.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">    it--;</span><br><span class="line">    cout &lt;&lt; *it &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>注意：凡是涉及到向前跳一个的，都要判断等不等于 begin</strong></p>
+<h3 id="multiset-和-set-的区别"><a href="#multiset-和-set-的区别" class="headerlink" title="multiset 和 set 的区别"></a>multiset 和 set 的区别</h3><p>首先 multiset 是可重复集合，而 set 是不可重复集合</p>
+<p>其次，multiset 如果是删除一个数值，那么会把所有等于这个数的全部删除，如果删除的是一个迭代器，那么只会删除这个位置</p>
+<hr>
+<p><em>巧记 begin 和 end</em></p>
+<p><strong>计算机左闭上右开，所以 <code>--end()</code> 才有数值</strong></p>
+<p><strong>所有操作不成立全部返回 end ，唯独向前跳一个是例外</strong></p>
+<p><strong>特殊记忆小于某个数的最大的和不大于（超过）某个数最大的</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">multiset&lt;<span class="type">int</span>&gt; st;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">while</span>(n--) &#123;</span><br><span class="line">        string op;</span><br><span class="line">        <span class="type">int</span> x;</span><br><span class="line">        cin &gt;&gt; op;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="string">&quot;Push&quot;</span>) st.<span class="built_in">insert</span>(x);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//这里也可以写成multiset&lt;int&gt;::iterator it = st.upper_bound(x);</span></span><br><span class="line">            <span class="keyword">auto</span> it = st.<span class="built_in">upper_bound</span>(x);</span><br><span class="line">            <span class="comment">//注意这里是判断等不等于st.begin()</span></span><br><span class="line">            <span class="keyword">if</span> (it == st.<span class="built_in">begin</span>()) <span class="built_in">printf</span>(<span class="string">&quot;No Element!\n&quot;</span>);</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//it在这里再--，在上面的话可能会出错</span></span><br><span class="line">                it--;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, *it);</span><br><span class="line">                st.<span class="built_in">erase</span>(it);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="biset"><a href="#biset" class="headerlink" title="biset"></a>biset</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1142/problem/C">bitset</a></p>
+<h3 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h3><blockquote>
+<p>所有题目都要首先要写出暴力，然后再去思考优化。</p>
+</blockquote>
+<p>管他能不能过，我们可以先把暴力当作找思路</p>
+<p>观察到 $C \le 10000， N \le 1000$ （分别小于等于 $1$ 万和 $1$ 千）</p>
+<p>直接开一个数组 $a[10010][1010]$ </p>
+<p>$a_{ij}$ 表示 $i$  是否属于 $j$ 集合</p>
+<p>$a_{ij}&#x3D;1$ 表示 $i$ 属于 $j$ 集合</p>
+<p>$a_{ij}&#x3D;0$ 表示 $i$ 不属于 $j$ 集合</p>
+<p>这样的话就要每次 $O(N)$ 查询</p>
+<p>但是询问有 $200000$ 个，整体的复杂度为 $O(NQ)$</p>
+<p><del>直接下播</del></p>
+<h3 id="压位"><a href="#压位" class="headerlink" title="压位"></a>压位</h3><p>$a$ 数组很明显有很多的浪费，因为它只是用来表示 $0$ 或 $1$ 的</p>
+<p>然而一个 int 本身就有 $32$ 个 $0$ 或 $1$</p>
+<p>所以可以对 $a$ 数组进行一些改编</p>
+<p>开一个数组 $a[10010][40]$</p>
+<p>相当于把 $1$ 千压成了 $40$</p>
+<p>一个 int 是 $32$ 个位，$40$ 个 int 就可以表示 $1$ 千多个集合了</p>
+<h3 id="bitset-的使用方法"><a href="#bitset-的使用方法" class="headerlink" title="bitset 的使用方法"></a>bitset 的使用方法</h3><p>手写压位太麻烦了，各种位运算痛不欲生，有没有更简单的方法呢？</p>
+<p>别忘了 STL 就是为了让代码量变少而生的</p>
+<p>我们可以使用 STL 中的 bitset</p>
+<ol>
+<li><p>定义： <code>bitset&lt;1010&gt; b[10010]</code>（<strong>注意：&lt;&gt; 里面必须是常数</strong>），可以理解为长度位 $1010$ 的二进制字符串</p>
+</li>
+<li><p><code>b[x].set(y)</code> 把 $x$ 的第 $y$  设为 $1$</p>
+</li>
+<li><p><code>(b[x] &amp; b[y])</code> 返回两个 bitset 与之后的新的 bitset</p>
+</li>
+<li><p><code>b[x].count()</code> 返回 $b[x]$ 中 $1$ 的数量</p>
+</li>
+<li><p><code>b[x].flip(pos)</code> 把 $b[x]$ 中的第 $pos$ 位 $0$ 变 $1$，$1$ 变 $0$ </p>
+</li>
+<li><p><code>b[x].reset()</code> 清空（把所有位设为 $0$ ）</p>
+</li>
+<li><p><code>b[x].any()</code> 如果 $b[x]$ 至少有一位为 $1$，返回 true，否则返回 false</p>
+</li>
+</ol>
+<p>详见 <a target="_blank" rel="noopener" href="https://cplusplus.com/">https://cplusplus.com/</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bitset&lt;1010&gt; a[<span class="number">10010</span>];<span class="comment">//用值当做下标</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> k, x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;k);</span><br><span class="line">        <span class="keyword">while</span>(k--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">            a[x].<span class="built_in">set</span>(i);<span class="comment">//x和i在同一集合</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> Q;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;Q);</span><br><span class="line">    <span class="keyword">while</span>(Q--) &#123;</span><br><span class="line">        <span class="type">int</span> x, y;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;x, &amp;y);</span><br><span class="line">        <span class="comment">//如果两个与了之后不为0，就说明这两个有相同的1，即在同一集合</span></span><br><span class="line">        <span class="keyword">if</span>((a[x] &amp; a[y]).<span class="built_in">any</span>()) <span class="built_in">printf</span>(<span class="string">&quot;Yes\n&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;No\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="矩阵切割"><a href="#矩阵切割" class="headerlink" title="矩阵切割"></a>矩阵切割</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1142/problem/D">矩形切割</a></p>
+<p>首先，我们发现，切痕可以用 set 维护</p>
+<p>然后，我们发现，每切一刀，只改变这一维中某一块的大小，其他的都不变</p>
+<p>而最大面积本质上讲就是横向的最大间距乘纵向的最大间距</p>
+<p>当切一刀的时候其实只会改变一个间距，其他的间距都不会变，那么就可以把这个间距找出来，删掉，再插入两个新的间距</p>
+<p>又因为间距会重复，所以需要两个 multiset 来维护间距 </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">set&lt;<span class="type">long</span> <span class="type">long</span>&gt; s1,s2;</span><br><span class="line">multiset&lt;<span class="type">long</span> <span class="type">long</span>&gt; ss1,ss2;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> w, h, n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld&quot;</span>, &amp;w, &amp;h, &amp;n);</span><br><span class="line">    <span class="comment">//插入边界</span></span><br><span class="line">    s<span class="number">1.</span><span class="built_in">insert</span>(w), s<span class="number">2.</span><span class="built_in">insert</span>(h);</span><br><span class="line">    s<span class="number">1.</span><span class="built_in">insert</span>(<span class="number">0</span>), s<span class="number">2.</span><span class="built_in">insert</span>(<span class="number">0</span>);</span><br><span class="line">    ss<span class="number">1.</span><span class="built_in">insert</span>(w), ss<span class="number">2.</span><span class="built_in">insert</span>(h);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">char</span> c;</span><br><span class="line">        <span class="type">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot; %c %d&quot;</span>, &amp;c, &amp;x);</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27;H&#x27;</span>) &#123;</span><br><span class="line">            <span class="comment">//找到这个切痕的切面一个切痕和后面一个切痕</span></span><br><span class="line">            <span class="keyword">auto</span> it=s<span class="number">2.</span><span class="built_in">upper_bound</span>(x),it2=s<span class="number">2.</span><span class="built_in">upper_bound</span>(x);</span><br><span class="line">            it2--;<span class="comment">//注意这里要--</span></span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> k = (*it) - (*it2);</span><br><span class="line">            ss<span class="number">2.</span><span class="built_in">erase</span>(ss<span class="number">2.f</span>ind(k));</span><br><span class="line">            ss<span class="number">2.</span><span class="built_in">insert</span>(x - (*it2)), ss<span class="number">2.</span><span class="built_in">insert</span>((*it)-x);</span><br><span class="line">            s<span class="number">2.</span><span class="built_in">insert</span>(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">auto</span> it=s<span class="number">1.</span><span class="built_in">upper_bound</span>(x),it2=s<span class="number">1.</span><span class="built_in">upper_bound</span>(x);</span><br><span class="line">            it2--;</span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> k=(*it)-(*it2);</span><br><span class="line">            ss<span class="number">1.</span><span class="built_in">erase</span>(ss<span class="number">1.f</span>ind(k));</span><br><span class="line">            ss<span class="number">1.</span><span class="built_in">insert</span>(x - (*it2)), ss<span class="number">1.</span><span class="built_in">insert</span>((*it)-x);</span><br><span class="line">            s<span class="number">1.</span><span class="built_in">insert</span>(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//最值相乘</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, *(--ss<span class="number">1.</span><span class="built_in">end</span>()) * *(--ss<span class="number">2.</span><span class="built_in">end</span>()));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/01/26/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%B8%89%E8%AF%BE%EF%BC%9ASTL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cmqnrykow00059wwg86ekf9rh" data-title="【提高组】第三课：STL 学习笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STL/" rel="tag">STL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" rel="tag">提高组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/28/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%9B%9B%E8%AF%BE%EF%BC%9A%E4%B8%89%E5%88%86-01%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【提高组】第四课：三分/01分数规划 学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/24/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%8C%E8%AF%BE%EF%BC%9A%E8%B4%AA%E5%BF%83-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【提高组】第二课：贪心 学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LCA/" rel="tag">LCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/" rel="tag">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" rel="tag">分类讨论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%A6%E7%B1%BB%E8%A7%A3%E6%B3%95/" rel="tag">另类解法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE/" rel="tag">子集枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" rel="tag">提高组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE/" rel="tag">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E5%8E%8BDP/" rel="tag">状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" rel="tag">组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/LCA/" style="font-size: 10px;">LCA</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" style="font-size: 10px;">分类讨论</a> <a href="/tags/%E5%8F%A6%E7%B1%BB%E8%A7%A3%E6%B3%95/" style="font-size: 10px;">另类解法</a> <a href="/tags/%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">子集枚举</a> <a href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" style="font-size: 20px;">提高组</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 15px;">枚举</a> <a href="/tags/%E7%8A%B6%E5%8E%8BDP/" style="font-size: 10px;">状压DP</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" style="font-size: 10px;">组合数</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 15px;">贪心</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/02/07/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%85%AD%E8%AF%BE%EF%BC%9A%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9DP-%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第六课：状态压缩DP/子集枚举 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/05/P10112-GESP202312-%E5%85%AB%E7%BA%A7-%E5%A5%96%E5%93%81%E5%88%86%E9%85%8D-%E9%A2%98%E8%A7%A3/">P10112 [GESP202312 八级] 奖品分配 题解</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/05/P10109-GESP202312-%E5%85%AD%E7%BA%A7-%E5%B7%A5%E4%BD%9C%E6%B2%9F%E9%80%9A-%E9%A2%98%E8%A7%A3/">P10109 [GESP202312 六级] 工作沟通 题解</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/04/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%94%E8%AF%BE%EF%BC%9A%E5%8A%A8%E8%A7%84-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第五课：动规 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/28/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%9B%9B%E8%AF%BE%EF%BC%9A%E4%B8%89%E5%88%86-01%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第四课：三分/01分数规划 学习笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

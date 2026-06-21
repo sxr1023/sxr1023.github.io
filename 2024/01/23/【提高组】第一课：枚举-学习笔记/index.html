@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>【提高组】第一课：枚举 学习笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="枚举第一课：枚举 A：dfs暴力枚举，二进制枚举按钮变色 题意：最少操作几次是的所有格子变成同色 以某个格子为中心的翻转最多只会有一次 同样的一个格子不会作为中心被翻转两次 解法暴力枚举每个格子翻或者不翻，最后检测是否全部同色，如果全部同色，看一下操作几次，更新答案 change 函数改变 $x,y$  及周边格子的颜色 check 函数判断格子颜色是否全部相同 dfs 函数暴力枚举。dep 参数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【提高组】第一课：枚举 学习笔记">
+<meta property="og:url" content="http://example.com/2024/01/23/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%B8%80%E8%AF%BE%EF%BC%9A%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="枚举第一课：枚举 A：dfs暴力枚举，二进制枚举按钮变色 题意：最少操作几次是的所有格子变成同色 以某个格子为中心的翻转最多只会有一次 同样的一个格子不会作为中心被翻转两次 解法暴力枚举每个格子翻或者不翻，最后检测是否全部同色，如果全部同色，看一下操作几次，更新答案 change 函数改变 $x,y$  及周边格子的颜色 check 函数判断格子颜色是否全部相同 dfs 函数暴力枚举。dep 参数">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-23T11:07:11.000Z">
+<meta property="article:modified_time" content="2026-06-21T12:38:36.301Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="提高组">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="枚举">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-【提高组】第一课：枚举-学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/23/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%B8%80%E8%AF%BE%EF%BC%9A%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-01-23T11:07:11.000Z" itemprop="datePublished">2024-01-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【提高组】第一课：枚举 学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1140">第一课：枚举</a></p>
+<h2 id="A：dfs暴力枚举，二进制枚举"><a href="#A：dfs暴力枚举，二进制枚举" class="headerlink" title="A：dfs暴力枚举，二进制枚举"></a>A：dfs暴力枚举，二进制枚举</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1140/problem/A">按钮变色</a></p>
+<p>题意：最少操作几次是的所有格子变成同色</p>
+<p>以某个格子为中心的翻转最多只会有一次</p>
+<p>同样的一个格子不会作为中心被翻转两次</p>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>暴力枚举每个格子翻或者不翻，最后检测是否全部同色，如果全部同色，看一下操作几次，更新答案</p>
+<p>change 函数改变 $x,y$  及周边格子的颜色</p>
+<p>check 函数判断格子颜色是否全部相同</p>
+<p>dfs 函数暴力枚举。dep 参数是搜到了哪个位置（最大16），used 参数记录翻转的次数</p>
+<p>不凡当前格子就去 dep + 1 位置，used 不变</p>
+<p>翻转当前格子就去 dep + 1 位置，used + 1</p>
+<p><strong>注意回溯！因为 used 作为参数，所以不用回溯，只要回溯 mp 数组即可</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> mp[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//5个方向</span></span><br><span class="line"><span class="type">int</span> dx[] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="type">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ans = <span class="number">20</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        <span class="type">int</span> ax = x + dx[i];</span><br><span class="line">        <span class="type">int</span> ay = y + dy[i];</span><br><span class="line">        <span class="keyword">if</span> (ax &lt; <span class="number">0</span> || ax &gt; <span class="number">4</span> || ay &lt; <span class="number">0</span> || ay &gt; <span class="number">4</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (mp[ax][ay] == <span class="string">&#x27;w&#x27;</span>) mp[ax][ay] = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">        <span class="keyword">else</span> mp[ax][ay] = <span class="string">&#x27;w&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">char</span> x = mp[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mp[i][j] != x) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> dep, <span class="type">int</span> used)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (dep == <span class="number">16</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>()) ans = <span class="built_in">min</span>(ans, used);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(dep + <span class="number">1</span>, used);</span><br><span class="line">    <span class="type">int</span> x = dep / <span class="number">4</span>, y = dep % <span class="number">4</span>;</span><br><span class="line">    <span class="built_in">change</span>(x, y);</span><br><span class="line">    <span class="built_in">dfs</span>(dep + <span class="number">1</span>, used + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">change</span>(x, y);<span class="comment">//回溯 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, mp[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//最开始在第0层 </span></span><br><span class="line">    <span class="keyword">if</span> (ans == <span class="number">20</span>) <span class="built_in">printf</span>(<span class="string">&quot;Impossible\n&quot;</span>);<span class="comment">//注意判断无解</span></span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="状态压缩"><a href="#状态压缩" class="headerlink" title="状态压缩"></a>状态压缩</h3><p>用一个整数的二进制来表示某个元素选或不选</p>
+<h2 id="B：双指针（尺取法）"><a href="#B：双指针（尺取法）" class="headerlink" title="B：双指针（尺取法）"></a>B：双指针（尺取法）</h2><p><a target="_blank" rel="noopener" href="https://517coding.com/contests/1140/problem/B">最短连续子序列</a></p>
+<p>题意：给你 $n,S$ 以及 $n$ 个数，求最短的连续子序列的长度似的这个连续子序列的和大于等于 $S$ （$n \le 10^5$）</p>
+<h3 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h3><p>暴力枚举所有的区间，求和，判断</p>
+<p>如果不用前缀和优化，复杂度为 $O(n^3)$ </p>
+<p>使用前缀和优化，复杂度为 $O(n^2)$ </p>
+<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><p>预处理前缀和 $sum_i$ 表示前 $i$ 个数的和</p>
+<p>枚举区间的左端点，此时发现越往右和越大，所以满足单调性，可以二分找到满足条件的最小的右端点，更新答案 </p>
+<p>复杂度为 $O(nlogn)$ </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a[N], sum[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, s;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;s);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">        sum[i] = sum[i - <span class="number">1</span>] + a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans = n + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//枚举左端点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="comment">//在 [i,n] 区间内去找一个满足条件的最小的右端点</span></span><br><span class="line">        <span class="type">int</span> l = i, r = n, best = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r) &#123;</span><br><span class="line">            <span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (sum[mid] - sum[i - <span class="number">1</span>] &gt;= s) &#123;</span><br><span class="line">                best = mid;</span><br><span class="line">                r = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (best != <span class="number">-1</span>) ans = <span class="built_in">min</span>(ans, best - i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ans == n + <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">&quot;0\n&quot;</span>);<span class="comment">//判断无解</span></span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><p>枚举其中一个端点，另一个端点在滑动</p>
+<p>值得的注意的是，右端点 $j$ 在滑动的时候不应当判断 $j$ 是否合法，而应当判断 $j+1$  位置是否合法，因为只有这样，才能尽可能的找打最靠右的右端点</p>
+<p>$j$ 初始值为 $0$ 是因为滑动以下就到了 $1$ ，不然的话会忽略第一个位置</p>
+<p>$tmp$ 维护区间和</p>
+<p>复杂度为 $O(n)$ </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, s;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;s);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> ans = n + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//确定左端点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="comment">//右端点进行滑动</span></span><br><span class="line">        <span class="comment">//尽可能地向右找</span></span><br><span class="line">        <span class="keyword">while</span>(j + <span class="number">1</span> &lt;= n &amp;&amp; tmp &lt; s) tmp += a[j + <span class="number">1</span>], j++;</span><br><span class="line">        <span class="keyword">if</span> (tmp &gt;= s) ans = <span class="built_in">min</span>(ans, j - i + <span class="number">1</span>);</span><br><span class="line">        tmp -= a[i];<span class="comment">//左端向右滑动，因此总和要减掉这个数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ans == n + <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">&quot;0\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C：异或"><a href="#C：异或" class="headerlink" title="C：异或"></a>C：异或</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1140/problem/C">异或和</a></p>
+<h3 id="异或的性质"><a href="#异或的性质" class="headerlink" title="异或的性质"></a>异或的性质</h3><p>两个位不同才为 $1$</p>
+<p>$101$ 异或 $010 &#x3D; 111$</p>
+<p>假如 $a$ ^ $b &lt; a + b$ （此处 <code>^</code> 为异或符号）</p>
+<p>说明什么？说明 $a$ ^ $b$  ^ $c$ 一定也小于 $a + b + c$ </p>
+<p>那么以后所有的数相异或都不会相等了</p>
+<h3 id="解法-1"><a href="#解法-1" class="headerlink" title="解法"></a>解法</h3><p>利用这个特质，可以得出解法：</p>
+<p>枚举一个左端点，然后利用双指针（two-pointers）技巧去滑动右端点，找到最大的满足条件的右端点</p>
+<hr>
+<p><strong>右端点滑动</strong>：假设我们枚举到一个左端点 $i$ ，接下来我们要用一个 $j$ 代表右端点，不断进行滑动</p>
+<p>设 $SA$ 为当前 $[i,j - 1]$ 区间的元素异或和，$x$ 等于 $a_j$ ，$sum$ 为 [$i,j - 1$] 区间和</p>
+<p> 如果 $SA$ ^ $x$ 等于 $sum + x$，那么 $j$ 就可以一直向右滑动</p>
+<p>一直滑倒一个最极限的位置为止</p>
+<p>所以 $[i,i],[i,i+1],[i,i+2]…[i,j]$ 都是满足条件的</p>
+<p>答案就可以就可以加上 $j-i+1$ </p>
+<hr>
+<p><strong>左端点移动：</strong>当我们扔掉 $i$ 位置的数时，这段区间其实是更加满足条件的，这是因为如果 $a$ ^ $b$ ^ $c&#x3D;a+b+c$，那么如果把 $c$ 让掉，$a$ ^ $b$ 也一定是等于 $a+b$ 的</p>
+<p>所以 $j$ 就没有必要从头开始，可以继续向右滑动，重复上面的操作，计算答案，复杂度就变成了 $O(n)$ </p>
+<p>和上一题不同的时，这题需要维护两个和，分别是异或和和区间和</p>
+<p><del>不开 long long 见祖宗</del></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">200010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> suma = <span class="number">0</span>, sumb = <span class="number">0</span>;<span class="comment">//suma维护异或和，sumb维护区间和</span></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="comment">//注意异或的优先级比较低，要加括号</span></span><br><span class="line">        <span class="keyword">while</span>(j + <span class="number">1</span> &lt;= n &amp;&amp; (suma ^ a[j + <span class="number">1</span>]) == (sumb + a[j + <span class="number">1</span>]))</span><br><span class="line">            suma ^= a[j + <span class="number">1</span>], sumb += a[j + <span class="number">1</span>], j++;</span><br><span class="line">        <span class="comment">//这里不需要判断j的越界情况，j因为上面的while循环最大会停留在n</span></span><br><span class="line">        ans += j - i + <span class="number">1</span>;</span><br><span class="line">        suma ^= a[i];<span class="comment">//同一个数异或两次相当于没有异或</span></span><br><span class="line">        sumb -= a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="D：折半枚举"><a href="#D：折半枚举" class="headerlink" title="D：折半枚举"></a>D：折半枚举</h2><p><a target="_blank" rel="noopener" href="https://www.517coding.com/contests/1140/problem/D">最大余数</a></p>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给你最多 $35$ 个整数，选出一个子集使得这个子集的和区域 $m$ 最大，求最大余数</p>
+<p>子集就是某一个组合</p>
+<p>暴力枚举所有组合复杂度 $2^{35}$ </p>
+<h3 id="解法-2"><a href="#解法-2" class="headerlink" title="解法"></a>解法</h3><p>分成两半之后，暴力枚举前一半数的所有组合，保存到 $b$ 数组并进行排序，复杂度最多为 $2^{18}$ </p>
+<p>暴力枚举另一半的所有组合，去 $b$ 数组里面寻找一个数，使得这个数跟 $x$ 加起来模 $m$ 最大</p>
+<p>去 $b$ 数组里面查找小于等于 $m - 1 - x$ 的最大的一个数，如果不存在就直接取 $b$ 数组里面最大的数</p>
+<hr>
+<p>所以问题就变成了在一个有序数组中查找某一个数，用二分解决</p>
+<p>可以利用二进制枚举，注意：二进制枚举时下标一般从 $0$ 开始</p>
+<p><strong>注意：$b$ 数组要开的很大，否则会 RE 或 WA</strong></p>
+<p><a target="_blank" rel="noopener" href="https://discuss.517coding.com/d/628-7%E6%AE%B5%E7%AC%AC1%E8%AF%BEd%E9%A2%98%E6%9C%80%E5%A4%A7%E4%BD%99%E6%95%B0-%E8%AD%A6%E7%A4%BA%E5%90%8E%E4%BA%BA">警示后人</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">300010</span>;<span class="comment">//数组至少要这么大</span></span><br><span class="line"><span class="type">int</span> a[N], b[N];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, mod, tot;</span><br><span class="line"><span class="comment">//在b数组里二分，找到小于等于x的最大的数，找不到则返回b数组中最大的数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (b[<span class="number">0</span>] &gt; x) <span class="keyword">return</span> b[tot - <span class="number">1</span>];</span><br><span class="line">    <span class="type">int</span> l = <span class="number">0</span>, r = tot - <span class="number">1</span>, best = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt;= r) &#123;</span><br><span class="line">        <span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (b[mid] &lt;= x) &#123;</span><br><span class="line">            best = mid;</span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b[best];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;mod);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">        a[i] %= mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m = n / <span class="number">2</span>;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//第一半的组合，保存在b数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; m); i++) &#123;</span><br><span class="line">        <span class="type">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &amp; (<span class="number">1</span> &lt;&lt; j)) tmp = (<span class="number">1LL</span> * tmp + a[j]) % mod;<span class="comment">//注意1LL，小心溢出</span></span><br><span class="line">        &#125;</span><br><span class="line">        b[tot++] = tmp;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, tmp);<span class="comment">//特殊处理再某一半的最大组合</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(b, b + tot);</span><br><span class="line">    m = n - (n / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; m); i++) &#123;</span><br><span class="line">        <span class="type">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">            <span class="comment">//因为开始点是从n/2开始的，所以要加上这些偏移量</span></span><br><span class="line">            <span class="type">int</span> jj = j + n / <span class="number">2</span>;</span><br><span class="line">            <span class="comment">//cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; jj &lt;&lt; &quot; &quot; &lt;&lt; (1 &lt;&lt; jj) &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">if</span> (i &amp; (<span class="number">1</span> &lt;&lt; j)) tmp = (<span class="number">1LL</span> * tmp + a[jj]) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//特殊处理再某一半的最大组合</span></span><br><span class="line">        ans = <span class="built_in">max</span>(ans, tmp);</span><br><span class="line">        <span class="type">int</span> x = <span class="built_in">find</span>(mod - tmp - <span class="number">1</span>);<span class="comment">//尽量找最接近mod - 1的数</span></span><br><span class="line">        ans = <span class="built_in">max</span>(ans, (x + tmp) % mod);<span class="comment">//这里注意取模</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/01/23/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%B8%80%E8%AF%BE%EF%BC%9A%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cmqnrykov00049wwgbm8sgwf6" data-title="【提高组】第一课：枚举 学习笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" rel="tag">提高组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE/" rel="tag">枚举</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/24/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%8C%E8%AF%BE%EF%BC%9A%E8%B4%AA%E5%BF%83-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【提高组】第二课：贪心 学习笔记
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LCA/" rel="tag">LCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/" rel="tag">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" rel="tag">分类讨论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%A6%E7%B1%BB%E8%A7%A3%E6%B3%95/" rel="tag">另类解法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE/" rel="tag">子集枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" rel="tag">提高组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE/" rel="tag">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E5%8E%8BDP/" rel="tag">状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" rel="tag">组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/LCA/" style="font-size: 10px;">LCA</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" style="font-size: 10px;">分类讨论</a> <a href="/tags/%E5%8F%A6%E7%B1%BB%E8%A7%A3%E6%B3%95/" style="font-size: 10px;">另类解法</a> <a href="/tags/%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">子集枚举</a> <a href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" style="font-size: 20px;">提高组</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 15px;">枚举</a> <a href="/tags/%E7%8A%B6%E5%8E%8BDP/" style="font-size: 10px;">状压DP</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" style="font-size: 10px;">组合数</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 15px;">贪心</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/02/07/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%85%AD%E8%AF%BE%EF%BC%9A%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9DP-%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第六课：状态压缩DP/子集枚举 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/05/P10112-GESP202312-%E5%85%AB%E7%BA%A7-%E5%A5%96%E5%93%81%E5%88%86%E9%85%8D-%E9%A2%98%E8%A7%A3/">P10112 [GESP202312 八级] 奖品分配 题解</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/05/P10109-GESP202312-%E5%85%AD%E7%BA%A7-%E5%B7%A5%E4%BD%9C%E6%B2%9F%E9%80%9A-%E9%A2%98%E8%A7%A3/">P10109 [GESP202312 六级] 工作沟通 题解</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/04/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%94%E8%AF%BE%EF%BC%9A%E5%8A%A8%E8%A7%84-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第五课：动规 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/28/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%9B%9B%E8%AF%BE%EF%BC%9A%E4%B8%89%E5%88%86-01%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第四课：三分/01分数规划 学习笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
