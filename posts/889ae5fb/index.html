@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>记录我的来时路 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录一下hexo博客来时路吧，简单说说 23年12月末接触hexo博客，记得那会为了弄这个痛不欲生，一个小问题又要问很多遍，那个时候我是被一个OI（信息学奥林匹配竞赛）朋友带着入坑的，就一直问问啊问啊问，现在看来他也是真的有耐心，帮助了我很多，具体就不一一列举了，他的博客是 https:&#x2F;&#x2F;wsq127.top 接下来就是励志写OI学术嘛，那个时候很单纯，时间也很多，年轻，有冲劲，就一直在维护网站">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录我的来时路">
+<meta property="og:url" content="http://example.com/posts/889ae5fb/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="记录一下hexo博客来时路吧，简单说说 23年12月末接触hexo博客，记得那会为了弄这个痛不欲生，一个小问题又要问很多遍，那个时候我是被一个OI（信息学奥林匹配竞赛）朋友带着入坑的，就一直问问啊问啊问，现在看来他也是真的有耐心，帮助了我很多，具体就不一一列举了，他的博客是 https:&#x2F;&#x2F;wsq127.top 接下来就是励志写OI学术嘛，那个时候很单纯，时间也很多，年轻，有冲劲，就一直在维护网站">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-06-21T13:16:14.000Z">
+<meta property="article:modified_time" content="2026-06-21T13:33:12.562Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="日常生活">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "记录我的来时路",
+  "url": "http://example.com/posts/889ae5fb/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2026-06-21T13:16:14.000Z",
+  "dateModified": "2026-06-21T13:33:12.562Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "John Doe",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/889ae5fb/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '记录我的来时路',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">记录我的来时路</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">记录我的来时路</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-06-21T13:16:14.000Z" title="Created 2026-06-21 21:16:14">2026-06-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-06-21T13:33:12.562Z" title="Updated 2026-06-21 21:33:12">2026-06-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/">日常生活</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>记录一下hexo博客来时路吧，简单说说</p>
+<p>23年12月末接触hexo博客，记得那会为了弄这个痛不欲生，一个小问题又要问很多遍，那个时候我是被一个OI（信息学奥林匹配竞赛）朋友带着入坑的，就一直问问啊问啊问，现在看来他也是真的有耐心，帮助了我很多，具体就不一一列举了，他的博客是 <a target="_blank" rel="noopener" href="https://wsq127.top/">https://wsq127.top</a></p>
+<p>接下来就是励志写OI学术嘛，那个时候很单纯，时间也很多，年轻，有冲劲，就一直在维护网站</p>
+<p>后来还是经过wsq127的帮助，免费接管了一个域名，继续维护</p>
+<p>再后来认识了Akilar，洪哥他们那个群体，进入了他们的QQ群，只不过我性子有些怕生，到底是没问多少问题。但现在回头看看，也很高兴认识一帮志同道合的朋友</p>
+<p>期间一度花了很长时间魔改网站，Qexo什么的都弄了，真的是很开心</p>
+<p>接着就是上了初二，也就是25年，不怎么学OI了，网站也渐渐的忘在了脑后了，域名过期之后也没有续上</p>
+<p>再回首，当初竟然花了那么多时间维护网站，真的是令现在的我都觉得很吃惊</p>
+<p>26年6月21日，我重建hexo博客，第一次写下这篇文章的时候</p>
+<p>原因很简单嘛，中考完了放松放松，又有点怀念以前魔改的日子，就重建了</p>
+<p>有句话叫做“魔改一时爽，一直魔改一直爽”（也是wsq127说出来的），我深以为然</p>
+<p>未来的话，这个网站也不指望多少人看到，只要我自己记得有这个地方就足够了</p>
+<p>以前没写过日记，我给自己的理由是生活如此平凡，哪有值得记录的</p>
+<p>然而当生活不平凡，生活中精彩来临的时候，我也并没有选择写日记什么的，那个时候给自己的理由是“写日记就是要真嘛，但是写在纸上难免被家长发现反而不美”，所以仍旧没有写</p>
+<p>如今看来，这又是一个遗憾</p>
+<p>现在看来的话，像这样一个互联网界的穷乡僻壤，无人在意的地方，倒是非常适合我写写日记，抒发个人情感什么的</p>
+<p>诸位能看到这篇文章，着实也是出乎我的意料，当然，更大的可能是没人看到，不过也没关系</p>
+<p>这是我的博客，自然要写我的东西，我自己独自观看，独自欣赏，独自漫步其中</p>
+<p>今日，暂且如此，且看他日风云尚且不定</p>
+<blockquote>
+<p>回首来时路，悠悠几春秋</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/posts/889ae5fb/">http://example.com/posts/889ae5fb/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/">日常生活</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/61e012bf/" title="【提高组】第六课：状态压缩DP/子集枚举 学习笔记"><img class="cover" src="/img/cover/7%E6%AE%B5%E7%AC%AC%E5%85%AD%E8%AF%BE.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">【提高组】第六课：状态压缩DP/子集枚举 学习笔记</div></div><div class="info-2"><div class="info-item-1">第六课：状态压缩DP&#x2F;子集枚举第六课：状态压缩DP&#x2F;子集枚举 folding 前置位运算知识  与：同为 1 ，则为 1，否则为0。即只要有一位是 0，结果就是0  或：同为 0 ，则为 0，否则为1。即只要有一位是 1，结果就是1  异或：不同则为 1，相同则为 0    已知一个状态压缩的数 $i$，有如下操作：  求 $i$ 的第 $j$ 位是否为 $1$ ：i&amp;(1&lt;&lt;j)!=0 （注意：是 !&#x3D;0，而不是&#x3D;&#x3D;1）  把 $i$ 的第 $j$ 位修改为 $1$：i|=1&lt;&lt;j   A：环游世界环游世界 首先，这很明显是一个无向图 这样，我们需要的信息就是：  已走过的点集 当前停留在哪里 当前的最小花费  知道了这三个信息之后，转移时只要枚举一个未走过的点，从当前的位置转移过去，再把花费加上即可 在做最短路是通常不会主动去构造一个环，而本题要求从起点出发，再回到起点 我们可以先找到一个点 $T$ ，求出起点到 $T$ 的最短路，最后再单独加上 $T$到起点的距离 表示已走过的集合就可以用状态...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/889ae5fb/" title="记录我的来时路">记录我的来时路</a><time datetime="2026-06-21T13:16:14.000Z" title="Created 2026-06-21 21:16:14">2026-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/61e012bf/" title="【提高组】第六课：状态压缩DP/子集枚举 学习笔记"><img src="/img/cover/7%E6%AE%B5%E7%AC%AC%E5%85%AD%E8%AF%BE.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【提高组】第六课：状态压缩DP/子集枚举 学习笔记"/></a><div class="content"><a class="title" href="/posts/61e012bf/" title="【提高组】第六课：状态压缩DP/子集枚举 学习笔记">【提高组】第六课：状态压缩DP/子集枚举 学习笔记</a><time datetime="2024-02-07T08:17:46.000Z" title="Created 2024-02-07 16:17:46">2024-02-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/6fe15873/" title="P10112 [GESP202312 八级] 奖品分配 题解"><img src="/img/404.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="P10112 [GESP202312 八级] 奖品分配 题解"/></a><div class="content"><a class="title" href="/posts/6fe15873/" title="P10112 [GESP202312 八级] 奖品分配 题解">P10112 [GESP202312 八级] 奖品分配 题解</a><time datetime="2024-02-05T03:10:28.000Z" title="Created 2024-02-05 11:10:28">2024-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9a3d92d8/" title="P10109 [GESP202312 六级] 工作沟通 题解"><img src="/img/404.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="P10109 [GESP202312 六级] 工作沟通 题解"/></a><div class="content"><a class="title" href="/posts/9a3d92d8/" title="P10109 [GESP202312 六级] 工作沟通 题解">P10109 [GESP202312 六级] 工作沟通 题解</a><time datetime="2024-02-05T03:10:18.000Z" title="Created 2024-02-05 11:10:18">2024-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e8d76788/" title="【提高组】第五课：动规 学习笔记"><img src="/img/cover/7%E6%AE%B5%E7%AC%AC%E4%BA%94%E8%AF%BE.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【提高组】第五课：动规 学习笔记"/></a><div class="content"><a class="title" href="/posts/e8d76788/" title="【提高组】第五课：动规 学习笔记">【提高组】第五课：动规 学习笔记</a><time datetime="2024-02-04T10:46:34.000Z" title="Created 2024-02-04 18:46:34">2024-02-04</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By John Doe</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
