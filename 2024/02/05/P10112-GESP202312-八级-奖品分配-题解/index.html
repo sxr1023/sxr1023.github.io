@@ -1,289 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>P10112 [GESP202312 八级] 奖品分配 题解 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="题目传送门 这道题目总的来说代码量不多，但是思维很麻烦。 题目说，所有的奖品加起来正好等于 $n$ 或等于 $n+1$。 那么，就可以进行分类讨论。 第一种情况：奖品数正好等于 $n$。 这种情况下就是说每个同学正好只拿一个奖品。 假设有 $10$ 名同学，奖品有 $3$ 种，每种奖品的个数分别为 $3,2,5$。 首先，我们要从 $10$ 个人中选择 $5$ 个人拿第三种奖品，那么组合情况数 $">
-<meta property="og:type" content="article">
-<meta property="og:title" content="P10112 [GESP202312 八级] 奖品分配 题解">
-<meta property="og:url" content="http://example.com/2024/02/05/P10112-GESP202312-%E5%85%AB%E7%BA%A7-%E5%A5%96%E5%93%81%E5%88%86%E9%85%8D-%E9%A2%98%E8%A7%A3/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目传送门 这道题目总的来说代码量不多，但是思维很麻烦。 题目说，所有的奖品加起来正好等于 $n$ 或等于 $n+1$。 那么，就可以进行分类讨论。 第一种情况：奖品数正好等于 $n$。 这种情况下就是说每个同学正好只拿一个奖品。 假设有 $10$ 名同学，奖品有 $3$ 种，每种奖品的个数分别为 $3,2,5$。 首先，我们要从 $10$ 个人中选择 $5$ 个人拿第三种奖品，那么组合情况数 $">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-05T03:10:28.000Z">
-<meta property="article:modified_time" content="2026-06-21T12:39:31.776Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="组合数">
-<meta property="article:tag" content="分类讨论">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+extends includes/layout.pug
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+    article#article-container.container.post-content
+      if theme.noticeOutdate.enable && page.noticeOutdate !== false
+        include includes/post/outdate-notice.pug
+      else
+        !=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (page.tags.length > 0 && theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-      <div class="outer">
-        <section id="main"><article id="post-P10112-GESP202312-八级-奖品分配-题解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/05/P10112-GESP202312-%E5%85%AB%E7%BA%A7-%E5%A5%96%E5%93%81%E5%88%86%E9%85%8D-%E9%A2%98%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2024-02-05T03:10:28.000Z" itemprop="datePublished">2024-02-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-  </div>
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      P10112 [GESP202312 八级] 奖品分配 题解
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P10112">题目传送门</a></p>
-<p>这道题目总的来说代码量不多，但是思维很麻烦。</p>
-<p>题目说，所有的奖品加起来正好等于 $n$ 或等于 $n+1$。</p>
-<p>那么，就可以进行分类讨论。</p>
-<p><strong>第一种情况：奖品数正好等于 $n$。</strong></p>
-<p>这种情况下就是说每个同学正好只拿一个奖品。</p>
-<p>假设有 $10$ 名同学，奖品有 $3$ 种，每种奖品的个数分别为 $3,2,5$。</p>
-<p>首先，我们要从 $10$ 个人中选择 $5$ 个人拿第三种奖品，那么组合情况数 $C_{10}^{5}$。</p>
-<p>接下来，从剩下的 $5$ 个人中选择 $2$ 个人拿第二种奖品，那么组合情况数为 $C_{5}^{2}$。</p>
-<p>那么最后只剩下 $3$ 个人，只能拿第一种奖品，即组合情况数位 $C_{3}^{3}$。</p>
-<p>这样的选取方法结果就是 $C_{10}^{5}\times C_{5}^{2}\times C_{3}^{3}&#x3D;2520$。</p>
-<p>如果换一种顺序取选取奖品，假如说从前往后取，先取第一种奖品，再取第二种奖品，最后取第三种奖品，结果就是 $C_{10}^{3}\times C_{7}^{2}\times C_{5}^{5}&#x3D;2520$。</p>
-<p>两个式子的结果相等的，这就证明了这种计算方法的正确性。</p>
-<p>这种情况下的公式为 $C_{n}^{a_1}\times C_{n-a_1}^{a_2}\times C_{n-a_1-a_2}^{a_3}\times…\times C_{n-a_1-a_2-…-a_{n-1}}^{a_n}$ 。</p>
-<p><strong>第二种情况：奖品数等于 $n+1$。</strong></p>
-<p>如果奖品数等于 $n+1$ 的话，最终就会多出来一个奖品。</p>
-<p>仍然举一个例子：有 $10$ 名同学，$3$ 种奖品，每种奖品的数量分别是 $4,5,2$。</p>
-<p>第一种思路：我们可以<strong>假设多出的奖品分别是第几种奖品。</strong></p>
-<p>假设多出的是第一种奖品，那就减掉好了，奖品数就变成了 $3,5,2$。</p>
-<p>假设多出的是第二种奖品，奖品数就变成了 $4,4,2$。</p>
-<p>假设多出的是第三种奖品，奖品数就变成了 $4,5,1$。</p>
-<p>一共就得到了三种情况，分别按照第一种情况算即可。</p>
-<p>分别相加，得到结果为 $C_{10}^{3}\times C_{7}^{5}\times C_{2}^{2}+C_{10}^{4}\times C_{6}^{4}\times C_{2}^{2}+C_{10}^{4}\times C_{6}^{5}\times C_{1}^{1}&#x3D;6930$。</p>
-<p>但是这样做的复杂度是多少呢？毫无疑问，是 $O(MT)$，很明显会超时。</p>
-<p>第二种思路：<strong>不是去掉物品，而是多加一个人</strong>。因为多出的奖品即使不给人也要放在那里，因此可以假设多出来一个人，多出的一个奖品正好给多出的一个人。这样就转换成了第一种情况。</p>
-<p>最终结果为 $C_{11}^{4}\times C_{7}^{5}\times C_{2}^{2}&#x3D;6930$。</p>
-<p>第一种思路的结果和第二种思路的结果正好相等，说明了第二种思路的正确性。</p>
-<p>因为只是让同学数加一，所以复杂度和第一种情况相等，完全可以通过。</p>
-<p>这种情况下的公式为 $C_{n+1}^{a_1}\times C_{(n+1)-a_1}^{a_2}\times C_{(n+1)-a_1-a_2}^{a_3}\times…\times C_{(n+1)-a_1-a_2-…-a_{n-1}}^{a_n}$ 。</p>
-<p>题目中说，所有奖品的数量不是等于 $n$ 就是等于 $n+1$，简单整理以下，设 $sum$ 为所有奖品的总数量，最终的答案就是  $C_{sum}^{a_1}\times C_{sum-a_1}^{a_2}\times C_{sum-a_1-a_2}^{a_3}\times…\times C_{sum-a_1-a_2-…-a_{n-1}}^{a_n}$ 。</p>
-<p>至于组合数可以使用杨辉三角预处理。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a[N], C[N][N];</span><br><span class="line"></span><br><span class="line"><span class="comment">//利用杨辉三角预处理组合数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == <span class="number">0</span> || j == i) C[i][j] = <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//边加边取模</span></span><br><span class="line">            <span class="keyword">else</span> C[i][j] = (C[i - <span class="number">1</span>][j] + C[i - <span class="number">1</span>][j - <span class="number">1</span>]) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="type">int</span> n, m;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">        <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">            sum += a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> ans = <span class="number">1</span>;<span class="comment">//注意开long long</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">            <span class="comment">//这里的结果计算方法参考上面的讲解</span></span><br><span class="line">            <span class="comment">//直接用sum来计算答案省的考虑两种情况</span></span><br><span class="line">            ans = (ans * C[sum][a[i]]) % mod;</span><br><span class="line">            sum -= a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/02/05/P10112-GESP202312-%E5%85%AB%E7%BA%A7-%E5%A5%96%E5%93%81%E5%88%86%E9%85%8D-%E9%A2%98%E8%A7%A3/" data-id="cmqnrykos00019wwgfwosdhjx" data-title="P10112 [GESP202312 八级] 奖品分配 题解" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" rel="tag">分类讨论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" rel="tag">组合数</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2024/02/07/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%85%AD%E8%AF%BE%EF%BC%9A%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9DP-%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          【提高组】第六课：状态压缩DP/子集枚举 学习笔记
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2024/02/05/P10109-GESP202312-%E5%85%AD%E7%BA%A7-%E5%B7%A5%E4%BD%9C%E6%B2%9F%E9%80%9A-%E9%A2%98%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">P10109 [GESP202312 六级] 工作沟通 题解</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LCA/" rel="tag">LCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/" rel="tag">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" rel="tag">分类讨论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%A6%E7%B1%BB%E8%A7%A3%E6%B3%95/" rel="tag">另类解法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE/" rel="tag">子集枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" rel="tag">提高组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE/" rel="tag">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E5%8E%8BDP/" rel="tag">状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" rel="tag">组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/LCA/" style="font-size: 10px;">LCA</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" style="font-size: 10px;">分类讨论</a> <a href="/tags/%E5%8F%A6%E7%B1%BB%E8%A7%A3%E6%B3%95/" style="font-size: 10px;">另类解法</a> <a href="/tags/%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">子集枚举</a> <a href="/tags/%E6%8F%90%E9%AB%98%E7%BB%84/" style="font-size: 20px;">提高组</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 15px;">枚举</a> <a href="/tags/%E7%8A%B6%E5%8E%8BDP/" style="font-size: 10px;">状压DP</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" style="font-size: 10px;">组合数</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 15px;">贪心</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/02/07/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%85%AD%E8%AF%BE%EF%BC%9A%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9DP-%E5%AD%90%E9%9B%86%E6%9E%9A%E4%B8%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第六课：状态压缩DP/子集枚举 学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2024/02/05/P10112-GESP202312-%E5%85%AB%E7%BA%A7-%E5%A5%96%E5%93%81%E5%88%86%E9%85%8D-%E9%A2%98%E8%A7%A3/">P10112 [GESP202312 八级] 奖品分配 题解</a>
-          </li>
-        
-          <li>
-            <a href="/2024/02/05/P10109-GESP202312-%E5%85%AD%E7%BA%A7-%E5%B7%A5%E4%BD%9C%E6%B2%9F%E9%80%9A-%E9%A2%98%E8%A7%A3/">P10109 [GESP202312 六级] 工作沟通 题解</a>
-          </li>
-        
-          <li>
-            <a href="/2024/02/04/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E4%BA%94%E8%AF%BE%EF%BC%9A%E5%8A%A8%E8%A7%84-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第五课：动规 学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/28/%E3%80%90%E6%8F%90%E9%AB%98%E7%BB%84%E3%80%91%E7%AC%AC%E5%9B%9B%E8%AF%BE%EF%BC%9A%E4%B8%89%E5%88%86-01%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">【提高组】第四课：三分/01分数规划 学习笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+    if page.comments !== false && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
