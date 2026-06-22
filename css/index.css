@@ -4278,7 +4278,7 @@ figure.highlight pre .javascript .function {
 }
 #page-header #site-title {
   margin: 0;
-  color: var(--black);
+  color: var(--white);
   font-size: 1.85em;
   -webkit-line-clamp: 3;
 }
@@ -4288,7 +4288,7 @@ figure.highlight pre .javascript .function {
   }
 }
 #page-header #site-subtitle {
-  color: var(--black-grey);
+  color: var(--white-grey);
   font-size: 1.15em;
 }
 @media screen and (min-width: 768px) {

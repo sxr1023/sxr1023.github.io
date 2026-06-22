@@ -1,53 +1,67 @@
 /* 主页所有文章页面背景 */
-#aside_content .card-widget, #recent-posts>.recent-post-items>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
-    /* 以下代表透明度为0.8 */
-    background: rgba(255,255,255,.8);
+[data-theme="light"] {
+    #aside_content .card-widget,
+    #recent-posts>.recent-post-items>.recent-post-item,
+    .layout_page>div:first-child:not(.recent-posts),
+    .layout_post>#page,
+    .layout_post>#post,
+    .read-mode .layout_post>#post {
+        background: rgba(255,255,255,.7);
+    }
 }
 
-/*侧边栏页面*/
-#aside-content>.card-widget  {
-	background: rgba(255,255,255,.8);
+[data-theme="dark"] {
+    #aside_content .card-widget,
+    #recent-posts>.recent-post-items>.recent-post-item,
+    .layout_page>div:first-child:not(.recent-posts),
+    .layout_post>#page,
+    .layout_post>#post,
+    .read-mode .layout_post>#post {
+        background: rgba(0,0,0,.7);
+    }
 }
-#aside-content>.sticky_layout>.card-widget{
-	background: rgba(255,255,255,.8);
+[data-theme='light'] #recent-posts > .recent-post-item{
+    background:rgba(255, 255, 255, 0.7)!important;
 }
-/*文章页面*/
-.layout>#post{
-	background: rgba(255,255,255,.8);
+[data-theme='light'] .card-widget{
+  background:rgba(255, 255, 255, 0.7)!important;
 }
-/*标签页面*/
-.layout>#page{
-	
-	background: rgba(255,255,255,.8);
+[data-theme='light'] div#post{
+  background:rgba(255, 255, 255, 0.7)!important;
 }
-/*分类页面*/
-.layout>#tag{
-	
-	background: rgba(255,255,255,.8);
+[data-theme='light'] div#page{
+  background:rgba(255, 255, 255, 0.7)!important;
 }
-/*时间轴页面*/
-.layout>#archive{
-	background: rgba(255,255,255,.8);
+[data-theme='light'] div#archive{
+  background:rgba(255, 255, 255, 0.7)!important;
 }
+[data-theme='light'] div#tag{
+  background:rgba(255, 255, 255, 0.7)!important;
+}
+[data-theme='light'] div#category{
+  background:rgba(255, 255, 255, 0.7)!important;
+}
+
 /* 黑夜模式下*/
 [data-theme='dark'] #recent-posts > .recent-post-item{
-    background:rgba(0, 0, 0, 0.8)!important;
+    background:rgba(0, 0, 0, 0.7)!important;
 }
 [data-theme='dark'] .card-widget{
-  background:rgba(0, 0, 0, 0.8)!important;
+  background:rgba(0, 0, 0, 0.7)!important;
 }
 [data-theme='dark'] div#post{
-  background:rgba(0, 0, 0, 0.8)!important;
+  background:rgba(0, 0, 0, 0.7)!important;
 }
 [data-theme='dark'] div#page{
-  background:rgba(0, 0, 0, 0.8)!important;
+  background:rgba(0, 0, 0, 0.7)!important;
 }
 [data-theme='dark'] div#archive{
-  background:rgba(0, 0, 0, 0.8)!important;
+  background:rgba(0, 0, 0, 0.7)!important;
 }
 [data-theme='dark'] div#tag{
-  background:rgba(0, 0, 0, 0.8)!important;
+  background:rgba(0, 0, 0, 0.7)!important;
 }
 [data-theme='dark'] div#category{
-  background:rgba(0, 0, 0, 0.8)!important;
+  background:rgba(0, 0, 0, 0.7)!important;
 }
+
