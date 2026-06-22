@@ -13,7 +13,7 @@
   background: transparent !important;
 }
 
-/* 可选：毛玻璃半透明效果（不想要就删掉这段）
+ 可选：毛玻璃半透明效果（不想要就删掉这段）
 #footer {
   background: rgba(255,255,255,0.05) !important;
   backdrop-filter: blur(4px);
@@ -24,4 +24,3 @@
 [data-theme="dark"] #footer::before {
   background: rgba(255,255,255,0.06) !important;
 }
-*/
