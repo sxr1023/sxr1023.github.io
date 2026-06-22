@@ -1,0 +1,27 @@
+/* 页脚容器完全透明 */
+#footer {
+  background: transparent !important;
+}
+
+/* 清除白天模式页脚遮罩层 */
+#footer::before {
+  background: transparent !important;
+}
+
+/* 清除夜间模式页脚遮罩层 */
+[data-theme="dark"] #footer::before {
+  background: transparent !important;
+}
+
+/* 可选：毛玻璃半透明效果（不想要就删掉这段）
+#footer {
+  background: rgba(255,255,255,0.05) !important;
+  backdrop-filter: blur(4px);
+}
+#footer::before {
+  background: rgba(0,0,0,0.08) !important;
+}
+[data-theme="dark"] #footer::before {
+  background: rgba(255,255,255,0.06) !important;
+}
+*/
