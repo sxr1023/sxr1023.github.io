@@ -12,12 +12,6 @@
 [data-theme="dark"] #footer::before {
   background: transparent !important;
 }
-
- 可选：毛玻璃半透明效果（不想要就删掉这段）
-#footer {
-  background: rgba(255,255,255,0.05) !important;
-  backdrop-filter: blur(4px);
-}
 #footer::before {
   background: rgba(0,0,0,0.08) !important;
 }
@@ -40,3 +34,10 @@
   pointer-events: none;
   z-index: 1;
 }
+
+
+
+
+
+
+
