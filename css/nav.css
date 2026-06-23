@@ -12,18 +12,18 @@
 }
 /* 主标题 */
 [data-theme="light"] #site-title {
-  color: #fff !important;
+  color: #222 !important;
 }
 [data-theme="dark"] #site-title {
-  color: #222 !important;
+  color: #eee !important;
 }
 
 /* 副标题打字机 */
 [data-theme="light"] #site-subtitle {
-  color: #eee !important;
+  color: #333 !important;
 }
 [data-theme="dark"] #site-subtitle {
-  color: #333 !important;
+  color: #ddd !important;
 }
 /* 打字光标 */
 #site-subtitle .typed-cursor {
