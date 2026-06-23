@@ -1,0 +1,100 @@
+/* ========== 全局默认箭头 pointer: normal.cur ========== */
+html,
+body {
+  cursor: url("/cursor/ShaR _JB1916/normal.cur"), default !important;
+}
+
+/* ========== 链接/按钮 hover link: link.cur ========== */
+a,
+button,
+.cursor-pointer,
+.nav-item,
+.card-btn,
+#pagination a,
+.post-tag,
+.article-meta a {
+  cursor: url("/cursor/ShaR _JB1916/link.cur"), pointer !important;
+}
+
+/* ========== 帮助提示 help: help.cur ========== */
+[title],
+.help-tip,
+.question-mark {
+  cursor: url("/cursor/ShaR _JB1916/help.cur"), help !important;
+}
+
+/* ========== 后台加载中 work: working.ani ========== */
+.pace-progress,
+.loading-box,
+[data-loading] {
+  cursor: url("/cursor/ShaR _JB1916/working.ani"), progress !important;
+}
+
+/* ========== 阻塞等待 busy: busy.ani ========== */
+*[cursor="wait"],
+.modal-loading {
+  cursor: url("/cursor/ShaR _JB1916/busy.ani"), wait !important;
+}
+
+/* ========== 精准十字 cross: precision.cur ========== */
+.canvas,
+.img-crop,
+.cross-area {
+  cursor: url("/cursor/ShaR _JB1916/precision.cur"), crosshair !important;
+}
+
+/* ========== 文本输入框 text: text.cur ========== */
+input[type="text"],
+input[type="password"],
+textarea,
+.search-input,
+.comment-textarea {
+  cursor: url("/cursor/ShaR _JB1916/text.cur"), text !important;
+}
+
+/* ========== 手写/拖拽抓手 hand: handwriting.cur ========== */
+.slider-thumb,
+.drag-item,
+.gallery-swipe {
+  cursor: url("/cursor/ShaR _JB1916/handwriting.cur"), grab !important;
+}
+
+/* ========== 禁用不可点击 unavailiable: unavailable.cur ========== */
+button:disabled,
+.disabled,
+.unclickable {
+  cursor: url("/cursor/ShaR _JB1916/unavailable.cur"), not-allowed !important;
+}
+
+/* ========== 垂直拉伸 vert: vertical.cur ========== */
+.resize-v,
+textarea::-webkit-resizer {
+  cursor: url("/cursor/ShaR _JB1916/vertical.cur"), ns-resize !important;
+}
+
+/* ========== 水平拉伸 horz: horizontal.cur ========== */
+.resize-h {
+  cursor: url("/cursor/ShaR _JB1916/horizontal.cur"), ew-resize !important;
+}
+
+/* ========== 对角线拉伸 dgn1 / dgn2 ========== */
+/* 左上-右下 ne-sw */
+.resize-d1 {
+  cursor: url("/cursor/ShaR _JB1916/diagonal1.cur"), nwse-resize !important;
+}
+/* 右上-左下 nw-se */
+.resize-d2 {
+  cursor: url("/cursor/ShaR _JB1916/diagonal2.cur"), nesw-resize !important;
+}
+
+/* ========== 整体拖拽 move: move.cur ========== */
+.drag-window,
+.drag-modal,
+.sort-item {
+  cursor: url("/cursor/ShaR _JB1916/move.cur"), move !important;
+}
+
+/* ========== 备选交替光标 alternate: alternate.cur ========== */
+.alternate-cursor {
+  cursor: url("/cursor/ShaR _JB1916/alternate.cur"), auto !important;
+}
