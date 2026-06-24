@@ -5,7 +5,7 @@
 
 /* ---------- 所有目录链接默认轻微模糊 ---------- */
 a.toc-link {
-    filter: blur(1.5px);      /* 从 3px 降低到 1.5px，保留轮廓 */
+    filter: blur(1px);      /* 从 3px 降低到 1.5px，保留轮廓 */
     opacity: 0.75;            /* 从 0.6 提升到 0.75，更清晰 */
     transition: filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 opacity 0.4s ease,
