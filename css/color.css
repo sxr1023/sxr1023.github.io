@@ -1,0 +1,83 @@
+/* ======= 白天模式（微调后） ======= */
+/* 文章卡片 - 柔和浅蓝绿 */
+.recent-post-item,
+.post-block {
+  background: rgba(160, 205, 220, 0.75) !important; /* 更清透的蓝绿 */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(185, 225, 240, 0.3); /* 阴影匹配新色 */
+  overflow: hidden;
+}
+
+#recent-posts > .recent-post-item {
+  background: rgba(185, 225, 240, 0.75) !important;
+}
+
+/* 侧边栏卡片 - 柔和浅绿蓝 */
+.aside-content .card-widget,
+#aside-content .card-widget,
+.sidebar .card-widget,
+#sidebar .card-widget,
+.card-widget {
+  background: rgba(155, 218, 205, 0.75) !important;
+  backdrop-filter: blur(12px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(180, 238, 225, 0.2) !important; /* 阴影匹配 */
+  overflow: hidden !important;
+}
+
+/* ======= 夜间模式（保持不变） ======= */
+html[data-theme="dark"] .recent-post-item,
+html[data-theme="dark"] .post-block {
+  background: rgba(50, 80, 110, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] #recent-posts > .recent-post-item {
+  background: rgba(50, 80, 110, 0.75) !important;
+}
+
+html[data-theme="dark"] .aside-content .card-widget,
+html[data-theme="dark"] #aside-content .card-widget,
+html[data-theme="dark"] .sidebar .card-widget,
+html[data-theme="dark"] #sidebar .card-widget,
+html[data-theme="dark"] .card-widget {
+  background: rgba(40, 70, 80, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 标签云文字颜色（白天） */
+.card-tag-cloud a {
+  color: #00C4B6 !important; 
+}
+.card-tag-cloud a:hover {
+  color: #00C4B6 !important;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] .card-tag-cloud a {
+  color: #A4D4F0 !important;
+}
+[data-theme="dark"] .card-tag-cloud a:hover {
+  color: #B3E5EF !important;
+}
+/*顶栏颜色*/
+/* 白天模式 - 半透明毛玻璃风格（与卡片统一） */
+nav#nav.show {
+  background: rgba(160, 205, 220, 0.75) !important; /* 浅蓝绿，透明度可调 */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 夜间模式 - 深色半透明 */
+[data-theme="dark"] nav#nav.show {
+  background: rgba(50, 80, 110, 0.75) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}

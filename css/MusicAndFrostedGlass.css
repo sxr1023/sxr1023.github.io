@@ -10,7 +10,15 @@
 /* 播放器内部面板、列表浅色底色 */
 .aplayer-body,
 .aplayer-list {
-  background: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(185, 225, 240, 0.5) !important;
+}
+.aplayer-list-light {
+  background: rgba(180, 238, 225, 0.55) !important;
+  backdrop-filter: blur(10px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(150%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important; /* 可选，增强玻璃质感 */
+  border-radius: 8px !important; /* 可选，圆角 */
+  overflow: hidden !important; /* 保证模糊边缘裁剪 */
 }
 /* 播放列表hover高亮 */
 .aplayer-list li:hover {
@@ -19,14 +27,14 @@
 
 /* 暗黑模式：半透明黑灰色毛玻璃，替换白色底色 */
 [data-theme="dark"] .aplayer.aplayer-fixed {
-  background: rgba(22, 22, 26, 0.65) !important;
+  background: rgba(50, 80, 110, 0.5) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
 }
 [data-theme="dark"] .aplayer-body,
 [data-theme="dark"] .aplayer-list {
-  background: rgba(35, 35, 40, 0.4) !important;
+  background: rgba(50, 80, 110, 0.5) !important;
 }
 [data-theme="dark"] .aplayer-list li:hover {
   background: rgba(255, 255, 255, 0.1) !important;
@@ -40,11 +48,19 @@
   color: #f0f0f0 !important;
 }
 
+[data-theme="dark"] .aplayer-list-light {
+  background: rgba(40, 70, 70, 0.55) !important;
+  backdrop-filter: blur(10px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(150%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important; /* 可选，增强玻璃质感 */
+  border-radius: 8px !important; /* 可选，圆角 */
+  overflow: hidden !important; /* 保证模糊边缘裁剪 */
+}
+
 /* 底部footer预留高度，不被播放器遮挡 */
 #footer {
   padding-bottom: 80px !important;
 }
-
 
 /* 底部不遮挡footer */
 #footer {
@@ -69,8 +85,22 @@
 }
 
 .layout > div:first-child:not(.recent-posts) {
-    background: rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
+  background: linear-gradient(to left, rgba(160, 205, 220, 0.75), rgba(155, 218, 205, 0.75)) !important;
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(175, 215, 230, 0.2);
+  overflow: hidden;
+}
+[data-theme="dark"] .layout > div:first-child:not(.recent-posts) {
+  background: linear-gradient(to left, rgba(50, 80, 110, 0.75), rgba(40, 70, 80, 0.75)) !important;
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(175, 215, 230, 0.2);
+  overflow: hidden;
 }
 
 #recent-posts > .recent-post-item {

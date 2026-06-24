@@ -20,9 +20,6 @@
         background: rgba(0,0,0,.7);
     }
 }
-[data-theme='light'] #recent-posts > .recent-post-item{
-    background:rgba(255, 255, 255, 0.7)!important;
-}
 [data-theme='light'] .card-widget{
   background:rgba(255, 255, 255, 0.7)!important;
 }
@@ -43,9 +40,7 @@
 }
 
 /* 黑夜模式下*/
-[data-theme='dark'] #recent-posts > .recent-post-item{
-    background:rgba(0, 0, 0, 0.7)!important;
-}
+
 [data-theme='dark'] .card-widget{
   background:rgba(0, 0, 0, 0.7)!important;
 }
