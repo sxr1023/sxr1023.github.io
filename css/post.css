@@ -1,0 +1,31 @@
+/* ============================================================
+   Butterfly 主题 · 目录(TOC)聚焦效果（柔和版）
+   非激活项轻微模糊，保留可读性
+   ============================================================ */
+
+/* ---------- 所有目录链接默认轻微模糊 ---------- */
+a.toc-link {
+    filter: blur(1.5px);      /* 从 3px 降低到 1.5px，保留轮廓 */
+    opacity: 0.75;            /* 从 0.6 提升到 0.75，更清晰 */
+    transition: filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.4s ease,
+                transform 0.35s ease;
+    transform: scale(0.98);
+    display: inline-block;
+}
+
+/* ---------- 当前激活的目录链接：完全清晰 ---------- */
+a.toc-link.active {
+    filter: blur(0px) !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    font-weight: 600;
+    color: var(--theme-color, #49b1f5);
+}
+
+/* ---------- 悬停非激活项：几乎清晰，只留一点点雾感 ---------- */
+a.toc-link:not(.active):hover {
+    filter: blur(0.45px);      /* 从 1px 降低到 0.6px */
+    opacity: 0.9;             /* 从 0.8 提升到 0.9 */
+    transform: scale(0.99);
+}
