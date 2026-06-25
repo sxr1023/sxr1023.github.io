@@ -4950,6 +4950,9 @@ figure.highlight pre .javascript .function {
   -ms-transition: 0.3s;
   transition: 0.3s;
 }
+html[data-theme="dark"] .loading-bg {
+  background: #32506e;
+}
 #loading-box .loading-img {
   width: 100px;
   height: 100px;
