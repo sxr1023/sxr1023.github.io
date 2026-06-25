@@ -7,11 +7,11 @@
     top: 10%;
     left: 10%;
     background-color: var(--card-bg);
-    border: 1px solid rgb(210,210,210);;
+    border: 1px solid rgb(210,210,210);
     border-radius: 8px;
     z-index: 100;
     box-shadow: 3px 3px 5px #88888894;
-    background-color: var(--june-white-acrylic1);
+    background-color: rgb(155, 218, 209);
     backdrop-filter: blur(30px);
 }
 [data-theme='dark'] #rightMenu{
@@ -21,12 +21,12 @@
     height: fit-content;
     top: 10%;
     left: 10%;
-    background-color: var(--card-bg);
+    background-color: rgb(40, 70, 81);
     border: 1px solid rgb(210,210,210);;
     border-radius: 8px;
     z-index: 100;
     box-shadow: 3px 3px 5px #88888894;
-    background-color: var(--june-black-acrylic1);
+    background-color: rgb(40, 72, 80);
     backdrop-filter: blur(30px);
 }
 #rightMenu .rightMenu-group{

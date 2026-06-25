@@ -4950,6 +4950,9 @@ figure.highlight pre .javascript .function {
   -ms-transition: 0.3s;
   transition: 0.3s;
 }
+[data-theme="dark"] .loading-bg {
+  background: #32506e;
+}
 #loading-box .loading-img {
   width: 100px;
   height: 100px;
@@ -4977,6 +4980,9 @@ figure.highlight pre .javascript .function {
   -ms-animation-direction: alternate;
   animation-direction: alternate;
 }
+[data-theme="dark"] #loading-box .loading-img {
+  border-color: #333;
+}
 #loading-box .loading-image-dot {
   width: 30px;
   height: 30px;
@@ -4991,6 +4997,9 @@ figure.highlight pre .javascript .function {
   -o-transform: translate(18px, 24px);
   -ms-transform: translate(18px, 24px);
   transform: translate(18px, 24px);
+}
+[data-theme="dark"] #loading-box .loading-image-dot {
+  border-color: #191919;
 }
 #loading-box.loaded .loading-bg {
   opacity: 0;
