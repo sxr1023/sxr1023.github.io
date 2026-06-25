@@ -1,4 +1,5 @@
 
+/*
 // 动态心跳，更改自己的名称
 $(document).ready(function (e) {
   $(".copyright").html(
@@ -41,7 +42,7 @@ function show_date_time() {
     "</font> 秒";
 }
 
-
+*/
 //动态标题
 var OriginTitile = document.title;
 var titleTime;
