@@ -1,31 +1,113 @@
-/* ============================================================
-   Butterfly 主题 · 目录(TOC)聚焦效果（柔和版）
-   非激活项轻微模糊，保留可读性
-   ============================================================ */
-
-/* ---------- 所有目录链接默认轻微模糊 ---------- */
-a.toc-link {
-    filter: blur(0.8px);      /* 从 3px 降低到 1.5px，保留轮廓 */
-    opacity: 0.75;            /* 从 0.6 提升到 0.75，更清晰 */
-    transition: filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                opacity 0.4s ease,
-                transform 0.35s ease;
-    transform: scale(0.98);
-    display: inline-block;
+/* 所有目录链接默认模糊 */
+body:not(:has(a.toc-link:hover)) a.toc-link {
+  filter: blur(0.8px);
+  transition: filter 0.2s ease;
 }
 
-/* ---------- 当前激活的目录链接：完全清晰 ---------- */
+/* 当前目录永久清晰 */
 a.toc-link.active {
-    filter: blur(0px) !important;
-    opacity: 1 !important;
-    transform: scale(1) !important;
-    font-weight: 600;
-    color: var(--theme-color, #49b1f5);
+  filter: blur(0) !important;
 }
 
-/* ---------- 悬停非激活项：几乎清晰，只留一点点雾感 ---------- */
-a.toc-link:not(.active):hover {
-    filter: blur(0.45px);      /* 从 1px 降低到 0.6px */
-    opacity: 0.9;             /* 从 0.8 提升到 0.9 */
-    transform: scale(0.99);
+/* 任意目录悬浮时，全部取消模糊 */
+body:has(a.toc-link:hover) a.toc-link {
+  filter: blur(0);
 }
+
+a.toc-link {
+  transition: filter 0.2s ease;
+}
+
+
+/* 归档样式 */
+span.card-archive-list-count {
+  width: auto;
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 0.9;
+  font-weight: 700;
+}
+.card-archive-list-count-group {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a span:last-child,
+#aside-content .card-categories ul.card-category-list > .card-category-list-item a span:last-child {
+  width: fit-content;
+  margin-left: 4px;
+}
+span.card-archive-list-count {
+  width: auto;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 0.9;
+  font-weight: 700;
+}
+.card-archive-list-date {
+  font-size: 14px;
+  opacity: 0.6;
+}
+li.card-archive-list-item {
+  width: 100%;
+  flex: 0 0 48%;
+}
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:hover,
+#aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover {
+  color: #fff;
+  background-color: rgb(160, 190, 220);
+  box-shadow: 0 8px 12px -3px #4259ef23;
+  border-radius: 8px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+[data-theme="dark"] #aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover {
+  color: #fff;
+  background-color: rgb(50, 70, 110);
+  box-shadow: 0 8px 12px -3px #4259ef23;
+  border-radius: 8px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+@media screen and (min-width: 1300px) {
+  #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:hover,
+  #aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover {
+    transform: scale(1.03);
+  }
+  #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:active,
+  #aside-content .card-categories ul.card-category-list > .card-category-list-item a:active {
+    transform: scale(0.97);
+  }
+}
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a,
+[data-theme="light"] #aside-content .card-categories ul.card-category-list > .card-category-list-item a {
+  border-radius: 8px;
+  margin: 4px 0;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  border:  1px solid rgb(181, 218, 155);
+}
+[data-theme="dark"] #aside-content .card-categories ul.card-category-list > .card-category-list-item a {
+  border-radius: 8px;
+  margin: 4px 0;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  border:  1px solid rgb(50, 91, 110);
+}
+
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a span:first-child,
+#aside-content .card-categories ul.card-category-list > .card-category-list-item a span:first-child {
+  width: auto;
+  flex: inherit;
+}
+#aside-content .card-archives ul.card-archive-list,
+#aside-content .card-categories ul.card-category-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+

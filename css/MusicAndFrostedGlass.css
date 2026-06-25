@@ -57,15 +57,6 @@
   overflow: hidden !important; /* 保证模糊边缘裁剪 */
 }
 
-/* 底部footer预留高度，不被播放器遮挡 */
-#footer {
-  padding-bottom: 80px !important;
-}
-
-/* 底部不遮挡footer */
-#footer {
-  padding-bottom: 80px !important;
-}
 
 
 /*************************************************************************************/

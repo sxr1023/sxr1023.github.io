@@ -51,21 +51,6 @@
   translate:-50%;
 }
 
-.nav-fixed #nav{
-    transform: translateY(58px)!important;
-    -webkit-transform: translateY(58px)!important;
-    -moz-transform: translateY(58px)!important;
-    -ms-transform: translateY(58px)!important;
-    -o-transform: translateY(58px)!important;
-}
-#nav{
-    transition: none!important;
-    -webkit-transition: none!important;
-    -moz-transition: none!important;
-    -ms-transition: none!important;
-    -o-transition: none!important;
-}
-
 
 /*鼠标放在超链接上的特效*/
 body {

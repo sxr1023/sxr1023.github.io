@@ -142,3 +142,34 @@
         margin:0 auto;
     }
 }
+
+/* ===== 方案一：Flexbox 推底（推荐） ===== */
+/* 让 body 占满视口高度，并纵向排布 */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* #page 作为中间容器，同样纵向排布并自动撑满 */
+#page {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 100vh;
+}
+
+/* 主要内容区域：自动占据剩余空间，把页脚推下去 */
+#content-wrap,        /* Butterfly 常用 */
+#main,                /* 备选 */
+.main-content,        /* 备选 */
+.post-content {       /* 备选 */
+  flex: 1 0 auto;
+}
+
+/* 页脚容器：禁止收缩，确保始终在底部 */
+div#foot-wrap {
+  flex-shrink: 0;
+  /* 可保留原样式，无需额外改动 */
+}
