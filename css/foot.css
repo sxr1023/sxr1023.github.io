@@ -8,7 +8,7 @@
 }
 
 #footer-wrap{
-    color:var(--june-white);
+    color: #FFFFFFB3;
     padding:50px 5% 35px 5%;
     display:flex;
     flex-wrap:wrap;
@@ -52,7 +52,7 @@
 }
 
 #footer-wrap .footer-button > a:hover{
-    background: #1f2d3d;
+    background: #FFFFFFB3;
     transition:0.2s;
 }
 
@@ -72,7 +72,7 @@
 }
 
 #footer-right p,#footer-right a{
-    color:var(--june-white);
+    color: #FFFFFFB3;
 }
 
 .footer-totop {
