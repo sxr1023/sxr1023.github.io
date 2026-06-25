@@ -29,3 +29,42 @@ a.toc-link:not(.active):hover {
     opacity: 0.9;             /* 从 0.8 提升到 0.9 */
     transform: scale(0.99);
 }
+
+#site-name::before{
+    opacity: 0;
+    background-color: var(--lyx-theme)!important;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    position:absolute;
+    top:0!important;
+    right:0!important;
+    width:100%;
+    height:100%;
+    content: "\f015";
+    [data-theme="light"] box-shadow: 0 0 5px rgb(160, 205, 220);
+    [data-theme="dark"] box-shadow: 0 0 5px rgb(50, 80, 110);
+    font-family: "Font Awesome 6 Free";
+    text-align: center;
+    color:white;
+    line-height:34px;/*如果有溢出或者垂直不居中的现象微调一下这个参数*/
+    font-size: 18px;/*根据个人喜好*/
+}
+#site-name:hover::before{
+    opacity: 1;
+    scale:1.03;
+}
+#site-name{
+    position: relative;
+    font-size: 24px; /*一定要把字体调大点，否则效果惨不忍睹！*/
+}
+:root{
+    --lyx-theme: rgb() /*我的主题色*/
+}
