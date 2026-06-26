@@ -1,34 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // 检查屏幕宽度是否大于某个值（例如768px，通常认为是平板/手机与桌面设备的分界点）
-  if (window.matchMedia("(min-width: 768px)").matches) {
-    var searchButton = document.getElementById('search-button');
-    var menusItems = document.querySelectorAll('.menus_items');
+document.addEventListener('pjax:complete', tonav);
+document.addEventListener('DOMContentLoaded', tonav);
+//响应pjax
+function tonav(){
+    document.getElementById("name-container").setAttribute("style", "display:none");
 
-    if (searchButton && menusItems.length > 0) {
-      // 获取 menusItems 的克隆节点
-      var menusItemsClone = menusItems[0].cloneNode(true);
+    var position = $(window).scrollTop();
 
-      // 将克隆节点插入到 searchButton 之前
-      searchButton.parentNode.insertBefore(menusItemsClone, searchButton);
+    $(window).scroll(function () {
 
-      // 删除所有的 menusItems 元素
-      menusItems.forEach(function(item) {
-        item.parentNode.removeChild(item);
-      });
+        var scroll = $(window).scrollTop();
+
+        if (scroll > position) {
+
+
+            document.getElementById("name-container").setAttribute("style", "");
+            document.getElementsByClassName("menus_items")[1].setAttribute("style", "display:none!important");
+
+        } else {
+
+
+            document.getElementsByClassName("menus_items")[1].setAttribute("style", "");
+            document.getElementById("name-container").setAttribute("style", "display:none");
+
+        }
+
+        position = scroll;
+
+    });
+    function scrollToTop(){
+        document.getElementsByClassName("menus_items")[1].setAttribute("style","");
+        document.getElementById("name-container").setAttribute("style","display:none");
+        btf.scrollToDest(0, 500);
     }
-  }
-});
-
-
-// 给body加post-page类，方便CSS只在文章页生效
-if(location.pathname.startsWith('/posts/')){
-  document.body.classList.add('post-page')
-}else{
-  document.body.classList.remove('post-page')
-}
-
-
-
-
-
-
+//修复没有弄右键菜单的童鞋无法回顶部的问题
+    document.getElementById("page-name").innerText = document.title.split(" | June's Blog")[0];}
