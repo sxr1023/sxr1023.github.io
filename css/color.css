@@ -93,14 +93,14 @@ figure.highlight {
   transition: all 0.3s ease;
 }
 /* 暗黑模式阴影弱化 */
-[data-theme="dark"] figure.highlight {
+figure.highlight {
   box-shadow: 0 4px 16px rgba(0,0,0,0.35) !important;
 }
 figure.highlight:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.16);
 }
-[data-theme="dark"] figure.highlight:hover {
+ figure.highlight:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
@@ -114,11 +114,11 @@ figure.highlight:hover {
   font-size: 13px;
 }
 /* 浅色头部背景 */
-:not([data-theme="dark"]) .highlight-tools {
+.highlight-tools {
   background: #f0f2f5 !important;
 }
 /* 暗黑头部背景 */
-[data-theme="dark"] .highlight-tools {
+ .highlight-tools {
   background: #2c313a !important;
 }
 .highlight-tools .lang {
@@ -134,7 +134,7 @@ figure.highlight:hover {
 :not([data-theme="dark"]) .copy-btn {
   background: rgba(0,0,0,0.08);
 }
-[data-theme="dark"] .copy-btn {
+.copy-btn {
   background: rgba(255,255,255,0.1);
 }
 .copy-btn:hover {
@@ -168,7 +168,7 @@ figure.highlight:hover {
   background: #f7f8fa !important;
   color: #909399 !important;
 }
-[data-theme="dark"] .gutter {
+.gutter {
   background: #252930 !important;
   color: #7f848e !important;
 }
@@ -180,11 +180,11 @@ figure.highlight:hover {
 .code {
   width: 100%;
 }
-:not([data-theme="dark"]) .code pre {
-  background: #ffffff !important;
+.code pre {
+  background: #1e291e !important;
 }
 [data-theme="dark"] .code pre {
-  background: #1e2229 !important;
+  background: #1e2929 !important;
 }
 
 /* 代码选中文字样式 */
@@ -195,26 +195,7 @@ figure.highlight:hover {
   background: rgba(64, 158, 255, 0.2) !important;
 }
 
-/* ========== 自定义滚动条美化 ========== */
-/* 横向滚动条 */
-.highlight .code pre::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
-}
-.highlight .code pre::-webkit-scrollbar-track {
-  background: transparent;
-}
-:not([data-theme="dark"]) .code pre::-webkit-scrollbar-thumb {
-  background: #dcdfe6;
-  border-radius: 3px;
-}
-[data-theme="dark"] .code pre::-webkit-scrollbar-thumb {
-  background: #4a505c;
-  border-radius: 3px;
-}
-.highlight .code pre::-webkit-scrollbar-thumb:hover {
-  background: #909399;
-}
+
 
 /* ========== 语法高亮微调（适配默认配色） ========== */
 /* 浅色模式关键字蓝色 */
