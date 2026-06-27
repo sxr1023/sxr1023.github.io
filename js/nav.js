@@ -1,36 +1,44 @@
-document.addEventListener('pjax:complete', tonav);
-document.addEventListener('DOMContentLoaded', tonav);
-//响应pjax
-function tonav(){
-    document.getElementById("name-container").setAttribute("style", "display:none");
+document.addEventListener("pjax:complete", tonav);
+document.addEventListener("DOMContentLoaded", tonav);
+// 响应pjax
+function tonav() {
+  // document.getElementById("name-container").setAttribute("style", "display:none");
 
-    var position = $(window).scrollTop();
+  let position = $(window).scrollTop();
 
-    $(window).scroll(function () {
+  $(window).scroll(function () {
+    let scroll = $(window).scrollTop();
 
-        var scroll = $(window).scrollTop();
-
-        if (scroll > position) {
-
-
-            document.getElementById("name-container").setAttribute("style", "");
-            document.getElementsByClassName("menus_items")[1].setAttribute("style", "display:none!important");
-
-        } else {
-
-
-            document.getElementsByClassName("menus_items")[1].setAttribute("style", "");
-            document.getElementById("name-container").setAttribute("style", "display:none");
-
-        }
-
-        position = scroll;
-
-    });
-    function scrollToTop(){
-        document.getElementsByClassName("menus_items")[1].setAttribute("style","");
-        document.getElementById("name-container").setAttribute("style","display:none");
-        btf.scrollToDest(0, 500);
+    if (scroll > position) {
+      document
+        .getElementById("name-container")
+        .setAttribute("style", "top: 0 !important;");
+      // document.getElementById("name-container").classList.add('titleShow');
+      document
+        .getElementsByClassName("menus_items")[1]
+        .setAttribute("style", "top: -60px !important");
     }
-//修复没有弄右键菜单的童鞋无法回顶部的问题
-    document.getElementById("page-name").innerText = document.title.split(" | June's Blog")[0];}
+ else {
+      document
+        .getElementsByClassName("menus_items")[1]
+        .setAttribute("style", "");
+      document.getElementById("name-container").setAttribute("style", "");
+      // document.getElementById("name-container").classList.remove('titleShow');
+    }
+
+    position = scroll;
+  });
+  function scrollToTop() {
+    document
+      .getElementsByClassName("menus_items")[1]
+      .setAttribute("style", "");
+    document.getElementById("name-container").setAttribute("style", "");
+    btf.scrollToDest(0, 500);
+  }
+  // 修复没有弄右键菜单的童鞋无法回顶部的问题
+  document.getElementById("page-name").innerText
+    = document.title.split(" | 鹊楠の小窝")[0];
+  document
+    .getElementById("page-name")
+    .addEventListener("click", scrollToTop);
+}

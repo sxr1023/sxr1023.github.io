@@ -64,3 +64,7 @@
 [data-theme='dark'] #footer-wrap a {
   color: var(--light-grey);
 }
+html {
+  overflow-y: auto;
+  scrollbar-gutter: stable both-edges;
+}

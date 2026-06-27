@@ -130,28 +130,3 @@
 #sidebar #menu-mask {
     background: rgba(255,255,255,0);
 }
-
-
-/* 全局预留滚动条占位，滚动条消失也不会变宽 */
-html {
-  scrollbar-gutter: stable both-edges !important;
-}
-
-
-/* 仅搜索弹窗分割线飞机 */
-.search-dialog hr::before {
-  content: "\f197" !important;
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important; /* solid实心图标必须900 */
-  font-size: 18px;
-  color: var(--theme-color);
-  position: relative;
-  top: -10px !important;
-}
-
-/* 全局所有页面分割线一并修复（文章、侧边栏） */
-hr::before {
-  content: "\f197" !important;
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-}
