@@ -98,7 +98,7 @@
 }
 
 .footer-info a:hover{
-    color:var(--june-theme-op)!important;
+    color: #0E6B89 !important;
     transition:0.2s;
 }
 

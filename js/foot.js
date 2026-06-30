@@ -49,14 +49,14 @@ var titleTime;
 document.addEventListener("visibilitychange", function () {
   if (document.hidden) {
     //离开当前页面时标签显示内容
-    document.title = "春秋蝉鸣，盼君归矣(╮・＿・╭)";
+    document.title = "命海独行，静候仙尊归来(｡・́︿・̀｡)";
     clearTimeout(titleTime);
   } else {
     //返回当前页面时标签显示内容
-    document.title = "落魄风停，久候君还 (・ω・)";
+    document.title = "剑指叠云，与君共逆宿命ヽ (｀Д´)ﾉ";
     //两秒后变回正常标题
     titleTime = setTimeout(function () {
       document.title = OriginTitile;
-    }, 2000);
+    }, 3000);
   }
 });
