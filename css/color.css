@@ -1,3 +1,17 @@
+:root {
+  --theme-color-blue: rgb(160, 205, 220);
+  --theme-color-green: rgb(155, 218, 205);
+  --theme-color: var(--theme-color-green);
+  --theme-color2: var(--theme-color-blue);
+}
+:root[data-theme="dark"] {
+  --theme-color-blue: rgb(50, 80, 110);
+  --theme-color-green: rgb(40, 70, 80);
+  --theme-color: var(--theme-color-blue);
+  --theme-color2: var(--theme-color-green);
+}
+
+
 /* ======= 白天模式（微调后） ======= */
 /* 文章卡片 - 柔和浅蓝绿 */
 .recent-post-item,
@@ -114,12 +128,12 @@ figure.highlight:hover {
   font-size: 13px;
 }
 /* 浅色头部背景 */
-.highlight-tools {
-  background: #f0f2f5 !important;
-}
 /* 暗黑头部背景 */
- .highlight-tools {
-  background: #2c313a !important;
+.highlight-tools {
+  background: #006b6b !important;
+}
+[data-theme="dark"] .highlight-tools {
+  background: #003838 !important;
 }
 .highlight-tools .lang {
   font-weight: 500;
@@ -156,7 +170,12 @@ figure.highlight:hover {
   font-size: 14px !important;
   line-height: 1.7 !important;
 }
-
+.code-expand-btn {
+  background: #1e2929a9 !important;
+}
+[data-theme="dark"] .code-expand-btn {
+  background: #1d3535a9 !important;
+}
 /* 行号栏 */
 .gutter {
   width: 50px !important;
@@ -181,7 +200,7 @@ figure.highlight:hover {
   width: 100%;
 }
 .code pre {
-  background: #1e291e !important;
+  background: #1d3535!important;
 }
 [data-theme="dark"] .code pre {
   background: #1e2929 !important;

@@ -1,21 +1,21 @@
-/* 导航栏魔改 */
 
-/* 一级菜单居中 */
-#nav .menus_items {
-  display: inline-block !important;
-  transition: all 0.3s;
-  position: absolute !important;
-  width: fit-content !important;
-  top: 50%;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+/* Nav导航栏 */
+#nav #navBox {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-#nav #blog-info {
-  flex: none !important;
+#nav .site-page:not(.child):after {
+  display: none;
 }
 
-/* 子菜单居中 */
+.nav-fixed #nav {
+  backdrop-filter: blur(5px) saturate(150%);
+}
+
 .menus_item_child li:not(#sidebar-menus li) {
   float: left;
   border-radius: 6px !important;
@@ -26,236 +26,263 @@
 }
 
 .menus_item_child:not(#sidebar-menus ul) {
-  /* left:calc(-150%)!important;这是估算值，为了保持元素居中的，如果不合适可以自己调改为：*/
+  /*
+    left:calc(-150%)!important;这是估算值，为了保持元素居中的，如果不合适可以自己调
+    改为：*/
   left: 50%;
   translate: -50%;
 }
 
-/* 标题遮罩 */
-[data-theme="light"] .site-name::before {
-  opacity: 0;
-  background-color: rgb(185, 225, 240) !important;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  position: absolute;
-  top: 0 !important;
-  right: 0 !important;
-  width: 100%;
-  height: 100%;
-  content: "\f015";
-  box-shadow: 0 0 5px var(--theme-color);
-  font-family: "Font Awesome 6 Free";
-  text-align: center;
-  color: white;
-  line-height: 34px;
-  /*如果有溢出或者垂直不居中的现象微调一下这个参数*/
-  font-size: 18px;
-  /*根据个人喜好*/
-}
-[data-theme="dark"] .site-name::before {
-  opacity: 0;
-  background-color: rgb(40, 70, 80) !important;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  position: absolute;
-  top: 0 !important;
-  right: 0 !important;
-  width: 100%;
-  height: 100%;
-  content: "\f015";
-  box-shadow: 0 0 5px rgb(40, 70, 80);
-  font-family: "Font Awesome 6 Free";
-  text-align: center;
-  color: white;
-  line-height: 34px;
-  /*如果有溢出或者垂直不居中的现象微调一下这个参数*/
-  font-size: 18px;
-  /*根据个人喜好*/
-  transform:  scale(0.6);
-}
-.site-name:hover {
-  border-radius: 8px;
-  overflow: hidden; 
-  background: rgb(185, 225, 240);
-  color: transparent;            /* 文字变透明，仍然占位 */
-}
-[data-theme="dark"] .site-name:hover {
-  border-radius: 8px;
-  overflow: hidden; 
-  background: rgb(40, 70, 80);
-  color: transparent;            /* 文字变透明，仍然占位 */
+#nav #blog-info {
+  overflow: visible;
+  flex: none;
+  z-index: 100;
 }
 
-.site-name:hover::before {
-  border-radius: 8px;
-  opacity: 1;
-}
-
-.site-name {
+#nav #blog-info a {
   position: relative;
-  font-size: 24px;
-  /*一定要把字体调大点，否则效果惨不忍睹！*/
+  font-size: 1.2em;
+}
+
+#nav #blog-info a::before {
+  opacity: 0;
+  background-color: var(--theme-color-green) !important;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  content: "\f015";
+  box-shadow: 0 0 5px var(--theme-color-green);
+  font-family: "Font Awesome 6 Free";
+  text-align: center;
+  color: white;
+  line-height: 34px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+#nav #blog-info a:hover::before {
+  opacity: 1;
+  scale: 1.03;
+}
+
+#nav.hide-menu .menus_items {
+  display: inline-block;
+  transition: 0.3s;
+}
+
+#nav .menus_items .menus_item,
+#nav .site-page.social-icon.search {
+  padding: 0 10px;
+  margin: 0 5px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+#nav .menus_items .menus_item:hover,
+#nav .site-page.social-icon.search:hover {
+  background: var(--theme-color);
+  box-shadow: 0 0 5px var(--theme-color);
+}
+
+#nav .menus_items .menus_item:hover a {
+  color: #fff;
+}
+
+#page-header.nav-fixed #nav .menus_items .menus_item:hover a,
+#page-header.nav-fixed #nav .site-page.social-icon.search:hover {
+  color: #fff;
+}
+
+#menuTitleBox {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#menuTitleBox #name-container {
+  height: 100%;
+  line-height: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+#menuTitleBox #name-container::before {
+  opacity: 0;
+  background-color: var(--theme-color-green) !important;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 60%;
+  content: "回到顶部";
+  box-shadow: 0 0 5px var(--theme-color-green);
+  text-align: center;
+  color: white;
+  line-height: 36px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+#menuTitleBox #name-container:hover::before {
+  opacity: 1;
+  scale: 1.03;
+  cursor: pointer;
 }
 
 #nav.hide-menu #toggle-menu {
   display: none !important;
-  padding: 0 6px;
 }
 
-#search-button,
-#toggle-menu {
-  position: relative;
-}
-
-/* 标题 */
-#nav {
-  justify-content: space-between !important;
-}
-
-.nav-fixed #nav {
-  transform: translateY(60px) !important;
-  -webkit-transform: translateY(60px) !important;
-  -moz-transform: translateY(60px) !important;
-  -ms-transform: translateY(60px) !important;
-  -o-transform: translateY(60px) !important;
-  transition: all 0.4s !important;
-  -webkit-transition: all 0.4s !important;
-  -moz-transition: all 0.4s !important;
-  -ms-transition: all 0.4s !important;
-  -o-transition: all 0.4s !important;
-}
-
-#page-name::before {
-  font-size: 18px;
+#nav #nav-right {
+  z-index: 100;
   position: absolute;
-  min-width: 100px;
+  right: 0;
+}
+#nav-right{
+  flex:1 1 auto;
+  justify-content: flex-end;
+  margin-left: auto;
+  display: flex;
+  flex-wrap:nowrap;
+}
+
+#nav a.site-page {
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+#nav a.site-page span {
+  padding-left: 4px;
+}
+
+#nav a.site-page::before {
+  display: none;
+}
+
+#nav #menus {
+  position: absolute;
+  display: flex;
   width: 100%;
-  height: 35px;
-  border-radius: 8px;
-  color: white !important;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  content: "回到顶部";
-  background-color: var(--theme-color);
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  opacity: 0;
-  box-shadow: 0 0 3px var(--theme-color);
-  line-height: 35px;
-  /*如果垂直位置不居中可以微调此值，也可以删了*/
+  align-items: center;
+  justify-content: center;
 }
 
-
-#page-name:hover:before {
-  opacity: 1;
-  border-radius: 8px;
-  overflow: hidden; 
-  background: rgb(185, 225, 240);
-  color: transparent;
+#nav #menus .menus_items {
+  transition: 0.3s;
 }
-[data-theme="dark"] #page-name:hover:before {
-  background: rgb(40, 70, 80);
+
+#nav .menus_items .menus_item .menus_item_child {
+  padding: 5px;
+  border-radius: 15px;
+}
+
+#nav .menus_items .menus_item .menus_item_child li {
+  transition: 0.3s;
+  border-radius: 10px !important;
+  margin: 0 2px;
+}
+
+#nav .menus_items .menus_item .menus_item_child li:hover {
+  background: var(--theme-color);
+}
+
+#nav .menus_items .menus_item .menus_item_child li:hover a {
+  color: #fff !important;
 }
 
 @media screen and (max-width: 768px) {
-  #name-container {
-    display: none !important;
-  }
-
-  .site-name::before {
-    line-height: 28px !important;
-    font-size: 16px !important;
-  }
-
-  #nav .menus_items {
-    display: none !important;
-  }
-
+  /* 菜单修复 */
   #nav.hide-menu #toggle-menu {
     display: inline-block !important;
   }
 
-  .menus_item_child:not(#sidebar-menus ul) {
-    /* left:calc(-150%)!important;这是估算值，为了保持元素居中的，如果不合适可以自己调改为：*/
-    translate: 0;
+  #nav #menus,
+  #nav #menuTitleBox {
+    display: none;
   }
 
-  .menus_item_child li:not(#sidebar-menusli) {
-    float: none;
-  }
-
-  #sidebar #sidebar-menus .menus_items .site-page:hover {
-    color: #fff !important;
+  #nav #blog-info a {
+    font-size: 1em;
   }
 }
 
-.titleNameBox {
-  z-index: -1;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+/* Nav导航栏 */
+.nav-fixed #nav{
+    transform: translateY(58px)!important;
+    -webkit-transform: translateY(58px)!important;
+    -moz-transform: translateY(58px)!important;
+    -ms-transform: translateY(58px)!important;
+    -o-transform: translateY(58px)!important;
+}
+#nav {
+  /* 仅给背景、模糊、阴影加渐变，不干扰transform菜单位移 */
+  transition: 
+    background 0.3s ease, 
+    backdrop-filter 0.3s ease, 
+    -webkit-backdrop-filter 0.3s ease,
+    box-shadow 0.3s ease;
+  -webkit-transition: 
+    background 0.3s ease, 
+    backdrop-filter 0.3s ease, 
+    -webkit-backdrop-filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+/* 仅页面处于最顶部时生效，其余状态完全不干涉原有导航样式 */
+#page-header.is-top #nav {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  /* 清除白色边框/分割线/外阴影 */
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-#name-container {
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
+/* 顶部状态下菜单容器同步透明 */
+#page-header.is-top #nav #menus {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-#name-container a {
-  height: 100%;
-  line-height: 60px;
-  display: inline-block;
-  padding: 0 !important;
-  position: relative;
+/* 清除导航内部子元素残留浅色分割线/边框 */
+#page-header.is-top #nav .menus_item,
+#page-header.is-top #nav .site-page {
+  border-bottom: none !important;
+  border-top: none !important;
 }
-
-#name-container:hover {
-  scale: 1.03;
-}
-
-#page-name {
-  position: relative;
-  padding: 10px 30px;
-  /*如果文字间隔不合理可以微调修改，第二个是水平方向的padding，第一个是垂直的*/
-}
-
-@media screen and (max-width: 1060px) {
-  #nav .menus_items .menus_item {
-    padding: 0 !important;
-  }
-}
-
-/* 导航栏魔改 end */
-
-

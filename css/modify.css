@@ -68,3 +68,31 @@
 html {
   overflow-y: scroll;
 }
+#post-info {
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+/* 内部标签、时间、阅读时长行内元素居中 */
+}
+#post-info .post-meta {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+[data-theme="light"] #web_bg:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.1);
+  content: '';
+}

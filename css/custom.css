@@ -59,3 +59,42 @@
   background: transparent !important;
 }
 
+.loading-img {
+    background: url(/img/avatar.png) no-repeat center center;
+    background-size: cover;
+}
+
+#readmode,
+#translateLink,
+#darkmode,
+#hide-aside-btn,
+#rightside-config,
+#to_comment,
+#go-up{
+    background: rgb(70, 218, 205) !important;
+}
+[data-theme="dark"] #readmode,
+[data-theme="dark"] #translateLink,
+[data-theme="dark"] #darkmode,
+[data-theme="dark"] #hide-aside-btn,
+[data-theme="dark"] #rightside-config,
+[data-theme="dark"] #to_comment,
+[data-theme="dark"] #go-up{
+    background: rgb(14, 107, 137) !important;
+}
+.search-dialog {
+  background: rgba(160, 205, 220, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+[data-theme="dark"] .search-dialog {
+  background: rgba(40, 70, 80, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.local-search-box--input {
+  background: rgb(155, 218, 210) !important;
+}
+[data-theme="dark"] .local-search-box--input {
+  background: rgb(50, 90, 110) !important;
+}

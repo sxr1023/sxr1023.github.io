@@ -1,0 +1,37 @@
+.snackbar-container{
+    border-radius: 12px!important;
+    background-color: rgba(155, 218, 205, 0.7) !important;
+    background: rgba(255,255,255,0.15);
+  /* 毛玻璃核心 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  /* 可选：轻微边框提升质感 */
+    border: 1px solid rgba(255,255,255,0.2);
+}
+[data-theme="dark"] .snackbar-container{
+    background-color: rgba(40, 70, 80, 0.8) !important;
+}
+.OwO-body{
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: #ffffff77!important;
+}
+
+.snackbar-container .action{
+    color:var(--theme-color2) !important;
+    background-color: transparent!important;
+}
+.snackbar-container{
+    font-family: HYTMR,'PingFang SC','Ubuntu Mono','Noto Sans','Microsoft Yahei','SimSun'!important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+@media screen and (max-width:640px) {
+    .snackbar-container {
+        border-radius: 0px !important;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        -ms-border-radius: 0px !important;
+        -o-border-radius: 0px !important;
+    }
+}

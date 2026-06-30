@@ -49,11 +49,11 @@ var titleTime;
 document.addEventListener("visibilitychange", function () {
   if (document.hidden) {
     //离开当前页面时标签显示内容
-    document.title = "(｡>﹏<｡) 别走呀~";
+    document.title = "春秋蝉鸣，盼君归矣(╮・＿・╭)";
     clearTimeout(titleTime);
   } else {
     //返回当前页面时标签显示内容
-    document.title = "(≧∇≦)ﾉ欢迎回来！";
+    document.title = "落魄风停，久候君还 (・ω・)";
     //两秒后变回正常标题
     titleTime = setTimeout(function () {
       document.title = OriginTitile;

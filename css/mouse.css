@@ -17,11 +17,6 @@ button,
 }
 
 /* ========== 帮助提示 help: help.cur ========== */
-[title],
-.help-tip,
-.question-mark {
-  cursor: url("/cursor/ShaR _JB1916/help.cur"), help !important;
-}
 
 /* ========== 后台加载中 work: working.ani ========== */
 .pace-progress,
@@ -40,7 +35,7 @@ button,
 .canvas,
 .img-crop,
 .cross-area {
-  cursor: url("/cursor/ShaR _JB1916/precision.cur"), crosshair !important;
+  cursor: url("/cursor/ShaR _JB1916/ext.cur"), crosshair !important;
 }
 
 /* ========== 文本输入框 text: text.cur ========== */
@@ -56,7 +51,7 @@ textarea,
 .slider-thumb,
 .drag-item,
 .gallery-swipe {
-  cursor: url("/cursor/ShaR _JB1916/handwriting.cur"), grab !important;
+  cursor: url("/cursor/ShaR _JB1916/text.cur"), grab !important;
 }
 
 /* ========== 禁用不可点击 unavailiable: unavailable.cur ========== */

@@ -1,44 +1,68 @@
 document.addEventListener("pjax:complete", tonav);
 document.addEventListener("DOMContentLoaded", tonav);
-// 响应pjax
+
 function tonav() {
-  // document.getElementById("name-container").setAttribute("style", "display:none");
+  const navDom = document.querySelector("#nav");
+  const headerDom = document.getElementById("page-header");
+  const nameContainer = document.querySelector("#name-container");
+  const menuItems = document.querySelector("#nav .menus_items");
+  const menuTitleBox = document.querySelector("#menuTitleBox");
 
-  let position = $(window).scrollTop();
+  function up() {
+    nameContainer.style.transform = "translate(-50%, 60px)";
+    menuItems.style.transform = "translateY(0)";
+    menuTitleBox.style.zIndex = "-1";
+  }
 
-  $(window).scroll(function () {
-    let scroll = $(window).scrollTop();
-
-    if (scroll > position) {
-      document
-        .getElementById("name-container")
-        .setAttribute("style", "top: 0 !important;");
-      // document.getElementById("name-container").classList.add('titleShow');
-      document
-        .getElementsByClassName("menus_items")[1]
-        .setAttribute("style", "top: -60px !important");
-    }
- else {
-      document
-        .getElementsByClassName("menus_items")[1]
-        .setAttribute("style", "");
-      document.getElementById("name-container").setAttribute("style", "");
-      // document.getElementById("name-container").classList.remove('titleShow');
-    }
-
-    position = scroll;
-  });
   function scrollToTop() {
-    document
-      .getElementsByClassName("menus_items")[1]
-      .setAttribute("style", "");
-    document.getElementById("name-container").setAttribute("style", "");
     btf.scrollToDest(0, 500);
   }
-  // 修复没有弄右键菜单的童鞋无法回顶部的问题
-  document.getElementById("page-name").innerText
-    = document.title.split(" | 鹊楠の小窝")[0];
-  document
-    .getElementById("page-name")
-    .addEventListener("click", scrollToTop);
+
+  function updatePageName() {
+    const pageNameElement = document.getElementById("page-name");
+    if (pageNameElement) {
+      pageNameElement.innerText = document.title.split(" | sxr1023's Blog")[0];
+    } else {
+      const observer = new MutationObserver((mutations, observer) => {
+        const pageNameElement = document.getElementById("page-name");
+        if (pageNameElement) {
+          pageNameElement.innerText = document.title.split(" | sxr1023's Blog")[0];
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
+  up();
+  let position = window.scrollY;
+
+  // 初始化判断页面是否在最顶部
+  function setNavTransparentState() {
+    if (window.scrollY === 0) {
+      headerDom.classList.add("is-top");
+    } else {
+      headerDom.classList.remove("is-top");
+    }
+  }
+  setNavTransparentState();
+
+  window.addEventListener("scroll", function () {
+    let scroll = window.scrollY;
+    // 更新顶部标记类
+    setNavTransparentState();
+
+    // 原有上下滑隐藏菜单逻辑不变
+    if (scroll > position) {
+      nameContainer.style.transform = "translate(-50%, 0)";
+      menuItems.style.transform = "translateY(-60px)";
+      menuTitleBox.style.zIndex = "1";
+    } else {
+      up();
+    }
+    position = scroll;
+  });
+
+  nameContainer.addEventListener("click", scrollToTop);
+  updatePageName();
 }

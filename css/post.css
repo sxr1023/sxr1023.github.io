@@ -6,7 +6,11 @@ body:not(:has(a.toc-link:hover)) a.toc-link {
 
 /* 当前目录永久清晰 */
 a.toc-link.active {
+  border-radius: 6px; /* 设置圆角的大小 */
   filter: blur(0) !important;
+}
+[data-theme="dark"] a.toc-link.active {
+  background: #006475 !important;
 }
 
 /* 任意目录悬浮时，全部取消模糊 */
@@ -109,5 +113,20 @@ li.card-archive-list-item {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+/* 全部圆角 8px */
+a#card-info-btn {
+  border-radius: 8px;
+}
+a#card-info-btn:hover {
+  background: #0085c4 !important;
+}
+[data-theme="dark"] a#card-info-btn {
+  background: var(--theme-color-blue) !important;
+}
+
+[data-theme="dark"] a#card-info-btn:hover {
+  background: rgb(26, 116, 116) !important;
 }
 
