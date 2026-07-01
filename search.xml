@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>P10109 [GESP202312 六级] 工作沟通 题解</title>
-    <url>/posts/9a3d92d8/index.html</url>
-    <content><![CDATA[题目传送门
-每次询问输出多个点的编号最大的公共祖先，本质上就是 LCA 问题。
-这里提供一种思路：把每个点的祖先全部求出来，然后用数组标记，如果这个点被标记了 mmm 次，那就说明这个点是所有员工的公共祖先。
-最后输出最大值即可。
-因为这道题的数据比较小，所以这样做的时间复杂度是完全可行的。
-#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 100010;int fa[N], vis[N];void change(int x) &#123;    vis[x]++;//自己能管理自己，即自己是自己的祖先    while(x != 0) &#123;        x = fa[x];//一直向上找祖先        vis[x]++;//记录这个点作为祖先的个数    &#125;&#125;int main() &#123;    int n;    scanf(&quot;%d&quot;, &amp;n);    for (int i = 1; i &lt; n; i++) &#123;        scanf(&quot;%d&quot;, &amp;fa[i]);    &#125;    int q;    scanf(&quot;%d&quot;, &amp;q);    while(q--) &#123;        int m;        scanf(&quot;%d&quot;, &amp;m);        //注意vis数组要清空        memset(vis, 0, sizeof(vis));        for (int i = 1; i &lt;= m; i++) &#123;            int x;            scanf(&quot;%d&quot;, &amp;x);            change(x);//每输入一个数，进行标记        &#125;        int ans = 0;        //因为是从小到大枚举的，所以不用取max        for (int i = 1; i &lt; n; i++) &#123;            if (vis[i] == m) ans = i;        &#125;        printf(&quot;%d\n&quot;, ans);    &#125;    return 0;&#125;
-]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>LCA</tag>
-        <tag>另类解法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>P10112 [GESP202312 八级] 奖品分配 题解</title>
     <url>/posts/6fe15873/index.html</url>
     <content><![CDATA[题目传送门
@@ -62,13 +44,39 @@
       </tags>
   </entry>
   <entry>
-    <title>title</title>
+    <title>Qexo测试</title>
     <url>/posts/2b36786b/index.html</url>
     <content><![CDATA[刚刚搭建好的 Qexo
 趁着热乎过来测试一下
 不过 vercel 好像被墙了害得我用 Qexo 还得先翻墙，有点麻烦
 但是该说不说这个界面还是比较好看的
+
+测试了一下有点bug，不太满意，不过我打算直接当一个好看点的源代码管理器来用了的，防止魔改的时候一不留神回不去了
 ]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Qexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P10109 [GESP202312 六级] 工作沟通 题解</title>
+    <url>/posts/9a3d92d8/index.html</url>
+    <content><![CDATA[题目传送门
+每次询问输出多个点的编号最大的公共祖先，本质上就是 LCA 问题。
+这里提供一种思路：把每个点的祖先全部求出来，然后用数组标记，如果这个点被标记了 mmm 次，那就说明这个点是所有员工的公共祖先。
+最后输出最大值即可。
+因为这道题的数据比较小，所以这样做的时间复杂度是完全可行的。
+#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 100010;int fa[N], vis[N];void change(int x) &#123;    vis[x]++;//自己能管理自己，即自己是自己的祖先    while(x != 0) &#123;        x = fa[x];//一直向上找祖先        vis[x]++;//记录这个点作为祖先的个数    &#125;&#125;int main() &#123;    int n;    scanf(&quot;%d&quot;, &amp;n);    for (int i = 1; i &lt; n; i++) &#123;        scanf(&quot;%d&quot;, &amp;fa[i]);    &#125;    int q;    scanf(&quot;%d&quot;, &amp;q);    while(q--) &#123;        int m;        scanf(&quot;%d&quot;, &amp;m);        //注意vis数组要清空        memset(vis, 0, sizeof(vis));        for (int i = 1; i &lt;= m; i++) &#123;            int x;            scanf(&quot;%d&quot;, &amp;x);            change(x);//每输入一个数，进行标记        &#125;        int ans = 0;        //因为是从小到大枚举的，所以不用取max        for (int i = 1; i &lt; n; i++) &#123;            if (vis[i] == m) ans = i;        &#125;        printf(&quot;%d\n&quot;, ans);    &#125;    return 0;&#125;
+]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>LCA</tag>
+        <tag>另类解法</tag>
+      </tags>
   </entry>
   <entry>
     <title>【提高组】第一课：枚举 学习笔记</title>
@@ -412,34 +420,6 @@ C：机器分配
       </tags>
   </entry>
   <entry>
-    <title>【提高组】第五课：动规 学习笔记</title>
-    <url>/posts/e8d76788/index.html</url>
-    <content><![CDATA[第五课：动规
-第五课：动规
-A：最少末尾零
-最少末尾零
-记录 222 最少的路径的 222 的个数和 555 最少的路径的 555 的个数，最后取较小值即可
-注意特判数组中有 000 的情况
-dpij0dp_{ij0}dpij0​ 表示走到 iii 行 jjj 列 222 的最少个数
-dpij1dp_{ij1}dpij1​ 表示走到 iii 行 jjj 列 555 的最少个数
-状态转的时候可以先转移第一行和第一列，这样减少思考
-然后其余的状态由上面和左面转移即可
-#include&lt;bits/stdc++.h&gt;using namespace std;const int N = 1010;int dp[N][N][2];int lst[N][N][2];int flag = -1,n,x;int mp[N][N][2];char s[N*5];int tot;int main() &#123;    scanf(&quot;%d&quot;,&amp;n);    for(int i = 1; i &lt;= n; i++) &#123;        for(int j = 1; j &lt;= n; j++) &#123;            scanf(&quot;%d&quot;, &amp;x);            if(x != 0) &#123;                while(x % 2 == 0) x /= 2,mp[i][j][0]++;                while(x % 5 == 0) x /= 5,mp[i][j][1]++;            &#125;            else flag = i,mp[i][j][0] = mp[i][j][1] = 1000;        &#125;    &#125;    for(int op = 0; op &lt; 2; op++) &#123;        dp[1][1][op] = mp[1][1][op];        for(int i = 2; i &lt;= n; i++) &#123;            lst[1][i][op] = 1;lst[i][1][op] = -1;            dp[1][i][op] = dp[1][i-1][op] + mp[1][i][op];            dp[i][1][op] = dp[i-1][1][op] + mp[i][1][op];        &#125;        for(int i = 2; i &lt;= n; i++) &#123;            for(int j = 2; j &lt;= n; j++) &#123;                if(dp[i][j-1][op] &lt; dp[i-1][j][op]) lst[i][j][op] = 1, dp[i][j][op] = dp[i][j - 1][op] + mp[i][j][op];                else lst[i][j][op] = -1, dp[i][j][op] = dp[i - 1][j][op] + mp[i][j][op];            &#125;        &#125;    &#125;    if(flag != -1 &amp;&amp; min(dp[n][n][0],dp[n][n][1])) &#123;        printf(&quot;1\n&quot;);        for(int i = 2; i &lt;= flag; i++) printf(&quot;D&quot;);        for(int j = 2; j &lt;= n; j++) printf(&quot;R&quot;);        for(int i = flag + 1; i &lt;= n; i++) printf(&quot;D&quot;);        return 0;    &#125;    int ans;    if(dp[n][n][0] &lt; dp[n][n][1]) ans = 0;    else ans = 1;    printf(&quot;%d\n&quot;,min(dp[n][n][0],dp[n][n][1]));    int nowx = n, nowy = n;    while(true) &#123;        if(lst[nowx][nowy][ans] == 1) nowy--, s[++tot] = &#x27;R&#x27;;        else nowx--, s[++tot] = &#x27;D&#x27;;        if(nowx == 1 &amp;&amp; nowy == 1) break;    &#125;    for(int i = tot;i &gt;= 1;i--) putchar(s[i]);    return 0;&#125;
-B：凑硬币
-凑硬币
-中级班原题，多重背包问题
-#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 100010;int f[N], v[N];int a[N], s[N];int main() &#123;	int n, m;	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);	int sum = 0, tot = 0;	for (int i = 1; i &lt;= n; i++) &#123;		scanf(&quot;%d&quot;, &amp;a[i]);	&#125;	for (int i = 1; i &lt;= n; i++) &#123;		scanf(&quot;%d&quot;, &amp;s[i]);		int t = 1;		while(s[i] &gt;= t) &#123;			v[++tot] = a[i] * t;			s[i] -= t;			t *= 2;		&#125;		v[++tot] = a[i] * s[i];	&#125;	f[0] = 1;	for (int i = 1; i &lt;= tot; i++) &#123;		for (int j = m; j &gt;= 1; j--) &#123;			if (f[j - v[i]] == 1) f[j] = 1;		&#125;	&#125;	for (int i = 1; i &lt;= m; i++) &#123;		if (f[i] == 1) sum++;	&#125;	printf(&quot;%d\n&quot;, sum);	return 0;&#125;
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>提高组</tag>
-        <tag>算法</tag>
-        <tag>枚举</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【提高组】第六课：状态压缩DP/子集枚举 学习笔记</title>
     <url>/posts/61e012bf/index.html</url>
     <content><![CDATA[第六课：状态压缩DP/子集枚举
@@ -513,6 +493,34 @@ dpidp_idpi​ 表示 iii 状态的字符集合最少需要删几次
         <tag>算法</tag>
         <tag>状压DP</tag>
         <tag>子集枚举</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【提高组】第五课：动规 学习笔记</title>
+    <url>/posts/e8d76788/index.html</url>
+    <content><![CDATA[第五课：动规
+第五课：动规
+A：最少末尾零
+最少末尾零
+记录 222 最少的路径的 222 的个数和 555 最少的路径的 555 的个数，最后取较小值即可
+注意特判数组中有 000 的情况
+dpij0dp_{ij0}dpij0​ 表示走到 iii 行 jjj 列 222 的最少个数
+dpij1dp_{ij1}dpij1​ 表示走到 iii 行 jjj 列 555 的最少个数
+状态转的时候可以先转移第一行和第一列，这样减少思考
+然后其余的状态由上面和左面转移即可
+#include&lt;bits/stdc++.h&gt;using namespace std;const int N = 1010;int dp[N][N][2];int lst[N][N][2];int flag = -1,n,x;int mp[N][N][2];char s[N*5];int tot;int main() &#123;    scanf(&quot;%d&quot;,&amp;n);    for(int i = 1; i &lt;= n; i++) &#123;        for(int j = 1; j &lt;= n; j++) &#123;            scanf(&quot;%d&quot;, &amp;x);            if(x != 0) &#123;                while(x % 2 == 0) x /= 2,mp[i][j][0]++;                while(x % 5 == 0) x /= 5,mp[i][j][1]++;            &#125;            else flag = i,mp[i][j][0] = mp[i][j][1] = 1000;        &#125;    &#125;    for(int op = 0; op &lt; 2; op++) &#123;        dp[1][1][op] = mp[1][1][op];        for(int i = 2; i &lt;= n; i++) &#123;            lst[1][i][op] = 1;lst[i][1][op] = -1;            dp[1][i][op] = dp[1][i-1][op] + mp[1][i][op];            dp[i][1][op] = dp[i-1][1][op] + mp[i][1][op];        &#125;        for(int i = 2; i &lt;= n; i++) &#123;            for(int j = 2; j &lt;= n; j++) &#123;                if(dp[i][j-1][op] &lt; dp[i-1][j][op]) lst[i][j][op] = 1, dp[i][j][op] = dp[i][j - 1][op] + mp[i][j][op];                else lst[i][j][op] = -1, dp[i][j][op] = dp[i - 1][j][op] + mp[i][j][op];            &#125;        &#125;    &#125;    if(flag != -1 &amp;&amp; min(dp[n][n][0],dp[n][n][1])) &#123;        printf(&quot;1\n&quot;);        for(int i = 2; i &lt;= flag; i++) printf(&quot;D&quot;);        for(int j = 2; j &lt;= n; j++) printf(&quot;R&quot;);        for(int i = flag + 1; i &lt;= n; i++) printf(&quot;D&quot;);        return 0;    &#125;    int ans;    if(dp[n][n][0] &lt; dp[n][n][1]) ans = 0;    else ans = 1;    printf(&quot;%d\n&quot;,min(dp[n][n][0],dp[n][n][1]));    int nowx = n, nowy = n;    while(true) &#123;        if(lst[nowx][nowy][ans] == 1) nowy--, s[++tot] = &#x27;R&#x27;;        else nowx--, s[++tot] = &#x27;D&#x27;;        if(nowx == 1 &amp;&amp; nowy == 1) break;    &#125;    for(int i = tot;i &gt;= 1;i--) putchar(s[i]);    return 0;&#125;
+B：凑硬币
+凑硬币
+中级班原题，多重背包问题
+#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 100010;int f[N], v[N];int a[N], s[N];int main() &#123;	int n, m;	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);	int sum = 0, tot = 0;	for (int i = 1; i &lt;= n; i++) &#123;		scanf(&quot;%d&quot;, &amp;a[i]);	&#125;	for (int i = 1; i &lt;= n; i++) &#123;		scanf(&quot;%d&quot;, &amp;s[i]);		int t = 1;		while(s[i] &gt;= t) &#123;			v[++tot] = a[i] * t;			s[i] -= t;			t *= 2;		&#125;		v[++tot] = a[i] * s[i];	&#125;	f[0] = 1;	for (int i = 1; i &lt;= tot; i++) &#123;		for (int j = m; j &gt;= 1; j--) &#123;			if (f[j - v[i]] == 1) f[j] = 1;		&#125;	&#125;	for (int i = 1; i &lt;= m; i++) &#123;		if (f[i] == 1) sum++;	&#125;	printf(&quot;%d\n&quot;, sum);	return 0;&#125;
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>提高组</tag>
+        <tag>算法</tag>
+        <tag>枚举</tag>
       </tags>
   </entry>
   <entry>

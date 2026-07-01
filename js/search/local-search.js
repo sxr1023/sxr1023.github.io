@@ -303,6 +303,7 @@ window.addEventListener('load', () => {
   const openSearch = () => {
     const bodyStyle = document.body.style
     bodyStyle.width = '100%'
+    //bodyStyle.overflow = 'hidden'
     btf.animateIn($searchMask, 'to_show 0.5s')
     btf.animateIn($searchDialog, 'titleScale 0.5s')
     setTimeout(() => { input.focus() }, 300)

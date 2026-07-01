@@ -640,29 +640,24 @@ document.addEventListener('DOMContentLoaded', function () {
   /**
  * 複製時加上版權信息
  */
-    const addCopyright = () => {
-    const { limitCount, languages, copy, copyrightEbable } = GLOBAL_CONFIG.copyright;
+  const addCopyright = () => {
+    const { limitCount, languages } = GLOBAL_CONFIG.copyright
 
-    const handleCopy = e => {
-      if (copy) {
-        btf.snackbarShow(GLOBAL_CONFIG.copy.success);
+    const handleCopy = (e) => {
+      e.preventDefault()
+      const copyFont = window.getSelection(0).toString()
+      let textFont = copyFont
+      if (copyFont.length > limitCount) {
+        textFont = `${copyFont}\n\n\n${languages.author}\n${languages.link}${window.location.href}\n${languages.source}\n${languages.info}`
       }
-      if (copyrightEbable) {
-        e.preventDefault();
-        const copyFont = window.getSelection(0).toString();
-        let textFont = copyFont;
-        if (copyFont.length > limitCount) {
-          textFont = `${copyFont}\n\n\n${languages.author}\n${languages.link}${window.location.href}\n${languages.source}\n${languages.info}`;
-        }
-        if (e.clipboardData) {
-          return e.clipboardData.setData("text", textFont);
-        } else {
-          return window.clipboardData.setData("text", textFont);
-        }
+      if (e.clipboardData) {
+        return e.clipboardData.setData('text', textFont)
+      } else {
+        return window.clipboardData.setData('text', textFont)
       }
-    };
+    }
 
-    document.body.addEventListener("copy", handleCopy);
+    document.body.addEventListener('copy', handleCopy)
   }
 
   /**
