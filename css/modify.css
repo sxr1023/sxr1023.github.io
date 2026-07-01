@@ -64,10 +64,6 @@
 [data-theme='dark'] #footer-wrap a {
   color: var(--light-grey);
 }
-/* 弹窗打开时补偿滚动条宽度，抵消overflow:hidden带来的偏移 */
-html {
-  overflow-y: scroll;
-}
 #post-info {
   text-align: center;
   width: 100%;

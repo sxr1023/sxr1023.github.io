@@ -49,14 +49,14 @@ var titleTime;
 document.addEventListener("visibilitychange", function () {
   if (document.hidden) {
     //离开当前页面时标签显示内容
-    document.title = "命海独行，静候仙尊归来(｡・́︿・̀｡)";
+    document.title = "(｡・́︿・̀｡) 道友，还请留步！";
     clearTimeout(titleTime);
   } else {
     //返回当前页面时标签显示内容
-    document.title = "剑指叠云，与君共逆宿命ヽ (｀Д´)ﾉ";
+    document.title = "ヽ (｀Д´)ﾉ 恭迎仙尊归来！";
     //两秒后变回正常标题
     titleTime = setTimeout(function () {
       document.title = OriginTitile;
-    }, 3000);
+    }, 2000);
   }
 });

@@ -640,10 +640,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /**
  * 複製時加上版權信息
  */
-  /**
- * 複製時加上版權信息
- */
-  const addCopyright = () => {
+    const addCopyright = () => {
     const { limitCount, languages, copy, copyrightEbable } = GLOBAL_CONFIG.copyright;
 
     const handleCopy = e => {
@@ -880,10 +877,7 @@ document.addEventListener('DOMContentLoaded', function () {
     switchComments()
     openMobileMenu()
   }
-  // 开发者工具键盘监听
-  window.onkeydown = function (e) {
-    123 === e.keyCode && btf.snackbarShow("开发者模式已打开，请遵循GPL协议", !1);
-  };
+
   refreshFn()
   unRefreshFn()
 })

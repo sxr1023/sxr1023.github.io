@@ -1,6 +1,6 @@
 /* 所有目录链接默认模糊 */
 body:not(:has(a.toc-link:hover)) a.toc-link {
-  filter: blur(0.8px);
+  filter: blur(1px);
   transition: filter 0.2s ease;
 }
 
