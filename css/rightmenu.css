@@ -1,0 +1,114 @@
+/* 原有主题色保留不变 */
+:root {
+
+  /* 浅色菜单专属 */
+  --menu-bg-light: rgba(112, 192, 212);
+  --menu-primary: #3EA6A4;
+  --menu-secondary: rgb(118, 202, 185);
+  --menu-border-light: rgb(200, 228, 238);
+  --menu-divider-light: rgb(215, 235, 242);
+  --menu-shadow-light: rgba(70, 130, 160, 0.22);
+}
+
+:root[data-theme="dark"] {
+  /* 深色菜单背景变量，替换原 --june-black-acrylic1 */
+  --menu-bg-dark: rgba(26, 44, 68);
+  --menu-primary: rgb(35, 65, 100);
+  --menu-secondary: rgb(28, 55, 68);
+  --menu-border-dark: rgb(70, 110, 140);
+  --menu-divider-dark: rgb(55, 90, 115);
+  --menu-shadow-dark: rgba(20, 40, 60, 0.6);
+}
+
+/* rightMenu 右键菜单 */
+[data-theme='light'] #rightMenu{
+    display: none;
+    position: fixed;
+    width: 160px;
+    height: fit-content;
+    top: 10%;
+    left: 10%;
+    background-color: var(--menu-bg-light);
+    border: 1px solid var(--menu-border-light);
+    border-radius: 8px;
+    z-index: 100;
+    box-shadow: 3px 3px 5px var(--menu-shadow-light);
+    backdrop-filter: blur(30px);
+}
+[data-theme='dark'] #rightMenu{
+    display: none;
+    position: fixed;
+    width: 160px;
+    height: fit-content;
+    top: 10%;
+    left: 10%;
+    /* 已替换为自定义深色背景变量，不再依赖 --june-black-acrylic1 */
+    background-color: var(--menu-bg-dark);
+    border: 1px solid var(--menu-border-dark);
+    border-radius: 8px;
+    z-index: 100;
+    box-shadow: 3px 3px 5px var(--menu-shadow-dark);
+    backdrop-filter: blur(30px);
+}
+#rightMenu .rightMenu-group{
+    padding: 7px 6px;
+}
+[data-theme="light"] #rightMenu .rightMenu-group:not(:nth-last-child(1)){
+    border-bottom: 1px solid var(--menu-divider-light);
+}
+[data-theme="dark"] #rightMenu .rightMenu-group:not(:nth-last-child(1)){
+    border-bottom: 1px solid var(--menu-divider-dark);
+}
+#rightMenu .rightMenu-group.rightMenu-small{
+    display: flex;
+    justify-content: space-between;
+}
+#rightMenu .rightMenu-group .rightMenu-item{
+    height: 30px;
+    line-height: 30px;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: var(--font-color);
+}
+#rightMenu .rightMenu-group.rightMenu-line .rightMenu-item{
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 4px;
+}
+[data-theme="light"] #rightMenu .rightMenu-group .rightMenu-item:hover{
+    background-color: var(--menu-secondary);
+    box-shadow: 0px 0px 6px var(--menu-primary);
+}
+[data-theme="dark"] #rightMenu .rightMenu-group .rightMenu-item:hover{
+    background-color: var(--menu-primary);
+    box-shadow: 0px 0px 6px var(--menu-secondary);
+}
+#rightMenu .rightMenu-group .rightMenu-item i{
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 0 5px;
+}
+#rightMenu .rightMenu-group .rightMenu-item span{
+    line-height: 30px;
+}
+[data-theme="light"] #rightMenu:hover{
+    border: 1px solid var(--menu-primary);
+}
+[data-theme="dark"] #rightMenu:hover{
+    border: 1px solid var(--menu-secondary);
+}
+#rightMenu .rightMenu-group.rightMenu-line .rightMenu-item *{
+    height: 40px;
+    line-height: 40px;
+}
+.rightMenu-group.hide{
+    display: none;
+}
+.rightMenu-item:hover{
+    color:#eef7fb !important;
+    background-color:var(--menu-primary)!important;
+}

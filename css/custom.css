@@ -1,0 +1,100 @@
+/* 页脚容器完全透明 */
+#footer {
+  background: transparent !important;
+}
+
+/* 清除白天模式页脚遮罩层 */
+#footer::before {
+  background: transparent !important;
+}
+
+/* 清除夜间模式页脚遮罩层 */
+[data-theme="dark"] #footer::before {
+  background: transparent !important;
+}
+#footer::before {
+  background: rgba(0,0,0,0.08) !important;
+}
+[data-theme="dark"] #footer::before {
+  background: rgba(255,255,255,0.06) !important;
+}
+
+/*流星特效*/
+#universe { 
+  display: block;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 页脚与头图透明 */
+#footer {
+  background: transparent !important;
+}
+#page-header {
+  background: transparent !important;
+}
+
+/* 白天模式遮罩透明 */
+#footer::before {
+  background: transparent !important;
+}
+#page-header::before {
+  background: transparent !important;
+}
+
+/* 夜间模式遮罩透明 */
+[data-theme="dark"] #footer::before {
+  background: transparent !important;
+}
+[data-theme="dark"] #page-header::before {
+  background: transparent !important;
+}
+
+.loading-img {
+    background: url(https://cdn.luogu.com.cn/upload/image_hosting/bzsyixoj.png) no-repeat center center;
+    background-size: cover;
+}
+
+#readmode,
+#translateLink,
+#darkmode,
+#hide-aside-btn,
+#rightside-config,
+#to_comment,
+#go-up{
+    background: rgb(70, 218, 205) !important;
+}
+[data-theme="dark"] #readmode,
+[data-theme="dark"] #translateLink,
+[data-theme="dark"] #darkmode,
+[data-theme="dark"] #hide-aside-btn,
+[data-theme="dark"] #rightside-config,
+[data-theme="dark"] #to_comment,
+[data-theme="dark"] #go-up{
+    background: rgb(14, 107, 137) !important;
+}
+.search-dialog {
+  background: rgba(160, 205, 220, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+[data-theme="dark"] .search-dialog {
+  background: rgba(40, 70, 80, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.local-search-box--input {
+  background: rgb(155, 218, 210) !important;
+}
+[data-theme="dark"] .local-search-box--input {
+  background: rgb(50, 90, 110) !important;
+}
