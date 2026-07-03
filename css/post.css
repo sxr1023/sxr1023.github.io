@@ -584,7 +584,7 @@ a#card-info-btn:hover {
     box-shadow: var(--june-shadow-border);
 }
 
-/* 首页轮播图 */
+/* 首页轮播图 
 
 #swiper_container .blog-slider__content {
   height: 250px;
@@ -602,5 +602,17 @@ a#card-info-btn:hover {
 #swiper_container .swiper-button-prev:after {
   color: var(--theme-color);
 }
+*/
 
-/* 首页轮播图 */
+/********************************layout*********************************/
+.layout{
+  max-width:1450px;
+}
+.fas.fa-angle-down.scroll-down-effects::before {
+  font-size: 2rem; /* 数值越大图标越大，px/rem/em 都能用 */
+}
+
+/*************滚动条*****************/
+/* 全局滚动条 - Chrome/Edge/Safari */
+
+

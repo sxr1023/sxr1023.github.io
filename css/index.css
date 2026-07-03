@@ -1434,7 +1434,7 @@ canvas:not(#ribbon-canvas),
   }
 }
 :root {
-  --global-font-size: 14px;
+  --global-font-size: 17px;
   --global-bg: #fff;
   --font-color: #4c4948;
   --hr-border: #a4d8fa;
@@ -1467,7 +1467,7 @@ canvas:not(#ribbon-canvas),
   --card-hover-box-shadow: 0 3px 8px 6px rgba(7,17,27,0.09);
   --pseudo-hover: #ff7242;
   --headline-presudo: #a0a0a0;
-  --scrollbar-color: #49b1f5;
+  --scrollbar-color: #9bdacd;
   --default-bg-color: #49b1f5;
   --zoom-bg: #fff;
   --mark-bg: rgba(0,0,0,0.3);
@@ -1749,7 +1749,7 @@ figure.highlight pre .javascript .function {
 }
 #article-container pre,
 #article-container code {
-  font-size: var(--global-font-size);
+  font-size: 16px;
   font-family: HYTMR !important;
 }
 #article-container code {
@@ -1777,7 +1777,7 @@ figure.highlight pre .javascript .function {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 6px 0 2px 14px;
-  font-size: var(--global-font-size);
+  font-size: 16px;
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1823,7 +1823,7 @@ figure.highlight pre .javascript .function {
   height: 2.15em;
   background: var(--hltools-bg);
   color: var(--hltools-color);
-  font-size: var(--global-font-size);
+  font-size: 16px;
 }
 #article-container .highlight-tools.closed ~ * {
   display: none;
@@ -1952,7 +1952,7 @@ figure.highlight pre .javascript .function {
   width: 100%;
   background: var(--hlexpand-bg);
   text-align: center;
-  font-size: var(--global-font-size);
+  font-size: 16px;
   cursor: pointer;
 }
 #article-container .code-expand-btn i {
@@ -3423,7 +3423,7 @@ h1.page-title + .tag-cloud-list {
   transition: all 0.5s;
 }
 #page-header.full_page {
-  height: 400px;
+  height: 100vh;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
@@ -5969,7 +5969,7 @@ blockquote.pullquote.right {
   --blockquote-bg: #2c2c2c;
   --reward-pop: #2c2c2c;
   --toc-link-color: rgba(255,255,255,0.6);
-  --scrollbar-color: #525252;
+  --scrollbar-color: #32506e;
   --timeline-bg: #1f1f1f;
   --zoom-bg: #121212;
   --mark-bg: rgba(0,0,0,0.6);
