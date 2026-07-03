@@ -1,33 +1,9 @@
-/* 返回顶部 */
-button#go-up #percent {
-    display: none;
-    /*font-weight: bold;*/
-    font-size: 16px !important;
-}
 
-/* 鼠标滑动到按钮上时显示返回顶部图标 */
-button#go-up:hover i {
-    display: block !important;
+@media screen and (min-width: 900px) {
+    #aside-content .sticky_layout {
+        top: 70px !important;
+    }
 }
-
-button#go-up:hover #percent {
-    display: none !important;
-}
-#rightside > div > button,
-#rightside > div > a {
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-}
-/* 所有目录链接默认模糊 */
-body:not(:has(a.toc-link:hover)) a.toc-link {
-  filter: blur(1px);
-  transition: filter 0.2s ease;
-}
-
 /* 当前目录永久清晰 */
 a.toc-link.active {
   border-radius: 6px; /* 设置圆角的大小 */
@@ -608,5 +584,23 @@ a#card-info-btn:hover {
     box-shadow: var(--june-shadow-border);
 }
 
+/* 首页轮播图 */
 
+#swiper_container .blog-slider__content {
+  height: 250px;
+}
 
+#swiper_container a.blog-slider__title {
+  font-weight: bold;
+}
+
+#swiper_container .blog-slider__text {
+  font-size: 1em;
+}
+
+#swiper_container .swiper-button-next:after,
+#swiper_container .swiper-button-prev:after {
+  color: var(--theme-color);
+}
+
+/* 首页轮播图 */

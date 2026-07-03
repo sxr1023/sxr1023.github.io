@@ -107,3 +107,4 @@ if (document.readyState === 'loading') {
   initYearFold();
 }
 document.addEventListener('pjax:complete', initYearFold);
+

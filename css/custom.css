@@ -64,12 +64,15 @@
     background-size: cover;
 }
 
+/*rightside*/
 #readmode,
 #translateLink,
 #darkmode,
 #hide-aside-btn,
 #rightside-config,
 #to_comment,
+#go-down,
+#mobile-toc-button,
 #go-up{
     background: rgb(70, 218, 205) !important;
 }
@@ -79,6 +82,8 @@
 [data-theme="dark"] #hide-aside-btn,
 [data-theme="dark"] #rightside-config,
 [data-theme="dark"] #to_comment,
+[data-theme="dark"] #mobile-toc-button,
+[data-theme="dark"] #go-down,
 [data-theme="dark"] #go-up{
     background: rgb(14, 107, 137) !important;
 }
@@ -97,4 +102,29 @@
 }
 [data-theme="dark"] .local-search-box--input {
   background: rgb(50, 90, 110) !important;
+}
+
+/* 返回顶部 */
+button#go-up #percent {
+    display: none;
+    /*font-weight: bold;*/
+    font-size: 16px !important;
+}
+
+/* 鼠标滑动到按钮上时显示返回顶部图标 */
+button#go-up:hover i {
+    display: block !important;
+}
+
+button#go-up:hover #percent {
+    display: none !important;
+}
+#rightside > div > button,
+#rightside > div > a {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
 }
