@@ -253,3 +253,25 @@ figure.highlight:hover {
   background: #2c313a !important;
   color: #ff7b72 !important;
 }
+.tag-Link {
+  background: var(--theme-color2) !important;
+  border: 2px solid var(--theme-color) !important;
+}
+[data-theme="light"] .tag-Link:hover {
+  background: oklch(from var(--theme-color2) calc(l * 0.9) c h) !important;
+  box-shadow: 0 0 15px var(--theme-color);
+}
+[data-theme="dark"] .tag-Link:hover {
+  background: oklch(from var(--theme-color2) calc(l * 1.2) c h) !important;
+  box-shadow: 0 0 15px var(--theme-color);
+}
+.tag-link-left {
+  border-radius: 10px;
+}
+
+[data-theme="light"] ::selection {
+  background: oklch(from var(--theme-color-blue) calc(l * 0.8) c h);
+}
+[data-theme="dark"] ::selection {
+  background: oklch(from var(--theme-color-blue) calc(l * 1.2) c h);
+}

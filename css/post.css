@@ -606,7 +606,7 @@ a#card-info-btn:hover {
 
 /********************************layout*********************************/
 .layout{
-  max-width:1450px;
+  max-width:1400px;
 }
 .fas.fa-angle-down.scroll-down-effects::before {
   font-size: 2rem; /* 数值越大图标越大，px/rem/em 都能用 */
@@ -616,3 +616,22 @@ a#card-info-btn:hover {
 /* 全局滚动条 - Chrome/Edge/Safari */
 
 
+/* 夜间模式下背景宇宙星光 */
+#universe {  
+    display: block;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+/* 亮色模式下隐藏 */
+[data-theme='light'] #universe {
+    display: none;
+}
