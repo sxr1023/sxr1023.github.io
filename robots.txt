@@ -1,0 +1,6 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://sxr1023.github.io/sitemap.xml
+Sitemap: https://sxr1023.github.io/baidusitemap.xml

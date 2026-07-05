@@ -61,3 +61,13 @@ document.addEventListener("visibilitychange", function () {
   }
 });
 
+
+// DOM加载完毕执行
+document.addEventListener('DOMContentLoaded', function () {
+  // 获取页面全部hr元素
+  const allHr = document.querySelectorAll('hr');
+  allHr.forEach(item => {
+    // 添加 class，不覆盖原有class
+    item.classList.add('custom-hr');
+  })
+})

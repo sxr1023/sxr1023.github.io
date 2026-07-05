@@ -124,11 +124,11 @@ a#card-info-btn:hover {
   background: #0f7d7f !important;
 }
 [data-theme="dark"] a#card-info-btn {
-  background: var(--theme-color-blue) !important;
+  background: rgb(46, 73, 100) !important;
 }
 
 [data-theme="dark"] a#card-info-btn:hover {
-  background: rgb(26, 91, 116) !important;
+  background: rgb(68, 100, 132) !important;
 }
 
 
@@ -635,3 +635,17 @@ a#card-info-btn:hover {
 [data-theme='light'] #universe {
     display: none;
 }
+
+
+
+/* 轮播设为order:1，排上面 */
+.blog-slider.swiper-container-fade {
+  order: 1 !important;
+}
+
+/* categoryBar 设为order:2，强制在轮播下方 */
+#categoryBar.recent-post-item {
+  order: 2 !important;
+}
+
+/* 下面所有文章卡片统一放到3，保证在分类栏更下方 */
