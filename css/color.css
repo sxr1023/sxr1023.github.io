@@ -6,7 +6,8 @@
   --scrollbar-background: #e6f4f6;
   --border-hover:#409eff;
   --border-color: rgba(0, 30, 50, 0.3);
-  --nav-color: rgba(160, 205, 220, 0.75);  
+  --nav-color: rgba(160, 205, 220, 0.75);
+  --nav-color-shi: rgb(160, 205, 220);
 }
 :root[data-theme="dark"] {
   --theme-color-blue: rgb(50, 80, 110);
@@ -17,6 +18,7 @@
   --border-hover:#6699cb;
   --border-color: rgb(255, 255, 255, 0.2);
   --nav-color: rgba(50, 80, 110, 0.75);
+  --nav-color-shi: rgb(50, 80, 110);
 }
 
 
@@ -325,5 +327,14 @@ figure.highlight:hover {
   }
 }
 .site-page.child {
-  background: var(--nav-color);
+  background: var(--nav-color-shi) !important;
+}
+i.fas.fa-chevron-down {
+  display: none;
+}
+.menus_item_child {
+  background: var(--nav-color-shi) !important;
+}
+.site-page.child:hover {
+  background: var(--theme-color-green) !important;
 }

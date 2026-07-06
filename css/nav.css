@@ -84,7 +84,7 @@
   display: inline-block;
   transition: 0.3s;
 }
-
+.site-page.child,
 #nav .menus_items .menus_item,
 #nav .site-page.social-icon.travellings,
 #nav .site-page.social-icon.randoms,
@@ -226,7 +226,6 @@ nav #search-button {
   border-radius: 10px !important;
   margin: 0 2px;
 }
-
 #nav .menus_items .menus_item .menus_item_child li:hover {
   background: var(--theme-color2);
 }
@@ -292,6 +291,7 @@ nav #search-button {
 }
 
 /* 清除导航内部子元素残留浅色分割线/边框 */
+.site-page.child,
 #page-header.is-top #nav .menus_item,
 #page-header.is-top #nav .site-page {
   border-bottom: none !important;
