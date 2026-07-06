@@ -6,6 +6,7 @@
   --scrollbar-background: #e6f4f6;
   --border-hover:#409eff;
   --border-color: rgba(0, 30, 50, 0.3);
+  --nav-color: rgba(160, 205, 220, 0.75);  
 }
 :root[data-theme="dark"] {
   --theme-color-blue: rgb(50, 80, 110);
@@ -15,6 +16,7 @@
   --scrollbar-background: #1c2833;
   --border-hover:#6699cb;
   --border-color: rgb(255, 255, 255, 0.2);
+  --nav-color: rgba(50, 80, 110, 0.75);
 }
 
 
@@ -90,7 +92,8 @@ html[data-theme="dark"] .card-widget {
 /*顶栏颜色*/
 /* 白天模式 - 半透明毛玻璃风格（与卡片统一） */
 nav#nav.show {
-  background: rgba(160, 205, 220, 0.75) !important; /* 浅蓝绿，透明度可调 */
+  
+  background: var(--nav-color) !important; /* 浅蓝绿，透明度可调 */
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -98,7 +101,7 @@ nav#nav.show {
 
 /* 夜间模式 - 深色半透明 */
 [data-theme="dark"] nav#nav.show {
-  background: rgba(50, 80, 110, 0.75) !important;
+  background: var(--nav-color) !important;
   border-bottom-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -310,14 +313,17 @@ figure.highlight:hover {
 
 #recent-posts .recent-post-item:hover,
 #aside-content .card-categories:hover {
-  border-color:  !important;
+  border-color:  var(--border-hover)!important;
   box-shadow: none !important;
 }
 
 [data-theme="dark"] {
   #recent-posts .recent-post-item:hover,
   #aside-content .card-categories:hover {
-    border-color:  !important;
+    border-color:  var(--border-hover) !important;
     box-shadow: none !important;
   }
+}
+.site-page.child {
+  background: var(--nav-color);
 }
