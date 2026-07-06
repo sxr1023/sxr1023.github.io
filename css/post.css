@@ -1,4 +1,3 @@
-
 @media screen and (min-width: 900px) {
     #aside-content .sticky_layout {
         top: 70px !important;
@@ -20,14 +19,14 @@ body:has(a.toc-link:hover) a.toc-link {
 
 a.toc-link {
   transition: filter 0.2s ease;
+  filter: blur(1px);
 }
-
 
 /* 归档样式 */
 span.card-archive-list-count {
   width: auto;
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 0.9;
   font-weight: 700;
 }
@@ -40,13 +39,6 @@ span.card-archive-list-count {
 #aside-content .card-categories ul.card-category-list > .card-category-list-item a span:last-child {
   width: fit-content;
   margin-left: 4px;
-}
-span.card-archive-list-count {
-  width: auto;
-  text-align: left;
-  font-size: 1.1rem;
-  line-height: 0.9;
-  font-weight: 700;
 }
 .card-archive-list-date {
   font-size: 14px;
@@ -132,156 +124,112 @@ a#card-info-btn:hover {
 }
 
 
-/* 归档页样式 */
-.layout.hide-aside {
-    max-width: var(--layout-width);
+/* 归档、标签、分类页 */
+.layout.hide-aside{
+    max-width:1400px;
 }
 
-#archive, #tag, #category {
-    background: var(--june-card-bg);
+#archive,#tag,#category {
+    background: var(--theme-color-blue);
     padding: 25px 10px;
+}
+
+.article-sort-title{
+    margin-top:30px;
+    margin-bottom:20px;
 }
 
 .article-sort-item::before, .article-sort-title::before, .article-sort-title::after {
     content: none;
 }
 
-.article-sort .year {
-    width: calc(100% - 0.8rem) !important;
-    border-bottom: none;
-    font-size: 22px;
-    font-weight: bold;
-    margin: 15px 0.4rem 12px;
-    padding: 14px 20px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--june-card-bg) 0%, var(--june-secondbg) 100%);
-    border: 1px solid var(--june-gray);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+.article-sort .year{
+    width:100%!important;
+    border-bottom:dashed 5px var(--ichika-color);
+    font-size:26px;
+    margin-top:20px;
 }
 
-.article-sort {
-    border: none;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 20px;
-    padding: 0;
+.article-sort{
+    border:none;
+    display:flex;
+    flex-wrap:wrap;
+    margin:20px 20px;
+    padding:0;
 }
 
-.article-sort-item:not(.year) {
-    padding: 8px 10px;
-    width: calc(50% - 0.8rem);
-    margin: 0.4rem;
-    border: 1px solid var(--june-gray);
-    border-radius: 15px;
-    background: var(--june-card-bg);
-    transition: var(--transition-time);
-    height: 120px;
-    overflow: hidden;
-    position: relative;
+.article-sort-item:not(.year){
+    padding:8px 10px;
+    width:calc(50% - 0.8rem);
+    margin:0.4rem;
+    border:1px solid var(--border-color);
+    border-radius:15px;
+    background: linear-gradient(to right, color-mix(in srgb, var(--theme-color-blue), black 0%), color-mix(in srgb, var(--theme-color-blue), white 20%));
+    transition:0.5s;
+    height:120px;
+}
+[data-theme="dark"] .article-sort-item:not(.year){
+    background: linear-gradient(to left, color-mix(in srgb, var(--theme-color-blue), black 10%), color-mix(in srgb, var(--theme-color-blue), white 2%));
+}
+.article-sort-item-a{
+    position:absolute;
+    width:100%;
+    height:100%;
 }
 
-.article-sort-item-a {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+.article-sort-item-img{
+    transition:0.5s;
+    height:90px;
+    width:140px;
 }
 
-.article-sort-item-categories a, .article-sort-item-tags a {
-    pointer-events: auto;
-    position: relative;
-    z-index: 2;
-    color: var(--font-color);
-}
-
-.article-sort-item-categories a:hover, .article-sort-item-tags a:hover {
-    color: var(--june) !important;
-}
-
-.article-sort-item-img {
-    transition: var(--transition-time);
-    height: 90px;
-    width: 140px;
-}
-
-.article-sort-item > a > img {
-    border-radius: 15px;
+.article-sort-item > a >img{
+    border-radius:15px;
 }
 
 .article-sort-item-title {
-    font-size: 18px;
+    font-size: 22px;
     padding-left: 10px;
     margin: 10px 0;
-    line-height: 25px;
-    text-overflow: ellipsis;
+    line-height:25px;
+    text-overflow:ellipsis;
 }
 
-.article-sort-item-title:hover {
-    transform: none;
+.article-sort-item-title:hover{
+    transform:none;
 }
 
-.article-sort-meta {
-    height: max-content;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
+.article-sort-meta{
+    height:max-content;
+    position:relative;
 }
 
-.article-sort-meta > .article-meta-wrap {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+.article-sort-meta > .article-meta-wrap{
+    float:left;
 }
 
-.article-sort-meta > .article-sort-item-time {
-    flex-shrink: 0;
-    white-space: nowrap;
-    margin-left: 8px;
+.article-sort-meta > .article-sort-item-time{
+    float:right;
 }
 
-.article-sort-item-categories, .article-sort-item-tags {
-    margin: 0 3px;
-    padding: 2px 4px;
-    border-radius: 0;
-    border: none;
-    font-size: 12px;
-    transition: var(--transition-time);
-    max-width: 150px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    position: relative;
-    z-index: 1;
+.article-sort-item-categories,.article-sort-item-tags{
+    margin:0 3px;
+    padding:5px 8px;
+    border-radius:25px;
+    border:1px solid var(--border-color);
+    font-size:12px;
+    transition:0.5s;
 }
 
-.article-sort-item-info > div:not(.article-sort-meta) {
-    display: flex;
-    min-width: 0;
-    overflow: hidden;
+.article-sort-item-info > div:not(.article-sort-meta){
+    display:flex;
 }
 
-.article-sort-item-info {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-}
-
-.article-sort-item:hover:not(.year) .article-sort-item-info > div:not(.article-sort-meta) .article-sort-item-title {
-    flex-shrink: 0;
-    max-width: 40%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.article-sort-description, .article-sort-item > i {
-    width: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: var(--transition-time);
+.article-sort-description,.article-sort-item > i{
+    width:0;
+    opacity:0;
+    overflow:hidden;
+    transition:0.5s;
 }
 
 .article-sort-description {
@@ -289,60 +237,51 @@ a#card-info-btn:hover {
     height: 59px;
     vertical-align: middle;
     margin: 5px 10px 0 15px;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    text-overflow:ellipsis;
 }
 
-.article-sort-item:hover:not(.year) {
-    border-color: var(--june);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.article-sort-item:hover:not(.year){
+    background-color:var(--theme-color-blue);
+    box-shadow: 0 0 10px var(--ichika-color);
 }
 
-.article-sort-item:hover:not(.year) .article-sort-description, .article-sort-item:hover:not(.year) > i {
-    opacity: 1;
+.article-sort-item:hover:not(.year) .article-sort-description,.article-sort-item:hover:not(.year) > i{
+    width:auto;
+    opacity:1;
 }
 
-.article-sort-item:hover:not(.year) .article-sort-description {
-    flex: 1;
-    min-width: 0;
-    width: auto;
-    overflow: hidden;
+.article-sort-item:hover:not(.year) .article-sort-item-img{
+    transition:0.5s;
+    width:0;
 }
 
-.article-sort-item:hover:not(.year) .article-sort-item-img {
-    transition: var(--transition-time);
-    width: 0;
+.article-sort-item:hover:not(.year) .article-sort-item-title{
+    color:var(--ichika-font-white)!important;
 }
 
-.article-sort-item:hover:not(.year) .article-sort-item-title {
-    color: var(--font-color) !important;
+.article-sort-item:hover:not(.year) .article-meta-wrap a,.article-sort-item:hover:not(.year) .article-sort-description,.article-sort-item:hover:not(.year) .article-sort-item-time{
+    color:var(--ichika-light-grey)!important;
 }
 
-.article-sort-item:hover:not(.year) .article-meta-wrap a, .article-sort-item:hover:not(.year) .article-sort-description, .article-sort-item:hover:not(.year) .article-sort-item-time {
-    color: inherit;
+.article-sort-item:hover:not(.year) .article-sort-item-categories{
+    border:1.5px solid var(--ichika-green);
 }
 
-.article-sort-item:hover:not(.year) .article-sort-item-categories {
-    border: none;
+.article-sort-item:hover:not(.year) .article-sort-item-tags{
+    border:1.5px solid var(--ichika-purple);
 }
 
-.article-sort-item:hover:not(.year) .article-sort-item-tags {
-    border: none;
+.article-sort-item:hover:not(.year) .article-sort-item-categories:hover{
+    background:var(--theme-color-blue);
+    box-shadow:0 0 5px var(--ichika-green);
 }
 
-.article-sort-item:hover:not(.year) .article-sort-item-categories:hover {
-    background: none;
-    box-shadow: none;
+.article-sort-item:hover:not(.year) .article-sort-item-tags:hover{
+    background:var(--theme-color-blue);
+    box-shadow:0 0 5px var(--ichika-purple);
 }
 
-.article-sort-item:hover:not(.year) .article-sort-item-tags:hover {
-    background: none;
-    box-shadow: none;
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px) {
     .article-sort-item:not(.year) {
         width: 100%;
     }
@@ -355,25 +294,68 @@ a#card-info-btn:hover {
         font-size: 16px;
     }
 
-    .article-sort-item-img {
-        width: 90px;
+    .article-sort-item-img{
+        width:90px;
     }
+    /* 移动端年份栏适配 */
+    .article-sort-item.year.year-foldable {
+        padding: 15px;
+        font-size: 22px;
+        margin: 10px 10px;
+        width: calc(100% - 20px);
+    }
+    .article-sort-item.year.year-foldable .year-count-wrap {
+        font-size: 14px;
+    }
+}
+/* 覆盖原有.year 通用样式，取消底部虚线 */
+.article-sort .year {
+    width: 100% !important;
+    border-bottom: none; /* 移除原来的虚线分割线 */
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+/* 年份折叠栏：匹配截图圆角卡片、外间距、主题背景 */
+.article-sort-item.year.year-foldable {
+  background: linear-gradient(to left, color-mix(in srgb, var(--theme-color-blue), black 0%), color-mix(in srgb, var(--theme-color-blue), white 15%));
+  border-radius: 15px;        /* 和文章卡片统一圆角 */
+  margin: 10px 0;             /* 上下向外填充10px间距，实现分离效果 */
+  padding: 20px;              /* 内部文字内边距，防止文字贴边框 */
+  display: flex;
+  justify-content: space-between; /* 左右分开：年份居左、篇数箭头居右 */
+  align-items: center;        /* 垂直居中对齐文字 */
+  border: 2px solid var(--border-color); /* 浅色描边，和截图边框一致 */
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] .article-sort-item.year.year-foldable {
+    background: linear-gradient(to right, color-mix(in srgb, var(--theme-color-blue), black 12%), color-mix(in srgb, var(--theme-color-blue), black 2%));
+}
+/* 右侧 11篇 + 下拉箭头容器 */
+.article-sort-item.year.year-foldable .year-count-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 篇数字和箭头之间距离 */
+  font-size: 16px;
+  color: var(--ichika-light-grey);
 }
 
 /* 分类页/归档页年份折叠 */
 .article-sort-item.year.year-foldable {
+    margin: 15px 6.4px 12px;
+    padding: 14px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
-    cursor: url(https://img.june-pj.cn/img/pointer.cur), pointer !important;
     user-select: none;
 }
 
 .article-sort-item.year.year-foldable:hover {
-    transform: translateX(2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border-color: var(--june);
+    transform: translateX(1px);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    border-color: var(--border-hover);
 }
 
 .year-fold-info {
@@ -386,12 +368,12 @@ a#card-info-btn:hover {
 .year-fold-badge {
     font-size: 12px;
     color: var(--june-fontcolor);
-    background: var(--june-card-bg);
-    padding: 2px 10px;
+    background: color-mix(in srgb, var(--theme-color-blue), white 8%);
+    padding: 1px 10px;
     border-radius: 10px;
     font-weight: 500;
     white-space: nowrap;
-    border: 1px solid var(--june-gray);
+    border: 1px solid var(--border-color);
 }
 
 .year-fold-arrow {
@@ -474,13 +456,13 @@ a#card-info-btn:hover {
     width: fit-content;
     font-size: 1.2em !important;
     padding: 0.2em 0.5em;
-    background: var(--june-card-bg);
+    background: var(--theme-color-blue);
     margin: 0.5em 0.5em;
-    border-radius: var(--border-radius-large);
+    border-radius: var(--theme-color-blue);
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
-    border: var(--style-border-always);
-    box-shadow: var(--june-shadow-border);
+    border: var(--border-color);
+    box-shadow: var(--theme-color-blue);
     align-items: center;
 }
 
@@ -489,7 +471,7 @@ a#card-info-btn:hover {
 }
 
 .category-lists ul li:hover {
-    background: var(--june);
+    background: var(--theme-color-blue);
     color: var(--june-white) !important;
 }
 
@@ -513,21 +495,21 @@ a#card-info-btn:hover {
     content: "\f292" !important;
     font-family: "iconfont" !important;
     opacity: 0.4;
-    padding-top: 2px;
-    padding-right: 2px;
+    padding-top: 1px;
+    padding-right: 1px;
 }
 
 .category-lists .category-list .category-list-count {
-    background: var(--june-secondbg);
+    background: var(--theme-color-blue);
     padding: 4px 4px;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--theme-color-blue);
     color: var(--june-secondtext);
     line-height: 1;
     text-align: center;
     min-width: 35px;
     display: inline-block;
     font-size: 1rem;
-    box-shadow: var(--june-shadow-border);
+    box-shadow: var(--theme-color-blue);
 }
 
 .category-lists .category-list .category-list-count:before,
@@ -600,7 +582,7 @@ a#card-info-btn:hover {
 
 #swiper_container .swiper-button-next:after,
 #swiper_container .swiper-button-prev:after {
-  color: var(--theme-color);
+  color: var(--theme-color-blue);
 }
 */
 
@@ -647,5 +629,3 @@ a#card-info-btn:hover {
 #categoryBar.recent-post-item {
   order: 2 !important;
 }
-
-/* 下面所有文章卡片统一放到3，保证在分类栏更下方 */

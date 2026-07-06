@@ -4,6 +4,8 @@
   --theme-color: var(--theme-color-green);
   --theme-color2: var(--theme-color-blue);
   --scrollbar-background: #e6f4f6;
+  --border-hover:#409eff;
+  --border-color: rgba(0, 30, 50, 0.3);
 }
 :root[data-theme="dark"] {
   --theme-color-blue: rgb(50, 80, 110);
@@ -11,6 +13,8 @@
   --theme-color: var(--theme-color-blue);
   --theme-color2: var(--theme-color-green);
   --scrollbar-background: #1c2833;
+  --border-hover:#6699cb;
+  --border-color: rgb(255, 255, 255, 0.2);
 }
 
 
@@ -306,14 +310,14 @@ figure.highlight:hover {
 
 #recent-posts .recent-post-item:hover,
 #aside-content .card-categories:hover {
-  border-color: #409eff !important;
+  border-color:  !important;
   box-shadow: none !important;
 }
 
 [data-theme="dark"] {
   #recent-posts .recent-post-item:hover,
   #aside-content .card-categories:hover {
-    border-color: #6699cb !important;
+    border-color:  !important;
     box-shadow: none !important;
   }
 }

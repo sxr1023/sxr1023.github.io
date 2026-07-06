@@ -52,3 +52,10 @@
     document.addEventListener('DOMContentLoaded', initSwiper);
     document.addEventListener('pjax:complete', initSwiper);
 })();
+setTimeout(() => {
+  const wrapper = container.closest('.recent-post-item');
+  const parent = wrapper && wrapper.parentElement;
+  if (wrapper && parent && parent.firstElementChild !== wrapper) {
+      parent.insertBefore(wrapper, parent.firstElementChild);
+  }
+}, 100); // 延迟100ms，等magnet分类插入完成再挪轮播
