@@ -93,4 +93,18 @@
 }
 /* 响应式 */
 
-/* icat-page顶部样式 */
+#page-site-info {
+  display: none;
+}
+#page-header.not-home-page {
+  height: 90px !important;
+}
+.icat-change-button-group {
+  background: var(--theme-color-green);
+  border-radius: 100px;
+}
+.icat-tips,
+.icat-content-item-tips,
+.icat-content-item-title {
+  color: #EEE;
+}

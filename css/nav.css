@@ -297,3 +297,13 @@ nav #search-button {
   border-bottom: none !important;
   border-top: none !important;
 }
+#page-header.not-home-page.is-top #nav {
+  background: var(--nav-color) !important;
+}
+
+[data-theme="light"] #page-header.not-home-page.is-top nav a {
+  color: #4c4948;
+}
+[data-theme-light="light"] #page-header.not-home-page.is-top #nav a.site-page span:hover{
+  color: #fff;
+}

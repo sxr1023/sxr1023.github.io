@@ -5,13 +5,14 @@
         const container = document.querySelector('.blog-slider');
         if (!container) return;
 
-        // 确保轮播容器排在 #recent-posts 最前面（magnet 插件会 afterbegin 注入分类卡片）
-        const wrapper = container.closest('.recent-post-item');
-        const parent = wrapper && wrapper.parentElement;
-        if (wrapper && parent && parent.firstElementChild !== wrapper) {
-            parent.insertBefore(wrapper, parent.firstElementChild);
-        }
-
+        // 延迟执行DOM移位，等待magnet插件插入分类卡片
+        setTimeout(() => {
+            const wrapper = container.closest('.recent-post-item');
+            const parent = wrapper && wrapper.parentElement;
+            if (wrapper && parent && parent.firstElementChild !== wrapper) {
+                parent.insertBefore(wrapper, parent.firstElementChild);
+            }
+        }, 100);
         // PJAX 回来时先销毁旧实例，避免重复初始化导致箭头异常
         if (swiperInstance && typeof swiperInstance.destroy === 'function') {
             swiperInstance.destroy(true, true);
@@ -52,10 +53,3 @@
     document.addEventListener('DOMContentLoaded', initSwiper);
     document.addEventListener('pjax:complete', initSwiper);
 })();
-setTimeout(() => {
-  const wrapper = container.closest('.recent-post-item');
-  const parent = wrapper && wrapper.parentElement;
-  if (wrapper && parent && parent.firstElementChild !== wrapper) {
-      parent.insertBefore(wrapper, parent.firstElementChild);
-  }
-}, 100); // 延迟100ms，等magnet分类插入完成再挪轮播
