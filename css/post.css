@@ -564,7 +564,7 @@ a#card-info-btn:hover {
 }
 
 .category-lists .category-list .category-list-count {
-    background: var(--theme-color-green);
+    background: var(--theme-color-blue);
     padding: 4px 4px;
     border-radius: 6px;
     color: var(--icat-secondtext);
