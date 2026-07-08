@@ -630,3 +630,110 @@ a#card-info-btn:hover {
     font-size: 1rem;
     box-shadow: var(--border-color);
 }
+/* 文章底栏打赏分享样式 */
+.post_function {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.post_function_box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-reward {
+    margin-top: 0 !important;
+    width: auto !important;
+}
+
+.post-reward .reward-button {
+    background: #2ECC71;
+    border-radius: 8px;
+}
+
+#post .post_function .post_function_box .post-privacy-btn {
+    display: flex;
+    color: #FFFFFFB3;
+    background-color: #3498DB;
+    height: 40px;
+    border-radius: 8px;
+    align-items: center;
+    padding: 0 24px;
+    gap: 6px;
+}
+
+.post-meta__tag-list {
+    display: flex !important;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.post_function > .post-meta__tag-list > .post-meta__tags {
+    background: var(--theme-color-green);
+    display: flex !important;
+    height: 40px;
+    border-radius: 8px !important;
+    align-items: center;
+    margin: 0 !important;
+    border: var(--style-border) !important;
+    color: var(--font-color) !important;
+}
+
+.post-meta__tags:before {
+    content: "\f292" !important;
+    font-family: "Font Awesome 6 Free" !important;
+    font-size: 12px;
+    opacity: .4;
+    padding-right: 2px
+}
+
+.post-reward:hover .reward-button,
+.post_function .post_function_box .post-privacy-btn:hover,
+.post_function > .post-meta__tag-list > .post-meta__tags:hover {
+    color: var(--june-white) !important;
+    background-color: var(--theme-color-blue) !important;
+    transition: all .6s ease 0s;
+}
+
+#pagination.pagination-post{
+    margin-top: 20px !important;
+}
+
+.post-reward .reward-main .reward-all {
+    display: flex !important;
+    background: white !important;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.post-reward .reward-main .reward-all:before {
+    display: none !important;
+}
+
+.post-reward .reward-main .reward-all:hover {
+    border: 1px solid var(--june);
+}
+
+.post-reward .reward-main {
+    width: auto !important;
+}
+
+@media (max-width: 768px) {
+    .post_function {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .post-meta__tag-list{
+        margin-bottom: 18px;
+        margin-left: 0;
+    }
+
+    .post-reward {
+        display: flex !important;
+    }
+}

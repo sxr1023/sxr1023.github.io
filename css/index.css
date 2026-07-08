@@ -210,7 +210,6 @@ template {
 }
 .fontawesomeIcon,
 .custom-hr:before,
-#post .post-copyright:before,
 #post .post-outdate-notice:before,
 .note:not(.no-icon)::before,
 .search-dialog hr:before {
@@ -4128,15 +4127,15 @@ h1.page-title + .tag-cloud-list {
 #article-container hr {
   margin: 20px 0;
 }
-#post .tag_share:after {
+#post .post_function:after {
   display: block;
   clear: both;
   content: '';
 }
-#post .tag_share .post-meta__tag-list {
+#post .post_function .post-meta__tag-list {
   display: inline-block;
 }
-#post .tag_share .post-meta__tags {
+#post .post_function .post-meta__tags {
   display: inline-block;
   margin: 8px 8px 8px 0;
   padding: 0 12px;
@@ -4151,20 +4150,20 @@ h1.page-title + .tag-cloud-list {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-#post .tag_share .post-meta__tags:hover {
+#post .post_function .post-meta__tags:hover {
   background: #49b1f5;
   color: var(--white);
 }
-#post .tag_share .post_share {
+#post .post_function .post_share {
   display: inline-block;
   float: right;
   margin: 8px 0 0;
   width: fit-content;
 }
-#post .tag_share .post_share .social-share {
+#post .post_function .post_share .social-share {
   font-size: 0.85em;
 }
-#post .tag_share .post_share .social-share .social-share-icon {
+#post .post_function .post_share .social-share .social-share-icon {
   margin: 0 4px;
   width: 1.85em;
   height: 1.85em;
@@ -4181,15 +4180,18 @@ h1.page-title + .tag-cloud-list {
   -o-transition: box-shadow 0.3s ease-in-out;
   -ms-transition: box-shadow 0.3s ease-in-out;
   transition: box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  border-radius: 12px !important;
+  background-color: #eff1f3;
 }
-#post .post-copyright:before {
-  position: absolute;
-  top: 2px;
-  right: 12px;
-  color: #49b1f5;
-  content: '\f1f9';
-  font-size: 1.3em;
-}
+#post .post-copyright:before,
+#post .post-copyright position absolute,
+#post .post-copyright right -26px,
+#post .post-copyright top -120px,
+#post .post-copyright content '\f25e',
+#post .post-copyright font-size 200px,
+#post .post-copyright font-family 'Font Awesome 5 Brands',
+#post .post-copyright opacity .2,
 #post .post-copyright:hover {
   -webkit-box-shadow: 0 0 8px 0 rgba(232,237,250,0.6), 0 2px 4px 0 rgba(232,237,250,0.5);
   box-shadow: 0 0 8px 0 rgba(232,237,250,0.6), 0 2px 4px 0 rgba(232,237,250,0.5);
@@ -4205,11 +4207,14 @@ h1.page-title + .tag-cloud-list {
   padding-left: 6px;
 }
 #post .post-copyright .post-copyright-info a {
-  text-decoration: underline;
+  text-decoration: none;
   word-break: break-word;
 }
 #post .post-copyright .post-copyright-info a:hover {
   text-decoration: none;
+}
+#post .post-copyright-cc-info {
+  color: #49b1f5;
 }
 #post .post-outdate-notice {
   position: relative;

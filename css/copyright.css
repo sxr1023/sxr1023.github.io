@@ -1,0 +1,66 @@
+#post .post-copyright {
+  background-color: var(--theme-color-blue);
+  text-shadow: #bfbeb8 1px 0 4px;
+}
+[data-theme="dark"]
+  #post .post-copyright {
+    border: 1px solid rgb(19 18 18 / 35%);
+  }
+[data-theme="dark"]
+  .post-copyright-info {
+    color: #e0e0e4;
+  }
+#post .post-copyright__title{
+    font-size:22px;
+}
+#post .post-copyright__notice{
+    font-size:15px;
+}
+#post .post-copyright:before {
+  position: absolute;
+  right: -26px;
+  top: -120px;
+  content: '\f25e';
+  font-size: 200px;
+  font-family: 'Font Awesome 5 Brands';
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+
+/* 浅色背景页面链接 */
+.post-copyright a {
+  color: #5A86B8;
+}
+.post-copyright a:hover {
+  color: #3667A6;
+}
+
+/* 深色背景页面链接 */
+[data-theme="dark"] .post-copyright a {
+  color: #5A86B8;
+}
+[data-theme="dark"] .post-copyright a:hover {
+  color: #74b0e8;
+}
+/* 版权默认链接 */
+.post-copyright a {
+  /* 消除字体边缘发虚模糊 */
+  text-shadow: 0 0 0.3px currentColor;
+  -webkit-font-smoothing: antialiased;
+  transition: color 0.18s ease;
+}
+.post-copyright h {
+  text-shadow: 0 0 0.3px currentColor;
+  -webkit-font-smoothing: antialiased;
+  transition: color 0.18s ease;
+}
+.post-copyright {
+  transition: box-shadow 0.3s ease;
+  border: 2px solid var(--border-color) !important;
+}
+.post-copyright:hover {
+  border: 2px solid var(--border-hover) !important;
+  box-shadow: 0 0 0 3px rgba(66, 133, 199, 0.2),
+              0 0 12px 8px rgba(66, 133, 199, 0.15);
+}
