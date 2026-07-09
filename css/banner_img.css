@@ -73,7 +73,7 @@
   font-weight: bold;
 }
 #page:has(#icat_page) .icat-content-item .icat-card-content .icat-change-button-group .icat-change-button:hover {
-  background: var(--icat-blue);
+  background: var(--theme-color-blue);
   color: var(--icat-white);
 }
 
@@ -107,4 +107,8 @@
 .icat-content-item-tips,
 .icat-content-item-title {
   color: #EEE;
+}
+#icat_page .icat-content.icat-content-item.icatPage.single {
+  border-radius: 24px;
+  overflow: hidden;
 }
