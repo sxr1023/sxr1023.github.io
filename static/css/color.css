@@ -307,7 +307,9 @@ figure.highlight:hover {
 }
 
 /*******************************卡片边框***********************************/
-#recent-posts .recent-post-item,
+
+#recent-posts .recent-post-item
+/*
 #aside-content .card-categories,
 #aside-content .card-tags,
 #aside-content .card-archives,
@@ -317,13 +319,14 @@ figure.highlight:hover {
 #aside-content .card-calendar,
 #aside-content .card-history,
 #aside-content .card-card-announcement,
-#aside-content .card-card-info {
+#aside-content .card-info */{
   border: 1px solid transparent !important;
   transition: all 0.3s ease !important;
 }
 
 [data-theme] { /*这里有点bug不知道为什么，删掉这行就会夜间无法生效*/
-  #recent-posts .recent-post-item:hover,
+  #recent-posts .recent-post-item:hover
+  /*
   #aside-content .card-categories:hover,
   #aside-content .card-tags:hover,
   #aside-content .card-archives:hover,
@@ -331,29 +334,10 @@ figure.highlight:hover {
   #aside-content .card-recent-post:hover,
   #aside-content #card-schedule:hover,
   #aside-content #card-calendar:hover,
-  #aside-content .card-history:hover {
+  #aside-content .card-history:hover */{
     border-color:  var(--border-hover)!important;
     box-shadow: none !important;
   }
-  .aside-content .card-widget,  #aside-content .card-widget, .sidebar .card-widget,  #sidebar .card-widget, .card-widget {
-    border: 1px solid transparent !important;
-    transition: all 0.3s ease !important;
-    box-shadow: none !important;
-  }
-  .aside-content .card-widget:hover,  #aside-content .card-widget:hover,.sidebar .card-widget:hover,#sidebar .card-widget:hover,  .card-widget:hover {
-    border-color: var(--border-hover)!important;
-    box-shadow: none !important;
-  }
-}
-
-.aside-content .card-widget,  #aside-content .card-widget, .sidebar .card-widget,  #sidebar .card-widget, .card-widget {
-  border: 1px solid transparent !important;
-  transition: all 0.3s ease !important;
-  box-shadow: none !important;
-}
-.aside-content .card-widget:hover,  #aside-content .card-widget:hover,.sidebar .card-widget:hover,#sidebar .card-widget:hover,  .card-widget:hover {
-  border-color: var(--border-hover)!important;
-  box-shadow: none !important;
 }
 
 .site-page.child {
