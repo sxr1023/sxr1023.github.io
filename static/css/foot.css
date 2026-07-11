@@ -182,7 +182,7 @@ body.tags #body-wrap.page {
 }
 [data-theme="light"] {
   body.is-categories #body-wrap.page {
-    background: #EEE !important;
+    background: var(--theme-color-blue) !important;
   }
   body.is-categories #footer-wrap {
     color: #000;

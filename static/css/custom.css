@@ -391,3 +391,6 @@ progress::-webkit-progress-value {
 #pBar_year {
   background: var(--theme-color-green);
 }
+body.is-posts #aside-content .card-history {
+    display: none;
+}
