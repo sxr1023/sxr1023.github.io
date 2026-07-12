@@ -29,15 +29,6 @@
   </url>
   
   <url>
-    <loc>https://sxr.wsq127.top/posts/f1bb7ed2/</loc>
-    
-    <lastmod>2026-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sxr.wsq127.top/posts/9a3d92d8/</loc>
     
     <lastmod>2026-07-12</lastmod>
@@ -111,6 +102,15 @@
   
   <url>
     <loc>https://sxr.wsq127.top/categories/index.html</loc>
+    
+    <lastmod>2026-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sxr.wsq127.top/posts/f1bb7ed2/</loc>
     
     <lastmod>2026-07-12</lastmod>
     
