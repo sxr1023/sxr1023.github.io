@@ -394,3 +394,71 @@ progress::-webkit-progress-value {
 body.is-posts #aside-content .card-history {
     display: none;
 }
+#article-container.post-content :is(h1,h2,h3,h4,h5,h6) {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+#article-container.post-content h1:before {
+    font-size: 20px;
+}
+#article-container.post-content h2:before {
+    font-size: 18px;
+}
+#article-container.post-content h3:before {
+    font-size: 16px;
+}
+#article-container.post-content h4:before {
+    font-size: 14px;
+}
+#article-container.post-content :is(h5,h6):before {
+    font-size: 12px;
+}
+#article-container.post-content h1:hover:before {
+    padding-left: 12px;
+}
+#article-container.post-content h1:hover {
+  padding-left: 40px;
+}
+#article-container.post-content h2:hover:before {
+    padding-left: 8.5px;
+}
+#article-container.post-content h2:hover {
+  padding-left: 35px;
+}
+#article-container.post-content h3:hover:before {
+    padding-left: 6px;
+}
+#article-container.post-content h3:hover {
+  padding-left: 30px;
+}
+#article-container.post-content h4:hover:before {
+    padding-left: 4px;
+}
+#article-container.post-content h4:hover {
+  padding-left: 26px;
+}
+#article-container.post-content h5:hover:before {
+    padding-left: 4px;
+}
+#article-container.post-content h5:hover {
+  padding-left: 24px;
+}
+#article-container.post-content h6:hover:before {
+    padding-left: 4px;
+}
+#article-container.post-content h6:hover {
+  padding-left: 24px;
+}
+
+#article-container.post-content :is(h1, h2, h3, h4, h5, h6):before,
+#article-container.post-content :is(h1, h2, h3, h4, h5, h6):hover:before {
+    color: rgb(13, 191, 236);
+}
+[data-theme="dark"] #article-container.post-content :is(h1, h2, h3, h4, h5, h6):before,
+[data-theme="dark"] #article-container.post-content :is(h1, h2, h3, h4, h5, h6):hover:before {
+    color: #1e9397
+}
