@@ -174,47 +174,29 @@ div#foot-wrap {
   /* 可保留原样式，无需额外改动 */
 }
 /*************分类标签页面页脚的修改******************/
-body.is-categories #body-wrap.page {
+body.is-banner_img #body-wrap.page {
   background: #121212 !important;
 }
 body.tags #body-wrap.page {
   background: #121212 !important;
 }
 [data-theme="light"] {
-  body.is-categories #body-wrap.page {
+  body.is-banner_img #body-wrap.page {
     background: var(--theme-color-blue) !important;
   }
-  body.is-categories #footer-wrap {
+  body.is-banner_img #footer-wrap {
     color: #000;
   }
-  body.is-categories #footer-right p{
+  body.is-banner_img #footer-right p{
     color: #000;
   }
-  body.is-categories #footer-right a{
+  body.is-banner_img #footer-right a{
     color: #000;
   }
-  body.is-categories .footer-service img {
+  body.is-banner_img .footer-service img {
     filter: brightness(0) invert(0);
   }
-  body.is-categories .footer-service img:hover{
-    filter: brightness(0) saturate(100%) invert(34%) sepia(74%) saturate(748%) hue-rotate(162deg) brightness(95%) contrast(91%);
-  }
-  body.is-tags #body-wrap.page {
-    background: #EEE !important;
-  }
-  body.is-tags #footer-wrap {
-    color: #000;
-  }
-  body.is-tags #footer-right p{
-    color: #000;
-  }
-  body.is-tags #footer-right a{
-    color: #000;
-  }
-  body.is-tags .footer-service img {
-    filter: brightness(0) invert(0);
-  }
-  body.is-tags .footer-service img:hover{
+  body.is-banner_img .footer-service img:hover{
     filter: brightness(0) saturate(100%) invert(34%) sepia(74%) saturate(748%) hue-rotate(162deg) brightness(95%) contrast(91%);
   }
 }

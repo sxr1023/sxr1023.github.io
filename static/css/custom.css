@@ -462,6 +462,7 @@ body.is-posts #aside-content .card-history {
 [data-theme="dark"] #article-container.post-content :is(h1, h2, h3, h4, h5, h6):hover:before {
     color: #1e9397
 }
+
 /* 最新文章图标 */
 .newPost {
     position: absolute;
