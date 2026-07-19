@@ -180,6 +180,14 @@ body.is-banner_img #body-wrap.page {
 body.tags #body-wrap.page {
   background: #121212 !important;
 }
+.footer-service img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+/* hover沿用你之前自定义的滤镜配色 */
+.footer-service img:hover{
+  filter: brightness(0) saturate(100%) invert(34%) sepia(74%) saturate(748%) hue-rotate(162deg) brightness(95%) contrast(91%);
+}
 [data-theme="light"] {
   body.is-banner_img #body-wrap.page {
     background: var(--theme-color-blue) !important;

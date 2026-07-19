@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://sxr.wsq127.top/posts/f1bb7ed2/</loc>
+    <loc>https://sxr.wsq127.top/categories/index.html</loc>
     
     <lastmod>2026-07-19</lastmod>
     
@@ -93,15 +93,6 @@
   
   <url>
     <loc>https://sxr.wsq127.top/about/index.html</loc>
-    
-    <lastmod>2026-07-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sxr.wsq127.top/categories/index.html</loc>
     
     <lastmod>2026-07-19</lastmod>
     
@@ -220,27 +211,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://sxr.wsq127.top/tags/hexo/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sxr.wsq127.top/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sxr.wsq127.top/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -252,13 +222,6 @@
   
   <url>
     <loc>https://sxr.wsq127.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sxr.wsq127.top/categories/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

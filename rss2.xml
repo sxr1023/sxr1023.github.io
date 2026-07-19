@@ -6,25 +6,9 @@
     <description>一路寒风身如絮，命海沉浮客独行</description>
     <language>zh-CN</language>
     <copyright>All rights reserved 2026, sxr1023</copyright>
-    <lastBuildDate>Sun, 19 Jul 2026 08:13:40 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 May 2024 01:39:22 GMT</lastBuildDate>
     <generator>Hexo</generator>
     <atom:link href="https://sxr.wsq127.top/rss2.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>Github Action+Hexo Pro工作流部署教程</title>
-      <link>https://sxr.wsq127.top/posts/f1bb7ed2/</link>
-      <description>
-        <![CDATA[<h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id]]>
-      </description>
-      <author>sxr1023</author>
-      <category domain="https://sxr.wsq127.top/categories/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/">博客相关</category>
-      <category domain="https://sxr.wsq127.top/tags/hexo/">hexo</category>
-      <category domain="https://sxr.wsq127.top/tags/%E6%95%99%E7%A8%8B/">教程</category>
-      <category domain="https://sxr.wsq127.top/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</category>
-      <pubDate>Sat, 04 Jul 2026 16:29:55 GMT</pubDate>
-      <content:encoded>
-        <![CDATA[<h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h6 id="h6"><a href="#h6" class="headerlink" title="h6"></a>h6</h6>]]>
-      </content:encoded>
-    </item>
     <item>
       <title>【提高组】第六课：状态压缩DP/子集枚举 学习笔记</title>
       <link>https://sxr.wsq127.top/posts/61e012bf/</link>
