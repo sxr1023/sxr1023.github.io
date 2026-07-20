@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://sxr.wsq127.top/todo/index.html</loc>
+    
+    <lastmod>2026-07-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sxr.wsq127.top/static/css/modify.css</loc>
     
     <lastmod>2026-07-20</lastmod>
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://sxr.wsq127.top/posts/e10f7fa7/</loc>
+    <loc>https://sxr.wsq127.top/posts/e8d76788/</loc>
     
     <lastmod>2026-07-20</lastmod>
     
@@ -74,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://sxr.wsq127.top/posts/e8d76788/</loc>
+    <loc>https://sxr.wsq127.top/posts/e10f7fa7/</loc>
     
     <lastmod>2026-07-20</lastmod>
     
@@ -101,25 +110,16 @@
   </url>
   
   <url>
-    <loc>https://sxr.wsq127.top/essay/index.html</loc>
-    
-    <lastmod>2026-07-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sxr.wsq127.top/privacy/index.html</loc>
-    
-    <lastmod>2026-07-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sxr.wsq127.top/charts/index.html</loc>
+    
+    <lastmod>2026-07-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sxr.wsq127.top/essay/index.html</loc>
     
     <lastmod>2026-07-20</lastmod>
     
