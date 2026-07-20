@@ -480,3 +480,7 @@ body.is-posts #aside-content .card-history {
     border-radius: 0 10px 0px 10px;
 }
 }
+
+hr.custom-hr::before {
+    display: none;
+}
