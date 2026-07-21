@@ -8,6 +8,7 @@
   --border-color: rgba(0, 30, 50, 0.3);
   --nav-color: rgba(160, 205, 220, 0.75);
   --nav-color-shi: rgb(160, 205, 220);
+  --text-color: #4c4948;
 }
 :root[data-theme="dark"] {
   --theme-color-blue: rgb(50, 80, 110);
@@ -19,6 +20,7 @@
   --border-color: rgb(255, 255, 255, 0.2);
   --nav-color: rgba(50, 80, 110, 0.75);
   --nav-color-shi: rgb(50, 80, 110);
+  --text-color: #FFFFFFB3;
 }
 
 

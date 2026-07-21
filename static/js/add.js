@@ -16,6 +16,12 @@ function setTagClass(){
   if(path.startsWith('/posts/')){
     document.body.classList.add('is-posts')
   }
+  if(path.startsWith('/todo/')) {
+    document.body.classList.add('is-banner_img')
+  }
+  if(path.startsWith('/charts/')) {
+    document.body.classList.add('is-banner_img')
+  }
 }
 document.addEventListener('DOMContentLoaded',setTagClass)
 document.addEventListener('pjax:complete',setTagClass)

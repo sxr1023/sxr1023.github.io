@@ -2,7 +2,7 @@
   border: 0;
   box-shadow: none !important;
   padding: 0 !important;
-  background: transparent !important;
+  background: var(--theme-color-blue) !important;
 }
 #web_bg ~ .page:has(#icat_page) {
   background: var(--card-bg);
