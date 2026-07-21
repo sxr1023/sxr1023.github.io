@@ -484,3 +484,18 @@ body.is-posts #aside-content .card-history {
 hr.custom-hr::before {
     display: none !important;
 }
+#article-container hr:before {
+    display: none !important;
+}
+#article-container hr {
+    border-width: 2px !important;
+    border-style: dashed !important;
+    border-color: rgb(55, 255, 208) !important;
+    border-image: none !important;
+}
+[data-theme="dark"] #article-container hr {
+    border-width: 2px !important;
+    border-style: dashed !important;
+    border-color: rgb(76, 153, 226) !important;
+    border-image: none !important;
+}
