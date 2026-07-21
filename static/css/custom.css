@@ -60,7 +60,7 @@
 }
 
 .loading-img {
-    background: url(https://cdn.luogu.com.cn/upload/image_hosting/bzsyixoj.png) no-repeat center center;
+    background: url(https://cdn.jsdmirror.com/gh/sxr1023/BlogImage/img/avatar.webp) no-repeat center center;
     background-size: cover;
 }
 
@@ -482,5 +482,5 @@ body.is-posts #aside-content .card-history {
 }
 
 hr.custom-hr::before {
-    display: none;
+    display: none !important;
 }

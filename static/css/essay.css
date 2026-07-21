@@ -85,7 +85,7 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: flex-start;
-    background: var(--june-card-bg);
+    background: var(--theme-color-green);
     box-shadow: var(--june-shadow-border);
     margin-right: 2%;
 }
@@ -132,7 +132,7 @@
 
 #bber > section > ul > li > div .bber-info-time,
 #bber > section > ul > li > div .bber-info-from {
-    color: var(--june-fontcolor);
+    color: var(--text-color);
     font-size: 0.7rem;
     background-color: var(--june-gray-op);
     padding: 0px 8px;
@@ -307,7 +307,7 @@
 #bbTimeList {
     width: 100%;
     min-height: 50px;
-    background: var(--card-bg);
+    background: var(--theme-color-blue);
     color: var(--june-fontcolor);
     padding: .5rem 1rem;
     display: flex;
