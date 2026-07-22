@@ -20,7 +20,7 @@ function essayScroll() {
     const r = window.scrollY + document.documentElement.clientHeight;
     let p = document.getElementById("post-comment") || document.getElementById("footer");
 
-    (p.offsetTop + p.offsetHeight / 2 < r || 90 < result) && (percentFlag = true);
+    (p.offsetTop + p.offsetHeight / 2 < r) && (percentFlag = true);
 }
 function replaceAll(e, n, t) {
     return e.split(n).join(t);
