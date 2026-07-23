@@ -65,6 +65,7 @@ html[data-theme="dark"] .post-block {
 }
 
 html[data-theme="dark"] #recent-posts > .recent-post-item {
+  border: solid 1px transparent !important;
   background: rgba(50, 80, 110, 0.75) !important;
 }
 

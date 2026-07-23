@@ -499,3 +499,12 @@ hr.custom-hr::before {
     border-color: rgb(76, 153, 226) !important;
     border-image: none !important;
 }
+#page-header #scroll-down .scroll-down-effects {
+    display: none;
+}
+.swiper-wrapper{
+    border: solid 1px transparent;
+}
+#recent-posts > .recent-post-item {
+    border: solid 1px transparent !important;
+}
