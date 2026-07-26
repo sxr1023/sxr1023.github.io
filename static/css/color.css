@@ -9,6 +9,10 @@
   --nav-color: rgba(160, 205, 220, 0.75);
   --nav-color-shi: rgb(160, 205, 220);
   --text-color: #4c4948;
+  --button-color: #00C4B6;
+  --button-hover-color: #0F7D7F;
+  --button-light-color: var(--button-color);
+  --button-dark-color: var(--button-hover-color);
 }
 :root[data-theme="dark"] {
   --theme-color-blue: rgb(50, 80, 110);
@@ -21,6 +25,10 @@
   --nav-color: rgba(50, 80, 110, 0.75);
   --nav-color-shi: rgb(50, 80, 110);
   --text-color: #FFFFFFB3;
+  --button-color: #2E4964;
+  --button-hover-color: #446484;
+  --button-light-color: var(--button-hover-color);
+  --button-dark-color: var(--button-color);
 }
 
 

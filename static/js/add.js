@@ -23,5 +23,6 @@ function setTagClass(){
     document.body.classList.add('is-banner_img')
   }
 }
+
 document.addEventListener('DOMContentLoaded',setTagClass)
 document.addEventListener('pjax:complete',setTagClass)

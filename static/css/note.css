@@ -1,7 +1,22 @@
+.iconfont {
+font-family: "iconfont" !important;
+font-size: 1em;
+/* 可以定义图标大小 */
+font-style: normal;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
 /* 标签外挂 */
 .note {
     --note-color: #5bc0de; 
-    --gradient-position: 4em -25em;
+    --gradient-position: 4em -23em;
     --gradient-size: 30em;
 
     border-radius: 12px;
@@ -12,9 +27,6 @@
     background-color: var(--june-card-bg);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: all .3s ease;
-    background-image:
-            radial-gradient(circle at var(--gradient-position), var(--note-color), transparent var(--gradient-size)),
-            linear-gradient(var(--note-color) -2000%, transparent);
 }
 
 .note[class*="note-"] {
@@ -75,7 +87,7 @@ details.folding-tag {
 
 details.folding-tag[open] > summary {
     color: var(--june-white) !important;
-    background: var(--june-main) !important;
+    background: var(--theme-color-blue) !important;
     border: 1px solid var(--june-main) !important;
     border-top: none !important;
     border-left: none !important;
@@ -85,7 +97,7 @@ details.folding-tag[open] > summary {
 }
 details.folding-tag > summary {
     border: var(--style-border) !important;
-    background: var(--june-card-bg);
+    background: var(--thrmr-color-blue);
     border-radius: 14px !important;
     box-shadow: var(--june-shadow-border);
     color: var(--font-color) !important;
@@ -110,7 +122,7 @@ details.folding-tag[open] > summary::marker {
 }
 details.folding-tag summary:hover {
     cursor: pointer;
-    background: var(--june-main) !important;
+    background: var(--thrmr-color-blue) !important;
     color: var(--june-white) !important;
     transition: 0.3s;
     box-shadow: var(--june-shadow-main);
@@ -123,4 +135,41 @@ details .content > *:nth-child(1) {
     padding: 20px;
     margin: 0px;
     margin-top: 0;
+}
+
+#article-container .tabs {
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 8px;
+    background: var(--theme-color-green);
+    border: 2.5px solid var(--border-color) !important;
+    margin: 1rem 0px !important;
+}
+
+
+#article-container .tabs > .nav-tabs > .tab.active {
+    border-top: transparent;
+    background: var(--button-light-color);
+    border: transparent;
+}
+#article-container .tabs > .nav-tabs > .tab:not(.active) {
+    background: var(--button-dark-color);
+    border: transparent;
+}
+#article-container .tabs > .nav-tabs > .tab:not(.active):hover {
+    background: var(--button-light-color);
+    border: transparent;
+}
+#article-container .tabs > .nav-tabs {
+    display: flex;
+    background: var(--theme-color-green);
+    padding: 12px 16px;
+    justify-content: center;
+}
+#article-container .tabs > .nav-tabs > .tab {
+    flex: 1;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border-radius: 8px;
+    transition:  all 0.4s;
 }
