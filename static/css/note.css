@@ -32,7 +32,7 @@ font-style: normal;
 .note[class*="note-"] {
     background-image:
             radial-gradient(circle at var(--gradient-position), var(--note-color), transparent var(--gradient-size)),
-            linear-gradient(var(--note-color) -2000%, transparent);
+            linear-gradient(var(--note-color) -1000%, transparent);
 }
 
 .note:hover {
@@ -64,79 +64,52 @@ font-style: normal;
     margin: 0 !important;
 }
 
-/* 标签外挂 */
-/* 折叠栏样式 */
-details.folding-tag[open] {
-    border-radius: 15px !important;
-    border-color: var(--june-main) !important;
-    border: 1px solid var(--june-main) !important;
+details[open] > div.content {
+    background: var(--theme-color-green) !important;
+    border-radius: 10px;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important
 }
-
-li details.folding-tag {
-    border-radius: 8px;
+details.folding-tag summary {
+    border-radius: 10px !important;
 }
-
-li details.folding-tag summary {
-    border-radius: 8px;
-}
-
 details.folding-tag {
-    transition: border 0s ease !important;
-    border: none !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(27, 205, 252, 0.3) !important;
+}
+details.folding-tag[open] summary {
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important
 }
 
-details.folding-tag[open] > summary {
-    color: var(--june-white) !important;
-    background: var(--theme-color-blue) !important;
-    border: 1px solid var(--june-main) !important;
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+details.folding-tag[cyan] > summary {
+    background: var(--button-dark-color) !important;
+    color: var(--text-color) !important;
 }
-details.folding-tag > summary {
-    border: var(--style-border) !important;
-    background: var(--thrmr-color-blue);
-    border-radius: 14px !important;
-    box-shadow: var(--june-shadow-border);
-    color: var(--font-color) !important;
-    user-select: none;
+[data-theme="dark"] details.folding-tag[cyan] > summary::marker {
+    color: #0F7D7F;
 }
-details.folding-tag > summary::marker {
-    color: var(--june-main);
-    font-size: 16px;
+[data-theme="dark"] details.folding-tag[cyan] > summary:hover::marker,
+[data-theme="dark"] details.folding-tag[open][cyan] > summary::marker {
+    color: #00C4B6;
 }
-details.folding-tag > summary::before {
-    content: " ";
-    margin-right: 2px;
+[data-theme="light"] details.folding-tag[cyan] > summary::marker {
+    color: #2E4964;
 }
-details.folding-tag[open] > div.content {
-    border-radius: 0 0 16px 16px;
+[data-theme="light"] details.folding-tag[cyan] > summary:hover::marker,
+[data-theme="light"] details.folding-tag[open][cyan] > summary::marker {
+    color: #446484;
 }
-details.folding-tag summary:hover::marker {
-    color: var(--june-white);
+details.folding-tag[cyan] > summary:hover {
+    background: var(--button-light-color) !important;
+    color: var(--text-color) !important;
 }
-details.folding-tag[open] > summary::marker {
-    color: var(--june-white);
+details.folding-tag[open][cyan] > summary {
+    background: var(--button-light-color) !important;
 }
-details.folding-tag summary:hover {
-    cursor: pointer;
-    background: var(--thrmr-color-blue) !important;
-    color: var(--june-white) !important;
-    transition: 0.3s;
-    box-shadow: var(--june-shadow-main);
+[data-theme="dark"] details[cyan] > summary {
+    filter: brightness(1) !important;
 }
-details .content > *:nth-child(1) {
-    margin-top: 0 !important;
-}
-
-.flink details.folding-tag[open] > div.content {
-    padding: 20px;
-    margin: 0px;
-    margin-top: 0;
-}
-
 #article-container .tabs {
     border-radius: 12px;
     overflow: hidden;

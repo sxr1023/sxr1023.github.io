@@ -675,7 +675,7 @@ a#card-info-btn:hover {
 #post .post_function .post_function_box .post-privacy-btn {
     display: flex;
     color: #FFFFFFB3;
-    background-color: #3498DB;
+    background-color: var(--button-color);
     height: 40px;
     border-radius: 8px;
     align-items: center;
@@ -711,9 +711,9 @@ a#card-info-btn:hover {
 .post-reward:hover .reward-button,
 .post_function .post_function_box .post-privacy-btn:hover,
 .post_function > .post-meta__tag-list > .post-meta__tags:hover {
-    color: var(--june-white) !important;
-    background-color: var(--theme-color-blue) !important;
-    transition: all .6s ease 0s;
+    color: #FFFFFFB3 !important;
+    background-color: var(--button-hover-color) !important;
+    transition: all .4s ease 0s;
 }
 
 #pagination.pagination-post{
