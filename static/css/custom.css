@@ -508,3 +508,12 @@ hr.custom-hr::before {
 #recent-posts > .recent-post-item {
     border: solid 1px transparent !important;
 }
+b, strong {
+    color: #5A86B8;
+}
+figure.highlight pre .deletion {
+    color:rgb(16, 94, 222);
+}
+figure.highlight pre .addition {
+    color: rgb(191, 66, 191);
+}

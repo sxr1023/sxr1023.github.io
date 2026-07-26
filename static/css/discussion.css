@@ -198,6 +198,11 @@
     transform: translate(-50%, -48px);
 }
 /* 亮色模式占位文字 */
-[data-theme="light"] .tk-input .el-textarea__inner::placeholder {
-  color: #4c4948 !important;
+[data-theme="light"] .tk-input .el-textarea__inner::placeholder,
+[data-theme="light"] .el-input-group--prepend .el-input__inner::placeholder {
+  color: #4c494890 !important;
+}
+[data-theme="dark"] .tk-input .el-textarea__inner::placeholder,
+[data-theme="dark"] .el-input-group--prepend .el-input__inner::placeholder {
+  color: #ffffff90 !important;
 }
