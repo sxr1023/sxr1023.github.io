@@ -517,3 +517,10 @@ figure.highlight pre .deletion {
 figure.highlight pre .addition {
     color: rgb(191, 66, 191);
 }
+.bber-logo {
+    font-size: 1.7rem !important;
+    line-height: 22px;
+}
+#aside-content .card-info #card-info-btn {
+    transition: all 0.3s;
+}
