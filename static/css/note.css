@@ -64,6 +64,7 @@ font-style: normal;
     margin: 0 !important;
 }
 
+/*折叠框美化*/
 details[open] > div.content {
     background: var(--theme-color-green) !important;
     border-radius: 10px;
@@ -86,6 +87,7 @@ details.folding-tag[cyan] > summary {
     background: var(--button-dark-color) !important;
     color: var(--text-color) !important;
 }
+/*因为cyan的配色与本站样式相符，因此着重美化了cyan的样式，其他的可以类似进行修改*/
 [data-theme="dark"] details.folding-tag[cyan] > summary::marker {
     color: #0F7D7F;
 }
@@ -119,7 +121,7 @@ details.folding-tag[open][cyan] > summary {
     margin: 1rem 0px !important;
 }
 
-
+/*分栏美化*/
 #article-container .tabs > .nav-tabs > .tab.active {
     border-top: transparent;
     background: var(--button-light-color);
