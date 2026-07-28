@@ -275,6 +275,7 @@ figure.highlight:hover {
   background: oklch(from var(--theme-color-green) calc(l * 1.2) c h) !important;
   color: #5db6cf !important;
 }
+
 .tag-Link {
   background: var(--theme-color2) !important;
   border: 2px solid var(--theme-color) !important;
