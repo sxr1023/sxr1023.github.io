@@ -73,7 +73,8 @@
 #to_comment,
 #go-down,
 #mobile-toc-button,
-#go-up{
+#go-up,
+.icon-V.hidden{
     background: rgb(70, 218, 205) !important;
 }
 [data-theme="dark"] #readmode,
@@ -84,7 +85,8 @@
 [data-theme="dark"] #to_comment,
 [data-theme="dark"] #mobile-toc-button,
 [data-theme="dark"] #go-down,
-[data-theme="dark"] #go-up{
+[data-theme="dark"] #go-up,
+[data-theme="dark"] .icon-V.hidden {
     background: rgb(14, 107, 137) !important;
 }
 .search-dialog {
@@ -523,4 +525,10 @@ figure.highlight pre .addition {
 }
 #aside-content .card-info #card-info-btn {
     transition: all 0.3s;
+}
+
+.icon-V.hidden svg {
+    width: 19px !important;
+    height: 19px !important;
+    display: inline-block;
 }
