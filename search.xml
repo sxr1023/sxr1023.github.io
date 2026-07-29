@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>如何给博客快速添加封面</title>
+      <link href="/posts/32f89082/"/>
+      <url>/posts/32f89082/</url>
+      
+        <content type="html"><![CDATA[<h2 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h2><p>博客封面，自古各大站长一大难题。</p><p>主要就两类——自己做，网上找。像洪佬他们就是自己做的，科技感满满，整齐划一，显得很正式。</p><p>具体可参考</p><a class="tag-Link" target="_blank" href="https://blog.zhheo.com/p/463d306b.html">    <div class="tag-link-tips">🔗 引用站外地址，请注意甄别</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://icon.bqb.cool/?url=blog.zhheo.com/p/463d306b.html);"></div>        <div class="tag-link-right">            <div class="tag-link-title">博客文章封面的变迁，我是如何制作博客封面的</div>            <div class="tag-link-sitename">张洪Heo</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a><p>那像我们这种懒人，用这种方法肯定是太过于浪费时间的，于是，只能选择第二种方法——网上找。</p><h2 id="图片选择"><a href="#图片选择" class="headerlink" title="图片选择"></a>图片选择</h2><p>这里推荐极简壁纸，无广告，图像质量也不错，没有水印。</p><a class="tag-Link" target="_blank" href="https://bizhi1.com/">    <div class="tag-link-tips">🔗 引用站外地址，请注意甄别</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://icon.bqb.cool/?url=bizhi1.com/);"></div>        <div class="tag-link-right">            <div class="tag-link-title">极简壁纸 - 专注超高清壁纸无水印下载</div>            <div class="tag-link-sitename">极简壁纸</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a><p>至于登录才能下载这个玩意，纯扯淡，直接 F12 找图片地址，然后下载就行。</p><p>这种办法不错，高效还能快速查找，但是总不能直接就用这个网址吧，还是说你打算用你电脑上的链接的？<del>真就是“长大了我要买一台能看到别人电脑上的图片的电脑”</del></p><p>所以，要用图床。</p><h2 id="为什么使用"><a href="#为什么使用" class="headerlink" title="为什么使用"></a>为什么使用</h2><p>网上说用 GitLab 的，我一注册账号发现好像是有免费时间限制的，吓我的放弃了。</p><p>如果你不在乎免费时间限制的话，GitLab 的确是比 Github更好的选择，尤其是在访问速度这一点。</p><p>但是，向我们这种小个体，大部分博客还是写给自己的，没必要。直接用 Github，改一下 CDN 就行了。</p><h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><p>太多了懒得搬教程了，我自己写也不会比这个更好，直接下面这个链接吧。</p><a class="tag-Link" target="_blank" href="https://zhuanlan.zhihu.com/p/489236769">    <div class="tag-link-tips">🔗 引用站外地址，请注意甄别</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://icon.bqb.cool/?url=zhuanlan.zhihu.com/p/489236769);"></div>        <div class="tag-link-right">            <div class="tag-link-title">使用Github+picGo搭建图床，保姆级教程来了</div>            <div class="tag-link-sitename">知乎</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 封面 </tag>
+            
+            <tag> 图床 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>butterfly标签外挂美化</title>
       <link href="/posts/c3ed160d/"/>
       <url>/posts/c3ed160d/</url>
@@ -249,8 +278,6 @@
             <tag> 提高组 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> 2 </tag>
             
         </tags>
       
