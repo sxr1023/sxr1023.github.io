@@ -1,0 +1,160 @@
+/* 全局变量定义 */
+:root {
+  --main: #1677B3;
+  --second: #ffffffb3;
+  --card-border: 1px solid transparent;
+  --border-radius: .5rem;
+  --main-shadow: 0 2px 3px 1px rgba(22, 119, 179, .2);
+  /* 新增卡片底色变量，和分页卡片底色保持一致，根据你站点主题底色自行修改值 */
+}
+
+/* 推荐文章区域 */
+.relatedPosts > .relatedPosts-list .content {
+  position: relative;
+}
+
+/* 推荐卡片父容器：增加背景色，解决hover发黑 */
+.relatedPosts > .relatedPosts-list > div {
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  /* 核心修复：补上卡片背景色，和上下篇卡片底色统一 */
+  /* 匹配分页默认基础样式 */
+  padding: 0;
+}
+
+.relatedPosts > .relatedPosts-list .content .date {
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.relatedPosts > .relatedPosts-list .content .title {
+  font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+.relatedPosts > .relatedPosts-list > div:hover {
+  color: var(--second);
+  box-shadow: var(--main-shadow);
+}
+
+/* 悬浮原生文字上滑消失 */
+.relatedPosts > .relatedPosts-list > div:hover .content .date,
+.relatedPosts > .relatedPosts-list > div:hover .content .title {
+  opacity: 0;
+  transform: translateY(-25px);
+}
+
+/* 悬浮展示的居中文字模块 */
+.relatedPosts > .relatedPosts-list .content .info {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  box-sizing: border-box;
+  padding: 6px 12px;
+  color: var(--second);
+  text-align: center;
+  word-wrap: break-word;
+  word-break: normal;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-height: calc(1.6em * 3);
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(calc(-50% + 25px));
+  border-radius: 6px;
+}
+.relatedPosts > .relatedPosts-list > div:hover .content .info {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+/* ========== 上下篇分页 完全复刻推荐卡片结构 ========== */
+#pagination.pagination-post {
+  border-radius: var(--border-radius);
+}
+
+#pagination .prev-post {
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+#pagination .next-post {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#pagination .prev-post .label,
+#pagination .next-post .label {
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+#pagination .prev-post .prev_info,
+#pagination .next-post .next_info {
+  font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 分页hover基础样式，和推荐卡片统一挂载到父级容器，不要挂在a标签 */
+#pagination .prev-post:hover,
+#pagination .next-post:hover {
+  color: var(--second);
+  box-shadow: var(--main-shadow);
+}
+
+/* 分页原有文字上浮消失逻辑 */
+#pagination .prev-post:hover .label,
+#pagination .next-post:hover .label,
+#pagination .prev-post:hover .prev_info,
+#pagination .next-post:hover .next_info {
+  opacity: 0;
+  transform: translateY(-25px);
+}
+
+/* 分页悬浮居中文字容器，两行展示 + 字号放大 */
+#pagination .content {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  box-sizing: border-box;
+  padding: 6px 12px;
+  color: var(--second);
+  text-align: center;
+  word-wrap: break-word;
+  word-break: normal;
+  font-size: 1.1rem; /* 原0.95rem放大 */
+  line-height: 1.6;
+  max-height: calc(1.6em * 2);
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(calc(-50% + 25px));
+  border-radius: 6px;
+}
+#pagination .prev-post:hover .content,
+#pagination .next-post:hover .content {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.postImgHover .cover, #pagination .prev-post .cover, #pagination .next-post .cover, .relatedPosts > .relatedPosts-list > div .cover {
+  opacity: 0.4;
+}
+.postImgHover:hover .cover, #pagination .prev-post:hover .cover, #pagination .next-post:hover .cover, .relatedPosts > .relatedPosts-list > div:hover .cover {
+  opacity: 0.5;
+}
