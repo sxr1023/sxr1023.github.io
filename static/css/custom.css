@@ -533,3 +533,6 @@ figure.highlight pre .addition {
     height: 19px !important;
     display: inline-block;
 }
+.fancybox__infobar {
+  font-family: "HYTMR", sans-serif !important;
+}

@@ -26,3 +26,4 @@ function setTagClass(){
 
 document.addEventListener('DOMContentLoaded',setTagClass)
 document.addEventListener('pjax:complete',setTagClass)
+
