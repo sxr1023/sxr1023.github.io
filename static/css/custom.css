@@ -99,10 +99,11 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-.local-search-box--input {
+.local-search-box--input, .ais-SearchBox-input {
   background: rgb(155, 218, 210) !important;
 }
-[data-theme="dark"] .local-search-box--input {
+[data-theme="dark"] .local-search-box--input,
+[data-theme="dark"] .ais-SearchBox-input {
   background: rgb(50, 90, 110) !important;
 }
 

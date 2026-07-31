@@ -4,3 +4,5 @@ Allow: /
 
 Sitemap: https://sxr1023.github.io/sitemap.xml
 Sitemap: https://sxr1023.github.io/baidusitemap.xml
+
+# Algolia-Crawler-Verif: AD350F5E939EE6DD
