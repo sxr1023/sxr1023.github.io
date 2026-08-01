@@ -13,6 +13,12 @@
   --button-hover-color: #0F7D7F;
   --button-light-color: var(--button-color);
   --button-dark-color: var(--button-hover-color);
+  --docsearch-modal-background: var(--theme-color-blue) !important;
+  --docsearch-footer-background: var(--theme-color-green) !important;
+  --docsearch-searchbox-focus-background: var(--theme-color-green) !important;
+  --docsearch-highlight-color: var(--border-color) !important;
+  --docsearch-primary-color: var(--border-hover) !important;
+  --docsearch-hit-background: var(--theme-color-green) !important;
 }
 :root[data-theme="dark"] {
   --theme-color-blue: rgb(50, 80, 110);
@@ -363,4 +369,17 @@ i.fas.fa-chevron-down {
 }
 .site-page.child:hover {
   background: var(--theme-color-green) !important;
+}
+.DocSearch-Reset {
+  color: var(--border-hover) !important;
+  display: flex !important;
+}
+.DocSearch-Reset:hover {
+  background: var(--theme-color-blue) !important;
+}
+.DocSearch-LoadingIndicator svg, .DocSearch-MagnifierLabel svg {
+  color: var(--border-hover) !important;
+}
+.DocSearch-Form {
+  border-color: var(--border-hover) !important;
 }

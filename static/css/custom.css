@@ -536,3 +536,35 @@ figure.highlight pre .addition {
 .fancybox__infobar {
   font-family: "HYTMR", sans-serif !important;
 }
+/* Enter */
+.DocSearch-Commands li:nth-child(1) .DocSearch-Label::after {
+  content: "选择";
+}
+.DocSearch-Commands li:nth-child(1) .DocSearch-Label {
+  font-size: 0;
+}
+.DocSearch-Commands li:nth-child(1) .DocSearch-Label::after {
+  font-size: 14px;
+}
+
+/* 上下箭头 */
+.DocSearch-Commands li:nth-child(2) .DocSearch-Label::after {
+  content: "上/下个";
+}
+.DocSearch-Commands li:nth-child(2) .DocSearch-Label {
+  font-size: 0;
+}
+.DocSearch-Commands li:nth-child(2) .DocSearch-Label::after {
+  font-size: 14px;
+}
+
+/* ESC关闭 */
+.DocSearch-Commands li:nth-child(3) .DocSearch-Label::after {
+  content: "关闭";
+}
+.DocSearch-Commands li:nth-child(3) .DocSearch-Label {
+  font-size: 0;
+}
+.DocSearch-Commands li:nth-child(3) .DocSearch-Label::after {
+  font-size: 14px;
+}
