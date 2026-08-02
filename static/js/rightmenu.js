@@ -128,19 +128,58 @@ rmf.translate = function () {
     document.getElementById("translateLink").click();
 }
 rmf.searchinThisPage = () => {
-    let mask = setMask(); // 确保 mask 元素存在于 document.body 中
-    document.getElementsByClassName("local-search-box--input")[0].value = window.getSelection().toString();
-    document.getElementsByClassName("search")[0].click();
-    var evt = document.createEvent("HTMLEvents");
-    evt.initEvent("input", false, false);
-    document.getElementsByClassName("local-search-box--input")[0].dispatchEvent(evt);
-
-    // 在尝试移除 mask 元素之前检查它是否存在于 document.body 中
-    if (document.body.contains(mask)) {
-        document.body.removeChild(mask);
+    console.log("===== 右键搜索函数开始执行 =====")
+    const rightMenuDom = document.getElementById('rightMenu')
+    if (rightMenuDom) rightMenuDom.style.display = 'none'
+    const selectText = window.getSelection().toString().trim()
+    console.log('选中的文本内容：', selectText)
+    if (!selectText) {
+        console.log('文本为空，直接退出函数')
+        return
     }
-}
 
+    // 触发弹窗
+    const keyEvent = new KeyboardEvent('keydown', { key: '/', bubbles: true })
+    document.dispatchEvent(keyEvent)
+    console.log('已下发 / 快捷键事件，拉起DocSearch弹窗')
+
+    let loopCount = 0
+    const pollTimer = setInterval(() => {
+        loopCount++
+        const inputList = document.getElementsByClassName("DocSearch-Input")
+        console.log(`轮询第${loopCount}次，数组长度：`, inputList.length)
+
+        if (inputList.length > 0) {
+            clearInterval(pollTimer)
+            const input = inputList[0]
+            console.log('捕获input，原始value：', input.value)
+
+            // 第一层延时：等待DocSearch内部初始化focus彻底完成
+            setTimeout(() => {
+                input.blur()
+                input.value = selectText
+                // 光标置于末尾，清除选区
+                input.selectionStart = input.selectionEnd = selectText.length
+                console.log('赋值完成，光标位置', input.selectionStart)
+
+                // 第二层延时：同步React状态
+                setTimeout(() => {
+                    input.dispatchEvent(new Event('input', { bubbles: true }))
+                    input.dispatchEvent(new Event('keyup', { bubbles: true }))
+                    console.log('事件派发完毕')
+
+                    // 第三层延时：最后再聚焦，此时不会触发全选
+                    setTimeout(() => {
+                        input.focus()
+                        console.log("流程全部结束")
+                    }, 80)
+                }, 60)
+            }, 100)
+            return
+        }
+        if (loopCount >= 25) clearInterval(pollTimer)
+    }, 120)
+}
 document.body.addEventListener('touchmove', function (e) {
 
 }, {passive: false});

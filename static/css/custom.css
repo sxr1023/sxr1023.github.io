@@ -604,3 +604,7 @@ figure.highlight pre .addition {
 .DocSearch-Title::before {
     color: var(--text-color) !important;
 }
+.DocSearch-Input::selection {
+    background: transparent !important;
+    color: var(--text-color) !important;
+}
