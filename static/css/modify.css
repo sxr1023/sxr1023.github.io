@@ -92,3 +92,31 @@
   background-color: rgba(0,0,0,0.1);
   content: '';
 }
+.DocSearch-Title {
+  position: relative;
+  text-indent: -9999px;
+}
+.DocSearch-Title strong {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.DocSearch-NoResults-Prefill-List .DocSearch-Help {
+  position: relative;
+  text-indent: -9999px;
+}
+.DocSearch-NoResults-Prefill-List .DocSearch-Help ::before {
+  content: "尝试搜索：";
+  color: var(--docsearch-muted-color);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-indent: 0;
+  white-space: nowrap;
+}

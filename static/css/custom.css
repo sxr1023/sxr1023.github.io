@@ -562,9 +562,45 @@ figure.highlight pre .addition {
 .DocSearch-Commands li:nth-child(3) .DocSearch-Label::after {
   content: "关闭";
 }
+
 .DocSearch-Commands li:nth-child(3) .DocSearch-Label {
   font-size: 0;
 }
 .DocSearch-Commands li:nth-child(3) .DocSearch-Label::after {
   font-size: 14px;
+}
+.DocSearch-NoResults-Prefill-List .DocSearch-Help {
+  position: relative;
+  text-indent: -9999px;
+  white-space: nowrap; /* 强制单行展示，杜绝文字折行 */
+}
+.DocSearch-NoResults-Prefill-List .DocSearch-Help::before {
+  content: "你可以尝试搜索：";
+  color: var(--docsearch-muted-color);
+  position: absolute;
+  /* 居中核心代码 */
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  text-indent: 0;
+  white-space: nowrap;
+}
+.DocSearch-StartScreen .DocSearch-Help {
+  position: relative;
+  text-indent: -9999px;
+  white-space: nowrap; /* 强制单行展示，杜绝文字折行 */
+}
+.DocSearch-StartScreen .DocSearch-Help::before {
+  content: "没有最近搜索历史";
+  color: var(--docsearch-muted-color);
+  position: absolute;
+  /* 居中核心代码 */
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  text-indent: 0;
+  white-space: nowrap;
+}
+.DocSearch-Title::before {
+    color: var(--text-color) !important;
 }
