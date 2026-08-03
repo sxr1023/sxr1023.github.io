@@ -608,3 +608,10 @@ figure.highlight pre .addition {
     background: transparent !important;
     color: var(--text-color) !important;
 }
+blockquote {
+    background: var(--theme-color-green) !important;
+    border-radius: 4px;
+}
+.docsearch-wrap {
+    display: none;
+}
